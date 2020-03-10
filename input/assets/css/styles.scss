@@ -1,0 +1,96 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media screen {
+    @include media-breakpoint-up(md) {
+        body {
+            min-height: 100vh;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}
+
+@each $size, $length in $sizes {
+    .max-vw-#{$size} {
+        max-width: #{$size}vw !important;
+    }
+
+    .min-vw-#{$size} {
+        min-width: #{$size}vw !important;
+    }
+
+    .max-vh-#{$size} {
+        max-height: #{$size}vh !important;
+    }
+
+    .min-vh-#{$size} {
+        min-height: #{$size}vh !important;
+    }
+}
+
+@each $color, $value in $colors {
+    @include text-emphasis-variant(".text-#{$color}", $value, true);
+}
+
+$font-family-serif: 'Roboto Slab', serif !default;
+
+h1, h2, h3 {
+    font-family: $font-family-serif;
+}
+
+h1 {
+    color: $primary;
+}
+
+h2, h3 {
+    color: $secondary;
+}
+
+#logo {
+    height: 3rem;
+}
+
+@mixin nav-project($color) {
+    a {
+        &, &:focus, &:active {
+            color: $color;
+        }
+
+        &:hover {
+            color: darken($color, 20%);
+        }
+
+        font-size: $font-size-lg;
+    }
+}
+
+#nav-framework {
+    @include nav-project($purple);
+}
+
+#nav-web {
+    @include nav-project($blue);
+}
+
+#nav-docs {
+    @include nav-project($orange);
+}
+
+#hero {
+    background: $primary linear-gradient(180deg, $blue, $primary) repeat-x !important;
+}
+
+#footer {
+    background: $secondary linear-gradient(180deg, $purple, $secondary) repeat-x !important;
+}
