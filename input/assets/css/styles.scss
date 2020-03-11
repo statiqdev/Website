@@ -12,11 +12,28 @@ html, body {
         body {
             min-height: 100vh;
         }
+
+        .icon-md-100 {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        body {
+            min-height: 100vh;
+        }
     }
 
     @include media-breakpoint-down(md) {
         body {
             -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .h-lg-100 {
+            height: 100%;
         }
     }
 }
@@ -41,9 +58,47 @@ html, body {
 
 @each $color, $value in $colors {
     @include text-emphasis-variant(".text-#{$color}", $value, true);
+
+    .bg-#{$color} {
+        background-color: $value;
+    }
+
+    .bg-gradient-#{$color} {
+        background: $value linear-gradient(180deg, $value, darken($value, 10%)) repeat-x !important;
+    }
+
+    .text-#{$color} {
+        color: $value;
+    }
+
+    .icon-#{$color} {
+        --fa-primary-color: #{$value};
+        --fa-secondary-color: #{lighten($value, 20%)};
+    }
+}
+
+.icon-theme {
+    --fa-primary-color: #{$primary};
+    --fa-secondary-color: #{$secondary};
+}
+
+.icon-100 {
+    width: 100% !important;
+    height: auto !important;
 }
 
 $font-family-serif: 'Roboto Slab', serif !default;
+
+.font-size-lg {
+    font-size: $font-size-lg;
+}
+
+.font-size-sm {
+    font-size: $font-size-sm;
+}
+.font-size-base {
+    font-size: $font-size-base;
+}
 
 h1, h2, h3 {
     font-family: $font-family-serif;
@@ -88,7 +143,16 @@ h2, h3 {
 }
 
 #hero {
-    background: $primary linear-gradient(180deg, $blue, $primary) repeat-x !important;
+    background: $blue linear-gradient(180deg, $blue, $purple) repeat-x !important;
+}
+
+.product-wordmark {
+    width: 3em;
+}
+
+.product-icon {
+    font-size: $font-size-base * 1.5;
+    margin-left: -($font-size-base * 0.75);
 }
 
 #footer {
