@@ -19,12 +19,6 @@ html, body {
         }
     }
 
-    @include media-breakpoint-up(md) {
-        body {
-            min-height: 100vh;
-        }
-    }
-
     @include media-breakpoint-down(md) {
         body {
             -webkit-overflow-scrolling: touch;
@@ -156,5 +150,97 @@ h2, h3 {
 }
 
 #footer {
-    background: $secondary linear-gradient(180deg, $purple, $secondary) repeat-x !important;
+    background-color: darken($purple, 40%);
+}
+
+$sections: () !default;
+$sections: map-merge(
+    (
+        "web": $blue,
+        "docs": $orange,
+        "framework": $purple,
+        "blog": $gray-600
+    ),
+    $sections
+);
+
+@each $section, $color in $sections {
+    .section-#{$section} {
+        #titlebar {
+            background-color: darken($color, 15%);
+
+            .section {
+                color: darken($color, 5%);
+                font-size: $h6-font-size;
+            }
+
+            .title {
+                line-height: 0.9em;
+                font-family: $font-family-serif;
+                font-size: $h3-font-size;
+            }
+        }
+
+        .sidebar-nav-item {
+            padding-top: $spacer * 0.5;
+            padding-bottom: $spacer * 0.5;
+            font-weight: $font-weight-bold;
+
+            &.has-children {
+                margin-bottom: 0;
+            }
+
+            &.active a {
+                color: $gray-600;
+
+                @include hover-focus-active() {
+                    color: $gray-600;
+                }
+            }
+        }
+
+        .sidebar-nav-children {
+            background-color: $gray-100;
+            border-left: ($border-width * 3) solid $gray-300;
+            padding-left: $spacer;
+            margin-bottom: $spacer;
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+
+        .sidebar-nav-child {
+            padding-top: $spacer * 0.5;
+            padding-bottom: $spacer * 0.5;
+
+            &.active a {
+                color: $gray-600;
+
+                @include hover-focus-active() {
+                    color: $gray-600;
+                }
+            }
+        }
+    }
+}
+
+.sidebar {
+    border-bottom: $border-width solid $border-color;
+    padding-bottom: $spacer * 1.5;
+    margin-bottom: $spacer * 1.5;
+
+    @include media-breakpoint-up(md) {
+        & {
+            border-right: $border-width solid $border-color;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
 }
