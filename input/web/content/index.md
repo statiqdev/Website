@@ -1,3 +1,5 @@
 ﻿Index: 2
 ---
-todo
+Here are some child pages:
+
+<?# ChildPages /?>

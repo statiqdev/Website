@@ -96,6 +96,9 @@ $font-family-serif: 'Roboto Slab', serif !default;
 
 h1, h2, h3 {
     font-family: $font-family-serif;
+    &:not(:first-child) {
+        margin-top: $spacer * 1.5;
+    }
 }
 
 h1 {
@@ -244,3 +247,35 @@ $sections: map-merge(
         }
     }
 }
+
+/* Mermaid */
+.mermaid {
+    overflow: hidden !important;
+    visibility: hidden !important;
+    &[data-processed="true"] {
+      visibility: visible !important;
+    }
+    min-height: 200px;
+  
+    svg {
+      min-height: 200px;
+    }
+  }
+  .node rect,
+  .node circle,
+  .node ellipse,
+  .node polygon {
+    fill: lighten($primary, 50%) !important;
+    stroke: #000 !important;
+  }
+  .type-node rect,
+  .type-node circle,
+  .type-node ellipse,
+  .type-node polygon {
+    fill: lighten($primary, 30%) !important;
+    stroke: #000 !important;
+  }
+  .cluster rect {
+    fill: $gray-100 !important;
+    stroke: $gray-300 !important;
+  }
