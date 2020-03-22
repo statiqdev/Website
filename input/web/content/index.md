@@ -1,4 +1,4 @@
-﻿Index: 2
+﻿Order: 2
 ---
 Here are some child pages:
 

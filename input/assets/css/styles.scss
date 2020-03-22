@@ -103,10 +103,13 @@ h1, h2, h3 {
 
 h1 {
     color: $primary;
+    padding-bottom: $spacer * 0.5;
+    margin-bottom: $spacer * 0.5;
+    border-bottom: $border-width solid $border-color;
 }
 
 h2, h3 {
-    color: $secondary;
+    color: lighten($primary, 20%);
 }
 
 #logo {
@@ -252,6 +255,9 @@ $sections: map-merge(
 .mermaid {
     overflow: hidden !important;
     visibility: hidden !important;
+    margin-bottom: $spacer;
+    margin-top: $spacer;
+
     &[data-processed="true"] {
       visibility: visible !important;
     }

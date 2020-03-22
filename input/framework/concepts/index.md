@@ -3,4 +3,6 @@ Description: Regardless of whether you run Statiq using an application like Stat
 ---
 <?!= Description /?>
 
+<img src="/assets/flow.png" class="mw-100">
+
 <?# ChildPages /?>
