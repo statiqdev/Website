@@ -1,0 +1,14 @@
+ArchiveSources: "blog/{*,!index.*}"
+ArchiveDestination: >
+  => GetInt("Index") <= 1 ? $"blog/index.html" : $"blog/{GetInt("Index")}.html"
+ArchivePageSize: 10
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+Title: Blog Posts
+ArchiveTitle: >
+  => $"{Title}{(GetInt("Index") > 1 ? (" (Page " + GetInt("Index") + ")") : null)}"
+---
+@foreach (IDocument post in Document.GetChildren())
+{
+    <p><a href="@post.GetLink(Context)">@post.GetTitle()</a></p>
+}

@@ -1,5 +1,5 @@
 ﻿Order: 2
 ---
-Here are some child pages:
+Coming Soon
 
 <?# ChildPages /?>

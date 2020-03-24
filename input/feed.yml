@@ -1,0 +1,5 @@
+FeedRss: true
+FeedAtom: true
+FeedSources: "blog/{*,!index.*}"
+FeedOrderKey: Published
+FeedOrderDescending: true
