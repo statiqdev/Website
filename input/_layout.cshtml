@@ -86,6 +86,8 @@
                         <div class="container flex-grow-1 d-flex flex-column mb-4">
                             @if (Document.GetBool(SiteKeys.NoSidebar))
                             {
+                                IgnoreSection(SectionNames.Sidebar);
+                                
                                 @RenderBody()
                             }
                             else
@@ -127,21 +129,24 @@
                                     <div class="col-md-9 col-lg-8">
                                         @RenderBody()
                                     </div>
-                                    @{
-                                        IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
-                                        if (headings?.Count > 0)
-                                        {
-                                            <div class="col-lg-2 d-none d-lg-block">
-                                                <div class="border-left pl-3">
-                                                    <p class="small font-weight-bold">On This Page</p>
-                                                    @foreach(IDocument heading in headings)
+                                        <div class="col-lg-2 d-none d-lg-block">
+                                            <div class="border-left pl-3">
+                                                @{
+                                                    IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
+                                                    if (headings.Count > 0)
                                                     {
-                                                        <p class="small"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></p>
+                                                        <div class="border-bottom mb-3">
+                                                            <p class="small font-weight-bold">On This Page</p>
+                                                            @foreach (IDocument heading in headings)
+                                                            {
+                                                                <p class="small"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></p>
+                                                            }
+                                                        </div>
                                                     }
-                                                </div>
+                                                }
+                                                <p class="small font-weight-bold"><a href="@Document.GetString("EditLink")">Edit This Page</a></p>
                                             </div>
-                                        }
-                                    }
+                                        </div>
                                 </div>
                             }
                         </div>

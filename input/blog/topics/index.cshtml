@@ -1,0 +1,25 @@
+ArchiveSources: "blog/posts/*"
+ArchiveKey: Topic
+ArchiveDestination: >
+  => GetInt("Index") <= 1 ? $"blog/topics/{GroupKey}/index.html" : $"blog/topics/{GroupKey}/{GetInt("Index")}.html"
+ArchivePageSize: 10
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+Title: Topics
+ArchiveTitle: => Outputs["Data"][$"blog/topics/{GroupKey}.yml"].GetString("Title")
+NoSidebar: => !ContainsKey("GroupKey")
+---
+@if (!Document.ContainsKey(Keys.GroupKey))
+{
+    @foreach (IDocument post in Document.GetChildren())
+    {
+        <p><a href="@post.GetLink(Context)">@post.GetTitle()</a></p>
+    }
+}
+else
+{
+    @foreach (IDocument topic in Document.GetChildren())
+    {
+        <p><a href="@topic.GetLink(Context)">@topic.GetTitle()</a></p>
+    }
+}

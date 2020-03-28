@@ -3,7 +3,16 @@
 }
 
 @section Sidebar {
-    <p>Sidebar!</p>
+    <h3>Topics</h3>
+    <ul>
+    @foreach (IDocument topic in
+        Outputs[nameof(Archives)]["blog/topics/index.html"]
+            .GetChildren()
+            .OrderByDescending(x => x.GetString(Keys.GroupKey)))
+    {
+        <li><a href="@topic.GetLink(Context)">@topic.GetTitle()</a></li>
+    }
+    </ul>
 }
 
 @RenderBody()

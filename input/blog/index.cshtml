@@ -1,10 +1,10 @@
-ArchiveSources: "blog/{*,!index.*}"
+ArchiveSources: "blog/posts/*"
 ArchiveDestination: >
   => GetInt("Index") <= 1 ? $"blog/index.html" : $"blog/{GetInt("Index")}.html"
 ArchivePageSize: 10
 ArchiveOrderKey: Published
 ArchiveOrderDescending: true
-Title: Blog Posts
+Title: All Posts
 ArchiveTitle: >
   => $"{Title}{(GetInt("Index") > 1 ? (" (Page " + GetInt("Index") + ")") : null)}"
 ---
