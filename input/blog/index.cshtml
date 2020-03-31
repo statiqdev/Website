@@ -10,5 +10,5 @@ ArchiveTitle: >
 ---
 @foreach (IDocument post in Document.GetChildren())
 {
-    <p><a href="@post.GetLink(Context)">@post.GetTitle()</a></p>
+    <p>@Html.DocumentLink(post)</p>
 }

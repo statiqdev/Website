@@ -10,7 +10,7 @@
             .GetChildren()
             .OrderByDescending(x => x.GetString(Keys.GroupKey)))
     {
-        <li><a href="@topic.GetLink(Context)">@topic.GetTitle()</a></li>
+        <li>@Html.DocumentLink(topic)</li>
     }
     </ul>
 }

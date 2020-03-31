@@ -94,7 +94,7 @@ $font-family-serif: 'Roboto Slab', serif !default;
     font-size: $font-size-base;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .display-1, .display-2, .display-3, .display-4, .h-section {
     font-family: $font-family-serif;
     &:not(:first-child) {
         margin-top: $spacer * 1.5;
@@ -105,11 +105,22 @@ h1 {
     color: $primary;
     padding-bottom: $spacer * 0.5;
     margin-bottom: $spacer * 0.5;
-    border-bottom: $border-width solid $border-color;
+    border-bottom: 4px solid $border-color;
 }
 
 h2, h3 {
     color: lighten($primary, 20%);
+}
+
+.h-section {
+    background-color: $gray-700;
+    color: $white;
+    padding: $spacer * 0.5;
+    margin-bottom: $spacer * 1.5;
+}
+
+#topnav {
+    background: $gray-200 linear-gradient(180deg, $white, $gray-200) repeat-x !important;
 }
 
 #logo {
@@ -128,6 +139,10 @@ h2, h3 {
 
         font-size: $font-size-lg;
     }
+}
+
+.bg-body {
+    background-color: $body-bg;
 }
 
 #nav-framework {
@@ -156,7 +171,7 @@ h2, h3 {
 }
 
 #footer {
-    background-color: darken($purple, 40%);
+    background-color: $gray-900;
 }
 
 $sections: () !default;
@@ -171,9 +186,22 @@ $sections: map-merge(
 );
 
 @each $section, $color in $sections {
+    .bg-#{$section} {
+        background-color: darken($color, 10%);
+    }
+
+    .text-#{$section} {
+        color: $color;
+    }
+
+    .icon-#{$section} {
+        --fa-primary-color: #{$color};
+        --fa-secondary-color: #{lighten($color, 20%)};
+    }
+
     .section-#{$section} {
         #titlebar {
-            background-color: darken($color, 15%);
+            background: darken($color, 20%) linear-gradient(180deg, darken($color, 20%), darken($color, 10%)) repeat-x !important;
 
             .section {
                 color: darken($color, 5%);
@@ -185,6 +213,24 @@ $sections: map-merge(
                 font-family: $font-family-serif;
                 font-size: $h3-font-size;
             }
+        }
+
+        #undertitle {
+            background-color: darken($color, 10%);
+
+            @include media-breakpoint-up(md) {
+                & > .container {
+                    min-height: $spacer * 1.5;
+
+                    & > .row {
+                        min-height: $spacer * 1.5;
+                    }
+                }
+            }
+        }
+
+        .bg-section {
+            background-color: darken($color, 10%);
         }
 
         .sidebar-nav-item {
@@ -206,7 +252,6 @@ $sections: map-merge(
         }
 
         .sidebar-nav-children {
-            background-color: $gray-100;
             border-left: ($border-width * 3) solid $gray-300;
             padding-left: $spacer;
             margin-bottom: $spacer;
@@ -237,13 +282,10 @@ $sections: map-merge(
 }
 
 .sidebar {
-    border-bottom: $border-width solid $border-color;
-    padding-bottom: $spacer * 1.5;
-    margin-bottom: $spacer * 1.5;
-
     @include media-breakpoint-up(md) {
         & {
-            border-right: $border-width solid $border-color;
+            padding-bottom: $spacer * 1.5;
+            margin-bottom: $spacer * 1.5;
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0;

@@ -1,4 +1,4 @@
-﻿Title: Getting Started With Statiq Docs
+﻿Title: About Statiq Docs
 ---
 Statiq Docs builds on [Statiq Web](/web) by adding support for .NET API documentation and other functionality that's important for documentation web sites.
 

@@ -23,7 +23,7 @@
     </head>
     <body class="d-flex flex-column">
         <div class="flex-grow-1 d-flex flex-column">
-            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-light">
+            <nav id="topnav" class="navbar navbar-expand-lg navbar-light">
                 <div class="container py-3">
                     <a class="navbar-brand" href="/"><img id="logo" src="/assets/statiq.svg" alt="Statiq Framework"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,31 +69,62 @@
             <div class="flex-grow-1 d-flex flex-column @(section != null ? "section-" + section : null)">
                 @if(section != null)
                 {
-                    <div id="titlebar" class="py-4 mb-4">
+                    <div id="titlebar" class="py-4">
                         <div class="container">
-                            <div class="section text-uppercase">@(section)</div>
-                            <div class="text-white m-0 title">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</div>
+                            <div class="row">
+                                @{ 
+                                    string titleBarClasses = Document.GetBool(SiteKeys.NoSidebar) ? string.Empty : "offset-md-3 offset-lg-2";
+                                }
+                                <div class="@titleBarClasses px-3 px-md-0">
+                                    <div class="section text-uppercase">@(section)</div>
+                                    <div class="text-white m-0 title">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="undertitle">
+                        <div class="container bg-white">                            
+                            <div class="row">
+                                @if (Document.GetBool(SiteKeys.NoSidebar))
+                                {
+                                    <div class="col">
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-md-3 col-lg-2 bg-section">
+                                    </div>
+                                    <div class="col-md-9 col-lg-8">
+                                    </div>
+                                }
+                                <div class="col-lg-2 d-none d-lg-block bg-section">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 }
                 <div class="flex-grow-1 d-flex flex-column">
                     @if (Document.GetBool(SiteKeys.NoContainer))
                     {
-                        @RenderBody()
+                        <div class="bg-white">
+                            @RenderBody()
+                        </div>
                     }
                     else
                     {
-                        <div class="container flex-grow-1 d-flex flex-column mb-4">
-                            @if (Document.GetBool(SiteKeys.NoSidebar))
-                            {
-                                IgnoreSection(SectionNames.Sidebar);
-                                
-                                @RenderBody()
-                            }
-                            else
-                            {
-                                <div class="row flex-grow-1 align-items-stretch">
-                                    <div class="sidebar col-md-3 col-lg-2">
+                        <div class="container flex-grow-1 d-flex flex-column bg-white">
+                            <div class="row flex-grow-1 align-items-stretch">
+                                @if (Document.GetBool(SiteKeys.NoSidebar))
+                                {
+                                    IgnoreSection(SectionNames.Sidebar);
+
+                                    <div class="col">
+                                        @RenderBody()
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="sidebar col-md-3 col-lg-2 pt-2 bg-body">
                                         @if (IsSectionDefined(SectionNames.Sidebar))
                                         {
                                             @RenderSection(SectionNames.Sidebar, false)
@@ -102,14 +133,14 @@
                                         {
                                             IDocument root = Outputs[nameof(Content)].First(x => x.Destination == section + "/index.html");
                                             <div class="sidebar-nav-item @(Document.IdEquals(root) ? "active" : null)">
-                                                <a href="@(root.GetLink(Context))">@root.GetTitle()</a>
+                                                @Html.DocumentLink(root)
                                             </div>
 
                                             @foreach (IDocument document in root.GetChildren())
                                             {
 
                                                 <div class="sidebar-nav-item @(Document.IdEquals(document) ? "active" : null) @(document.HasChildren() ? "has-children" : null)">
-                                                    <a href="@(document.GetLink(Context))">@document.GetTitle()</a>
+                                                    @Html.DocumentLink(document)
                                                 </div>
 
                                                 @if (document.HasChildren())
@@ -118,7 +149,7 @@
                                                         @foreach (IDocument child in document.GetChildren())
                                                         {
                                                             <div class="sidebar-nav-child @(Document.IdEquals(child) ? "active" : null)">
-                                                                <a href="@(child.GetLink(Context))">@child.GetTitle()</a>
+                                                                @Html.DocumentLink(child)
                                                             </div>
                                                         }
                                                     </div>
@@ -126,35 +157,33 @@
                                             }
                                         }
                                     </div>
-                                    <div class="col-md-9 col-lg-8">
+                                    <div class="col-md-9 col-lg-8 pt-4 pt-md-0 pb-4 px-4">
                                         @RenderBody()
                                     </div>
-                                        <div class="col-lg-2 d-none d-lg-block">
-                                            <div class="border-left pl-3">
-                                                @{
-                                                    IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
-                                                    if (headings.Count > 0)
-                                                    {
-                                                        <div class="border-bottom mb-3">
-                                                            <p class="small font-weight-bold">On This Page</p>
-                                                            @foreach (IDocument heading in headings)
-                                                            {
-                                                                <p class="small"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></p>
-                                                            }
-                                                        </div>
-                                                    }
+                                }
+                                <div class="col-lg-2 d-none d-lg-block bg-body pl-3 pt-3">
+                                    @{
+                                        IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
+                                        if (headings.Count > 0)
+                                        {
+                                            <div class="border-bottom mb-3">
+                                                <p class="small font-weight-bold">On This Page</p>
+                                                @foreach (IDocument heading in headings)
+                                                {
+                                                    <p class="small"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></p>
                                                 }
-                                                <p class="small font-weight-bold"><a href="@Document.GetString("EditLink")">Edit This Page</a></p>
                                             </div>
-                                        </div>
+                                        }
+                                    }
+                                    <p class="small font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fad fa-pencil"></i> Edit This Page</a></p>
                                 </div>
-                            }
+                            </div>
                         </div>
                     }
                 </div>
             </div>
         </div>
-        <div id="footer" class="p-3 text-white bg-gradient-secondary font-size-sm">
+        <div id="footer" class="p-3 text-white font-size-sm">
             <div class="container">
                 <div>© @DateTime.Today.Year Statiq/Dave Glick</div>
             </div>

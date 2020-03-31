@@ -13,13 +13,13 @@ NoSidebar: => !ContainsKey("GroupKey")
 {
     @foreach (IDocument post in Document.GetChildren())
     {
-        <p><a href="@post.GetLink(Context)">@post.GetTitle()</a></p>
+        <p>@Html.DocumentLink(post)</p>
     }
 }
 else
 {
     @foreach (IDocument topic in Document.GetChildren())
     {
-        <p><a href="@topic.GetLink(Context)">@topic.GetTitle()</a></p>
+        <p>@Html.DocumentLink(topic)</p>
     }
 }

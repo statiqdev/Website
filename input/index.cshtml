@@ -4,7 +4,7 @@
 @section Splash {
     <div id="hero" class="jumbotron jumbotron-fluid mb-0">
         <div class="container">
-            <h1 class="display-4 text-white">Your imagination, your generator.</h1>
+            <div class="display-4 text-white">Your imagination, your generator.</div> 
             <p class="lead text-white">Statiq is the world's most powerful static generation platform, allowing you to use or create a static generator that's exactly what <em>you</em> need.</p>
         </div>
     </div>
@@ -34,14 +34,14 @@
             <div class="col-lg-4">
                 <a href="/web" class="text-decoration-none">
                     <div><img src="/assets/wordmark.svg" class="product-wordmark" alt="Statiq"></div>
-                    <div class="display-4 font-weight-light text-blue mt-n2">Web</div>
+                    <div class="display-4 font-weight-light text-web mt-n2">Web</div>
                 </a>
             </div>
             <div class="col-lg-8">
                 <div class="row h-lg-100 d-flex align-items-center">
                     <div class="col-lg-2 h-100 d-flex flex-column">
                         <div class="border-left flex-grow-1 d-none d-lg-block"></div>
-                        <div class="product-icon d-none d-lg-block"><i class="fad fa-globe-africa icon-blue"></i></div>
+                        <div class="product-icon d-none d-lg-block"><i class="fad fa-globe-africa icon-web"></i></div>
                         <div class="border-left flex-grow-1 d-none d-lg-block"></div>
                     </div>
                     <div class="col-12 col-lg-10">
@@ -49,7 +49,7 @@
                             A batteries-included static site generator that's appropriate for most use cases. Use it
                             out-of-the-box or extend it with custom pipelines, data sources, and layouts.
                         </p>
-                        <button class="btn btn-dark font-weight-bold">Get Started <i class="fas fa-long-arrow-alt-right"></i></button>
+                        <a href="/web" class="btn btn-dark font-weight-bold">Get Started <i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -58,14 +58,14 @@
             <div class="col-lg-4">
                 <a href="/docs" class="text-decoration-none">
                     <div><img src="/assets/wordmark.svg" class="product-wordmark" alt="Statiq"></div>
-                    <div class="display-4 font-weight-light text-orange mt-n2">Docs</div>
+                    <div class="display-4 font-weight-light text-docs mt-n2">Docs</div>
                 </a>
             </div>
             <div class="col-lg-8">
                 <div class="row h-lg-100 d-flex align-items-center">
                     <div class="col-lg-2 h-100 d-flex flex-column">
                         <div class="border-left flex-grow-1 d-none d-lg-block"></div>
-                        <div class="product-icon d-none d-lg-block"><i class="fad fa-book icon-orange"></i></div>
+                        <div class="product-icon d-none d-lg-block"><i class="fad fa-book icon-docs"></i></div>
                         <div class="border-left flex-grow-1 d-none d-lg-block"></div>
                     </div>
                     <div class="col-12 col-lg-10">
@@ -73,7 +73,7 @@
                             Extends Statiq Web by adding support for generating .NET API documentation while still benefiting
                             from all the capabilities of a robust general-purpose static site generator.
                         </p>
-                        <button class="btn btn-dark font-weight-bold">Get Started <i class="fas fa-long-arrow-alt-right"></i></button>
+                        <a href="/docs" class="btn btn-dark font-weight-bold">Get Started <i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -82,14 +82,14 @@
             <div class="col-lg-4">
                 <a href="/framework" class="text-decoration-none">
                     <div><img src="/assets/wordmark.svg" class="product-wordmark" alt="Statiq"></div>
-                    <div class="display-4 font-weight-light text-purple mt-n2">Framework</div>
+                    <div class="display-4 font-weight-light text-framework mt-n2">Framework</div>
                 </a>
             </div>
             <div class="col-lg-8">
                 <div class="row h-lg-100 d-flex align-items-center">
                     <div class="col-lg-2 h-100 d-flex flex-column">
                         <div class="border-left flex-grow-1 d-none d-lg-block"></div>
-                        <div class="product-icon d-none d-lg-block"><i class="fad fa-rocket-launch icon-purple"></i></div>
+                        <div class="product-icon d-none d-lg-block"><i class="fad fa-rocket-launch icon-framework"></i></div>
                         <div class="border-left flex-grow-1 d-none d-lg-block"></div>
                     </div>
                     <div class="col-12 col-lg-10">
@@ -97,7 +97,7 @@
                             The framework behind Statiq Web and Statiq Docs with over 100 modules to help you easily build a custom
                             static generator application specifically for your needs.
                         </p>
-                        <button class="btn btn-dark font-weight-bold">Get Started <i class="fas fa-long-arrow-alt-right"></i></button>
+                        <a href="/framework" class="btn btn-dark font-weight-bold">Get Started <i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -194,4 +194,64 @@
             <li>The final output of each pipeline is made available to other pipeline and may be written to output files or deployed to hosting services.</li>
         </ul>
     </div>
+</div>
+
+<div class="container py-3">
+    <div class="text-center">
+        <h2>Feature Comparison</h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 40%"></th>
+                <th scope="col" class="text-framework" style="width: 20%">Framework</th>
+                <th scope="col" class="text-web" style="width: 20%">Web</th>
+                <th scope="col" class="text-docs" style="width: 20%">Docs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Preview server with live reload</td>
+                <td></td>
+                <td><i class="fad fa-check-square icon-web"></i></td>
+                <td><i class="fad fa-check-square icon-docs"></i></td>
+            </tr>
+            <tr class="table-dark text-dark">
+                <th scope="row" colspan="4">Deployment</th>
+            </tr>
+            <tr>
+                <td scope="row">General deployment pipelines</td>
+                <td><i class="fad fa-check-square icon-framework"></i></td>
+                <td><i class="fad fa-check-square icon-web"></i></td>
+                <td><i class="fad fa-check-square icon-docs"></i></td>
+            </tr>
+            <tr>
+                <td scope="row">Out-of-the-box Netlify deployments</td>
+                <td></td>
+                <td><i class="fad fa-check-square icon-web"></i></td>
+                <td><i class="fad fa-check-square icon-docs"></i></td>
+            </tr>
+            <tr>
+                <td scope="row">Out-of-the-box Azure App Service deployments</td>
+                <td></td>
+                <td><i class="fad fa-check-square icon-web"></i></td>
+                <td><i class="fad fa-check-square icon-docs"></i></td>
+            </tr>
+            <tr class="table-dark text-dark">
+                <th scope="row" colspan="4">Licensing</th>
+            </tr>
+            <tr>
+                <td scope="row">Open source</td>
+                <td><i class="fad fa-check-square icon-framework"></i></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td scope="row">License</td>
+                <td>MIT</td>
+                <td>Non-commercial (Prosperity)</td>
+                <td>Non-commercial (Prosperity)</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
