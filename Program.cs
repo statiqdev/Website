@@ -6,7 +6,7 @@ using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
 
-namespace Statiq.Dev
+namespace Statiqdev
 {
     public static class Program
     {

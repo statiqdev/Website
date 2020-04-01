@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Statiq.Dev
+namespace Statiqdev
 {
     public static class SiteKeys
     {

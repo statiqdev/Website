@@ -28,7 +28,7 @@
   -->
   
   <ItemGroup>
-    <ProjectReference Include="..\..\statiqdev\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
+    <ProjectReference Include="..\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
   </ItemGroup>
 
 </Project>
