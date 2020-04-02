@@ -1,7 +1,5 @@
 ﻿Title: About Statiq Framework
 ---
-Statiq Framework is a powerful and extensible static generation toolkit that you can use to create your own special-purpose static generator applications.
-As the fundamental building blocks of [Statiq Web](/web) and [Statiq Docs](/docs) it's also important to undertand the underlying concepts and features
-since projects using those applications can also benefit from extensibility through Statiq Framework fucntionality.
+Statiq Framework is a powerful static generation framework that can be used to create custom static generation applications. While many users will find that [Statiq Web](/web) or [Statiq Docs](/docs) have enough functionality built-in, crafting a custom static generator with Statiq Framework provides the most flexibility.
 
 <?# ChildPages /?>
