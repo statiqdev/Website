@@ -52,7 +52,7 @@ Executing the modules in a pipeline happens in four phases. The phases are disti
 
 ## Input Phase
 
-The input phase executes first for all pipelines in parallel. No pipeline can access outputs from any other pipeline during the input phase. This phase is generally used to create documents by reading from disk, downloading from a web service, etc.
+The input phase is generally used for fetching data from an outside source and creating documents from that data. For example: the file system, a database, a web API, etc. The input phase is immediatly started for all pipelines concurrently and cannot access outputs from other pipelines.
 
 ## Process Phase
 
@@ -80,22 +80,22 @@ Deployment pipelines are special in that they don't execute by default. To execu
 
 ## Execution Policy
 
-A pipeline's execution policy determines if a pipeline is executed for a given run. By default, non-deployment pipelines are executed automatically and deployment pipelines are only executed when Statiq is launched with the `deploy` command. Pipelines are also executed if they are a dependency of an executing pipelines, regardless of policy.
+A pipeline's execution policy determines if a pipeline is executed. By default, non-deployment pipelines are executed automatically and deployment pipelines are only executed when Statiq is launched with the `deploy` command. Pipelines are also executed if they are a dependency of an executing pipeline, regardless of policy.
 
-You can adjust this behavior and create sophisticated behaviors for your Statiq application by changing the `ExecutionPolicy` property.
+You can adjust this behavior and create sophisticated behaviors for your Statiq application by changing the `ExecutionPolicy` property for each pipeline.
 
 ### Default
 
-The pipeline will be executed unless `Deployment` is `true` or a specific set of pipelines is specified from the command-line.
+Default pipelines are normally executed (I.e., they effectively have a policy of `Normal`, see below) _unless_ the pipeline is a [Deployment pipeline](#deployment) in which case the pipeline is manually executed or executed when the `deploy` command is run from the command-line interface. This policy is the most common and should be used for most pipelines.
 
 ### Normal
 
-The pipeline will be executed unless a specific set of pipelines is specified from the command-line.
+Normal pipelines are always executed unless other pipelines are explicitly specified. A normal pipeline will also be executed if it’s the dependent of an executing pipeline.
 
 ### Manual
 
-The pipeline will only be executed if specified or as a dependency.
+Manual pipelines are only executed if explicity specified. A manual pipeline will also be executed if it’s the dependent of an executing pipeline. This policy is useful for specialized pipelines that should only be executed on-demand and are not part of the normal generation process.
 
 ### Always
 
-The pipeline will always be executed.
+This policy means that the pipeline should always execute regardless of what pipelines are explicitly specified (if any). Pipelines with an always policy are useful for housekeeping and other tasks that should be carried out no matter what.

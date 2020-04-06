@@ -26,9 +26,27 @@ To create a document you typically call one of the `CreateDocument()` method ove
 
 To clone an existing document and replace or add new content and/or metadata you can call one of the `Clone()` methods on the document itself. If you're unsure whether you have a null document, the execution context also provides several `CloneOrCreateDocument()` overloads that either clones an existing document or creates a new one depending on if the provided document reference is null or not.
 
+If your module creates or manipulates documents, follow these guidelines and tips on document creation and working with documents:
+
+- Call `Clone()` on existing documents to clone with new properties.
+- Call `Engine.SetDefaultDocumentType<TDocument>()` to change the default document type.
+- Call `CreateDocument()` (engine or execution context) to create a new document of the default document type.
+- Call `CreateDocument<TDocument>()` (engine or execution context) to create a new document of the specified document type.
+- Call `CloneOrCreateDocument()` (engine or execution context) to either clone _or_ create a new document of the default document type depending on if a passed-in document exists (is `null`) or not.
+- Call `CloneOrCreateDocument<TDocument>()` (engine or execution context) to either clone _or_ create a new document of the specified document type depending on if a passed-in document exists (is `null`) or not.
+
+Statiq is very flexible with what can be considered a document. You may find that a custom document type better represents your data than creating a standard document. If you already have an existing data element (such as the result of an API call), it might also be helpful to wrap that object as a document instead of copying it’s data to a default document object. Follow these guidelines and tips when working with alternate document types:
+
+- Use base classes:
+  - Implementing `IDocument` is the minimum requirement, but it’s not recommended to implement this interface directly.
+  - Override `Document<TDocument>` to derive a custom document type with built-in metadata support.
+  - Override `IDocument.Clone()` in custom document types as needed. The default behavior is to perform a member-wise clone.
+- Convert an existing object of any type into a `IDocument` using `.ToDocument()` extensions:
+  - This wraps the object in an `ObjectDocument<T>`.
+
 # Document Properties
 
-In addition to metadata, every document has a few fundamental properties.
+In addition to metadata, every document has a few core properties.
 
 ## Document ID
 
