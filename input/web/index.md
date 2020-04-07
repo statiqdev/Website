@@ -41,7 +41,7 @@ namespace MySite
       await Bootstrapper
         .Factory
         .CreateWeb(args)
-        .RunAsync();    
+        .RunAsync();
   }
 }
 ```

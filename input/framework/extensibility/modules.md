@@ -2,11 +2,25 @@ Description: Writing your own modules is easy!
 ---
 [Modules](/framework/concepts/modules) are the basic building blocks of Statiq functionality. If the out-of-the-box modules don’t satisfy your use case, it’s easy to customize generation by creating new modules.
 
-Modules implement the `IModule` interface which defines a single `Task<IEnumerable<IDocument>> ExecuteAsync(IExecutionContext context)` method. The [execution context](/framework/concepts/execution/execution-context) passed to the `ExecuteAsync` method contains the input documents to the module as well as providing access to output documents from other pipelines and various engine and utility functionality. 
+Modules implement the `IModule` interface which defines a single `Task<IEnumerable<IDocument>> ExecuteAsync(IExecutionContext context)` method. The [execution context](/framework/concepts/execution/execution-context) passed to the `ExecuteAsync` method contains the input documents to the module as well as providing access to output documents from other pipelines and various engine and utility functionality.
 
 While you can implement `IModule` easily enough yourself, in practice most modules are derived from a number of different base module classes:
 
-TODO
+- `Module` is a common module base class that's appropriate for most modules.
+  - `ParallelModule` can be used when documents should be processed in parallel.
+  - `SyncModule` can be used when the module execution should be synchronous (I.e. not `async`).
+  - `ParallelSyncModule` can be used when documents should be processed in parallel but the module execution should be synchronous (I.e. not `async`).
+- `ParentModule` can be used to execute child modules.
+  - `SyncParentModule` can be used when the module execution should be synchronous (I.e. not `async`).
+  - `ForEachDocument` can be used to execute child modules against each input document one at a time.
+  - `ForAllDocuments` can be used to execute child modules against all documents and is very useful for grouping a sequence of child modules into a single parent module.
+- `ChildDocumentsModule` can be used to execute child modules and then combine or manipulate input documents based on the output documents of the child modules.
+  - `SyncChildDocumentsModule` can be used when the module execution should be synchronous (I.e. not `async`).
+- `ConfigModule<TValue>` and `MultiConfigModule` can be used to manage `Config<TValue>` delegates for configuring the module (you can also manage configuration delegates yourself, these modules just make it a little easier).
+  - `ParallelConfigModule<TValue>` and `ParallelMultiConfigModule` can be used when documents should be processed in parallel.
+  - `SyncConfigModule<TValue>` and `SyncMultiConfigModule` can be used when the module execution should be synchronous (I.e. not `async`).
+  - `ParallelSyncConfigModule<TValue>` and `ParallelSyncMultiConfigModule` can be used when documents should be processed in parallel but the module execution should be synchronous (I.e. not `async`).
+- `ReadDataModule` can be used to convert data from arbitrary data sources into output documents.
 
 When using the base module classes you should never call `IModule.ExecuteAsync(...)` directly. Instead, most of the module base classes above have both an `ExecuteContext` virtual method and/or an `ExecuteInput` virtual method.
 

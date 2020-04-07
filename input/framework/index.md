@@ -38,8 +38,9 @@ namespace MyGenerator
   {
     public static async Task<int> Main(string[] args) =>
       await Bootstrapper
+        .Factory
         .CreateDefault(args)
-        .RunAsync();    
+        .RunAsync();
   }
 }
 ```
