@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Octokit;
 using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
@@ -36,6 +37,7 @@ namespace Statiqdev
                     }
                     return builder.ToString();
                 }))
+                .AddPipelines()
                 .RunAsync();
     }
 }

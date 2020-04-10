@@ -180,7 +180,10 @@
                                             </div>
                                         }
                                     }
-                                    <p class="small font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fad fa-pencil"></i> Edit This Page</a></p>
+                                    @if (Document.ContainsKey("EditLink"))
+                                    {
+                                        <p class="small font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fad fa-pencil"></i> Edit This Page</a></p>
+                                    }
                                 </div>
                             </div>
                         </div>
