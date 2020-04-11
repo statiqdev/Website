@@ -8,7 +8,4 @@ Title: All Posts
 ArchiveTitle: >
   => $"{Title}{(GetInt("Index") > 1 ? (" (Page " + GetInt("Index") + ")") : null)}"
 ---
-@foreach (IDocument post in Document.GetChildren())
-{
-    <p>@Html.DocumentLink(post)</p>
-}
+@Html.Partial("/_posts.cshtml", Document)

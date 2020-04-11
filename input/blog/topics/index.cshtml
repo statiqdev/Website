@@ -11,10 +11,7 @@ NoSidebar: => !ContainsKey("GroupKey")
 ---
 @if (!Document.ContainsKey(Keys.GroupKey))
 {
-    @foreach (IDocument post in Document.GetChildren())
-    {
-        <p>@Html.DocumentLink(post)</p>
-    }
+    @Html.Partial("/_posts.cshtml", Document)
 }
 else
 {

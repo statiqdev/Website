@@ -1,0 +1,33 @@
+﻿<div>
+    @foreach (IDocument post in Document.GetChildren())
+    {
+        <div>
+            <div class="p-3 mb-2 bg-light post-title">
+                <h2><a href="@Context.GetLink(post)">@post.GetString("Title")</a></h2>
+                <h6 class="text-secondary">@post.GetDateTime("Published").ToLongDateString()</h6>
+            </div>
+            @Html.Raw(await post.GetContentStringAsync())
+        </div>
+    }
+    @{
+        IDocument older = Document.GetDocument(Keys.Next);
+        IDocument newer = Document.GetDocument(Keys.Previous);
+    }
+    @if (older != null || newer != null)
+    {
+        <div class="d-flex flex-row justify-content-between p-3 bg-light">
+            <div>
+                @if (older != null)
+                {
+                    <a class="btn btn-primary" href="@Context.GetLink(older)" role="button">Older</a>
+                }
+            </div>
+            <div>
+                @if (newer != null)
+                {
+                    <a class="btn btn-primary" href="@Context.GetLink(newer)" role="button">Newer</a>
+                }
+            </div>
+        </div>
+    }
+</div>

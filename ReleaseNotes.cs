@@ -12,42 +12,34 @@ namespace Statiqdev
 {
     public class ReleaseNotes : Pipeline
     {
+        private static readonly string[] Projects = new[] { "Statiq.Framework", "Statiq.Web", "Statiq.Docs" };
+
         public ReleaseNotes()
         {
+            DependencyOf.Add(nameof(Statiq.Web.Pipelines.Content));
+
             InputModules = new ModuleList
             {
-                // TODO: Add credentials once ReadGitHub takes a config for that
-                new ReadGitHub(async github =>
-                    (await GetReleaseNotesAsync(github, "Statiq.Framework"))
-                        .Concat(await GetReleaseNotesAsync(github, "Statiq.Web"))
-                        .Concat(await GetReleaseNotesAsync(github, "Statiq.Docs")))
+                new ReadGitHub(async (ctx, github) =>
+                    (await Projects.ToAsyncEnumerable().SelectManyAwait(x => GetReleaseNotesAsync(github, x)).ToArrayAsync())
+                        .ToDocuments(sourceFunc: x => ctx.FileSystem.RootPath / ctx.FileSystem.InputPaths[0] / $"blog/posts/{x.Project}-{x.Name}.md", null))
+                    .WithCredentials(Config.FromSetting<string>("GITHUB_TOKEN"))
             };
 
             ProcessModules = new ModuleList
             {
                 // Need to replace "@" for Razor and "<?" because some of the release notes reference shortcode syntax
-                new SetContent(Config.FromDocument(doc => doc.GetString(nameof(ReleaseNote.Body)).Replace("@", "@@").Replace("<?", "&lt;?"))),
+                new SetContent(Config.FromDocument(doc => doc.GetString(nameof(ReleaseNote.Body)).Replace("@", "@@").Replace("<?", "&lt;?")), MediaTypes.Markdown),
+                new SetMetadata(SiteKeys.Topic, Config.FromDocument(doc => "release")),
                 new SetMetadata(Keys.Title, Config.FromDocument(doc => $"{doc[nameof(ReleaseNote.Project)]} Release {doc[nameof(ReleaseNote.Name)]}")),
                 new SetDestination(Config.FromDocument(doc =>
-                    new NormalizedPath($"blog/{doc.GetDateTimeOffset(nameof(ReleaseNote.PublishedAt)).ToString("yyyy/MM/dd")}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")
+                    new NormalizedPath($"blog/{doc.GetDateTimeOffset(nameof(ReleaseNote.PublishedAt)):yyyy/MM/dd}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")
                         .OptimizeFileName()))
-
-                // TODO: 
-            };
-
-            PostProcessModules = new ModuleList
-            {
-                new ProcessTemplates()
-            };
-
-            OutputModules = new ModuleList
-            {
-                new WriteFiles()
             };
         }
 
-        private async Task<IEnumerable<ReleaseNote>> GetReleaseNotesAsync(GitHubClient github, string project) =>
-            (await github.Repository.Release.GetAll("statiqdev", project)).Where(x => x.PublishedAt.HasValue).Select(x => new ReleaseNote(project, x));
+        private async ValueTask<IAsyncEnumerable<ReleaseNote>> GetReleaseNotesAsync(GitHubClient github, string project) =>
+            (await github.Repository.Release.GetAll("statiqdev", project)).Where(x => x.PublishedAt.HasValue).Select(x => new ReleaseNote(project, x)).ToAsyncEnumerable();
 
         private class ReleaseNote
         {
