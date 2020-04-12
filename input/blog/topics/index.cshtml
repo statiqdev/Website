@@ -9,7 +9,7 @@ Title: Topics
 ArchiveTitle: => Outputs["Data"][$"blog/topics/{GroupKey}.yml"].GetString("Title")
 NoSidebar: => !ContainsKey("GroupKey")
 ---
-@if (!Document.ContainsKey(Keys.GroupKey))
+@if (Document.ContainsKey(Keys.GroupKey))
 {
     @Html.Partial("/_posts.cshtml", Document)
 }

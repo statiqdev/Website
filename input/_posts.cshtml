@@ -6,7 +6,6 @@
                 <h2><a href="@Context.GetLink(post)">@post.GetString("Title")</a></h2>
                 <h6 class="text-secondary">@post.GetDateTime("Published").ToLongDateString()</h6>
             </div>
-            @Html.Raw(await post.GetContentStringAsync())
         </div>
     }
     @{

@@ -33,7 +33,7 @@ namespace Statiqdev
                 new SetMetadata(SiteKeys.Topic, Config.FromDocument(doc => "release")),
                 new SetMetadata(Keys.Title, Config.FromDocument(doc => $"{doc[nameof(ReleaseNote.Project)]} Release {doc[nameof(ReleaseNote.Name)]}")),
                 new SetDestination(Config.FromDocument(doc =>
-                    new NormalizedPath($"blog/{doc.GetDateTimeOffset(nameof(ReleaseNote.PublishedAt)):yyyy/MM/dd}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")
+                    new NormalizedPath($"blog/{doc.GetDateTimeOffset(nameof(ReleaseNote.Published)):yyyy/MM/dd}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")
                         .OptimizeFileName()))
             };
         }
@@ -57,7 +57,7 @@ namespace Statiqdev
 
             public string Body => _release.Body;
 
-            public DateTimeOffset PublishedAt => _release.PublishedAt.Value;
+            public DateTime Published => _release.PublishedAt.Value.DateTime;
         }
     }
 }
