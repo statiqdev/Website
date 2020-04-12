@@ -14,16 +14,15 @@
     <div class="container py-4">
         <div class="row d-flex align-items-end">
             <div class="col-sm-4">
-                <h3 class="d-inline text-white">Latest Blog Posts</h3>
+                <h3 class="d-inline text-white">Latest Posts</h3>
             </div>
-            <div class="col-sm-4">
-                <div class="text-muted"><small>January 14, 2020</small></div>
-                <div><a href="#" class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></div>
-            </div>
-            <div class="col-sm-4">
-                <div class="text-muted"><small>January 14, 2020</small></div>
-                <div><a href="#" class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></div>
-            </div>
+            @foreach (IDocument post in Outputs[nameof(Archives)]["blog/index.html"].GetChildren().Take(2))
+            {
+                <div class="col-sm-4">
+                    <div class="text-muted"><small>@post.GetDateTime(WebKeys.Published).ToLongDateString()</small></div>
+                    <div><a href="@post.GetLink()" class="text-white">@post.GetTitle()</a></div>
+                </div>
+            }
         </div>
     </div>
 </div>

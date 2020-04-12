@@ -2,6 +2,13 @@
     Layout = @"/_layout.cshtml";
 }
 
+@section Subtitle {
+    @if (Document.ContainsKey(WebKeys.Published))
+    {
+        <div>@Document.GetDateTime(WebKeys.Published).ToLongDateString()</div>
+    }
+}
+
 @section Sidebar {
     <h3>Topics</h3>
     <ul>

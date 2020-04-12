@@ -83,6 +83,10 @@
                                 <div class="@titleBarClasses px-3 px-md-0">
                                     <div class="section text-uppercase">@(section)</div>
                                     <div class="text-white m-0 title">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</div>
+                                    @if (IsSectionDefined(SectionNames.Subtitle))
+                                    {
+                                        @RenderSection(SectionNames.Subtitle, false)
+                                    }
                                 </div>
                             </div>
                         </div>
