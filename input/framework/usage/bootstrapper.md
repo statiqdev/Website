@@ -30,3 +30,5 @@ When using Statiq Framework you can create the boostrapper with the `.CreateDefa
 One of the more important responsibilities of the `Bootstrapper` is to manage the command-line interface by processing arguments and executing commands.
 
 # Defining Pipelines
+
+# Settings

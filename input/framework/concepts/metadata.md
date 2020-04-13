@@ -27,11 +27,8 @@ Every [document](/framework/concepts/documents) acts like a dictionary and imple
 
 ## Type Conversion 
 
-All metadata is represented internally as raw objects. This allows you to store not just strings, but more complex data as well. However, when you access metadata you probably don't want to think about how it's stored or what the original type was. For example, YAML doesn't really distinguish between numbers and strings when it reads data, it's only when getting a value that you care. To make metadata as easy to work with as possible, Statiq Framework includes a very powerful type conversion capability that lets you convert nearly any metadata value to any other compatible type.
+All metadata is represented internally as raw objects. This allows you to store not just strings, but more complex data as well. However, when you access metadata you probably don't want to think about how it's stored or what the original type was. For example, YAML doesn't really distinguish between numbers and strings when it reads data, it's only when getting a value that you care. To make metadata as easy to work with as possible, Statiq Framework includes a very powerful [type conversion capability](/framework/usage/type-conversion) that lets you convert nearly any metadata value to any other compatible type. For example, when you call `IMetadata.Get<TValue>(string key)` it doesn’t matter what the underlying type of the metadata is because the type converter will convert it to the requested `TValue` type if at all possible.
 
-When converting metadata values, all .NET type conversion techniques are checked including `TypeConverter`, `IConvertible`, casting, etc. The conversion support is provided by a fork of the [UniversalTypeConverter](http://www.codeproject.com/Articles/248440/Universal-Type-Converter) library. Type conversion capabilities can also be accessed directly through the static `TypeHelper` class and new conversions can be added at run-time through it's `RegisterTypeConverter` methods.
-
-Converting between type of a sequence or from a single item to a sequence is also supported. If you request an `IList<T>`, `IEnumerable<T>`, or array of `T` and the metadata value is also enumerable, all elements will be converted to the requested type `T` and those that cannot be converted will be omitted from the result. If the metadata value is not enumerable, it will be returned as a single element of the requested enumerable type.
 
 ## Metadata Lookup
 
