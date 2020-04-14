@@ -1,7 +1,6 @@
 ﻿Order: 2
-Description: Statiq Web has a variety of ways of reading, writing, and working with different kinds of content.
 ---
-<?!= Description /?>
+Statiq Web has a variety of ways of reading, writing, and working with different kinds of content.
 
 In general, your content should be placed in the “input” folder and is processed based on it’s media type (which is typically determined by file extension). The following extensions are recognized by default:
 

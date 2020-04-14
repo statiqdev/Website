@@ -1,9 +1,8 @@
 Order: 4
-Description: A pipeline is a series of modules executed in sequence.
 ---
-A *pipeline* is a series of modules executed in sequence that results in final output documents. A given [execution](/framework/concepts/execution) can have multiple pipelines which are executed in sequence, and subsequent pipelines have access to the documents from the previous pipelines.
+A pipeline is a series of modules executed in sequence that results in final output documents.
 
-Conceptually, a simple pipeline looks like:
+A given [execution](/framework/concepts/execution) can have multiple pipelines which are executed in sequence, and subsequent pipelines have access to the documents from the previous pipelines. Conceptually, a simple pipeline looks like:
 
 <div class="mermaid">
     graph TD

@@ -1,5 +1,3 @@
-Description: Writing your own modules is easy!
----
 [Modules](/framework/concepts/modules) are the basic building blocks of Statiq functionality. If the out-of-the-box modules don’t satisfy your use case, it’s easy to customize generation by creating new modules.
 
 Modules implement the `IModule` interface which defines a single `Task<IEnumerable<IDocument>> ExecuteAsync(IExecutionContext context)` method. The [execution context](/framework/concepts/execution/execution-context) passed to the `ExecuteAsync` method contains the input documents to the module as well as providing access to output documents from other pipelines and various engine and utility functionality.

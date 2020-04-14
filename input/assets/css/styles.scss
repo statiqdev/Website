@@ -211,7 +211,7 @@ $sections: map-merge(
             .title {
                 line-height: 1.5em;
                 font-family: $font-family-serif;
-                font-size: $h3-font-size;
+                font-size: $h1-font-size * 1.2;
             }
         }
 
@@ -290,6 +290,16 @@ $sections: map-merge(
             padding-bottom: 0;
             margin-bottom: 0;
         }
+    }
+}
+
+.page-box {
+    border: 1px solid $gray-200;
+    @include box-shadow($btn-box-shadow);
+    @include border-radius($border-radius, 0);
+
+    *:last-child {
+        margin-bottom: 0;
     }
 }
 

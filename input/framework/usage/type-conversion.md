@@ -1,6 +1,6 @@
-Description: Statiq can perform a variety of powerful type conversions.
----
-Statiq includes a powerful type conversion capability accessible through the static `TypeHelper` class. These utility methods check all .NET type conversion techniques including `TypeConverter`, `IConvertible`, casting, etc. in order to convert any type to any other compatible type. The conversion support is provided by a fork of the [UniversalTypeConverter](http://www.codeproject.com/Articles/248440/Universal-Type-Converter) library. New conversions can also be added at run-time through the `TypeHelper.RegisterTypeConverter()` methods.
+Statiq can perform a variety of powerful type conversions.
+
+The type conversion capability is accessible through the static `TypeHelper` class. These utility methods check all .NET type conversion techniques including `TypeConverter`, `IConvertible`, casting, etc. in order to convert any type to any other compatible type. The conversion support is provided by a fork of the [UniversalTypeConverter](http://www.codeproject.com/Articles/248440/Universal-Type-Converter) library. New conversions can also be added at run-time through the `TypeHelper.RegisterTypeConverter()` methods.
 
 Converting between sequences of different types or from a single item to a sequence is also supported. If you request an `IList<T>`, `IEnumerable<T>`, or array of `T` and the original value is also enumerable, all elements will be converted to the requested type `T` and those that cannot be converted will be omitted from the result. If the original value is not enumerable, it will be returned as a single element of the requested enumerable type.
 

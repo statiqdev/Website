@@ -1,6 +1,7 @@
 Order: 2
-Description: Metadata is the primary way information is passed though modules and pipelines via documents.
 ---
+Metadata is the primary way information is passed though modules and pipelines via documents.
+
 Along with its content, every [document](/framework/concepts/documents) contains *metadata*. As with documents, metadata is immutable and you must clone a document to add additional metadata. Several [modules](/framework/concepts/modules), such as `SetMetadata`, are designed to allow you to manipulate document metadata as part of your [pipeline](/framework/concepts/pipelines).
 
 # Front Matter
@@ -29,6 +30,9 @@ Every [document](/framework/concepts/documents) acts like a dictionary and imple
 
 All metadata is represented internally as raw objects. This allows you to store not just strings, but more complex data as well. However, when you access metadata you probably don't want to think about how it's stored or what the original type was. For example, YAML doesn't really distinguish between numbers and strings when it reads data, it's only when getting a value that you care. To make metadata as easy to work with as possible, Statiq Framework includes a very powerful [type conversion capability](/framework/usage/type-conversion) that lets you convert nearly any metadata value to any other compatible type. For example, when you call `IMetadata.Get<TValue>(string key)` it doesn’t matter what the underlying type of the metadata is because the type converter will convert it to the requested `TValue` type if at all possible.
 
+## Computed Metadata
+
+TODO: "fat-arrow" syntax and IConfig
 
 ## Metadata Lookup
 

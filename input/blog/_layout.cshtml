@@ -5,21 +5,24 @@
 @section Subtitle {
     @if (Document.ContainsKey(WebKeys.Published))
     {
-        <div>@Document.GetDateTime(WebKeys.Published).ToLongDateString()</div>
+        IDocument topicDocument = Outputs[nameof(Archives)][$"blog/topics/{Document.GetString("topic")}/index.html"];
+        <div class="text-white-50">
+            @Document.GetDateTime(WebKeys.Published).ToLongDateString() in
+            <a href="@(topicDocument.GetLink())"><span class="badge badge-dark">@topicDocument.GetTitle()</span></a>
+        </div>
     }
 }
 
 @section Sidebar {
     <h3>Topics</h3>
-    <ul>
-    @foreach (IDocument topic in
-        Outputs[nameof(Archives)]["blog/topics/index.html"]
-            .GetChildren()
-            .OrderByDescending(x => x.GetString(Keys.GroupKey)))
+    @foreach (IDocument topic in Outputs[nameof(Archives)]["blog/topics/index.html"]
+        .GetChildren()
+        .OrderByDescending(x => x.GetString(Keys.GroupKey)))
     {
-        <li>@Html.DocumentLink(topic)</li>
+        <div class="sidebar-nav-item">
+            @Html.DocumentLink(topic)
+        </div>
     }
-    </ul>
 }
 
 @RenderBody()

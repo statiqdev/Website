@@ -25,15 +25,19 @@ namespace Statiqdev
                 .AddShortcode("ChildPages", Config.FromDocument(doc =>
                 {
                     StringBuilder builder = new StringBuilder();
-                    builder.AppendLine(@"<h4 class=""h-section"">Child Pages</h4>");
+                    builder.AppendLine(@"<h4 class=""h-section mb-2"">Child Pages</h4>");
                     foreach (IDocument child in doc.GetChildren())
                     {
+                        builder.AppendLine("<div>");
+                        builder.AppendLine("<div class=\"p-3 mb-2 bg-light page-box\">");                        
                         builder.AppendLine($@"<h5><a href=""{child.GetLink()}"">{child.GetTitle()}</a></h5>");
-                        string description = child.GetString("Description");
-                        if (!string.IsNullOrEmpty(description))
+                        string excerpt = child.GetString(Statiq.Html.HtmlKeys.Excerpt);
+                        if (!string.IsNullOrEmpty(excerpt))
                         {
-                            builder.AppendLine($@"<p>{description}</p>");
+                            builder.AppendLine(excerpt);
                         }
+                        builder.AppendLine("</div>");
+                        builder.AppendLine("</div>");
                     }
                     return builder.ToString();
                 }))

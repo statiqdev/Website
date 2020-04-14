@@ -11,6 +11,7 @@ NoSidebar: => !ContainsKey("GroupKey")
 ---
 @if (Document.ContainsKey(Keys.GroupKey))
 {
+    <p>@(Outputs[nameof(Data)][$"blog/topics/{Document.GetString(Keys.GroupKey)}.yml"].GetString("Description"))</p>
     @Html.Partial("/_posts.cshtml", Document)
 }
 else

@@ -1,6 +1,7 @@
 Order: 5
-Description: Shortcodes are small but powerful macros that can generate content or add metadata to your documents.
 ---
+Shortcodes are small but powerful macros that can generate content or add metadata to your documents.
+
 <?! Raw ?><?# Raw ?>
 
 Statiq supports several templating engines like Markdown and Razor, but sometimes you need to generate some content regardless of the templating language you're using. Shortcodes are small text macros that can do big things and work across any templating engine. Statiq Framework and [Statiq Web](/web) come with several helpful shortcodes and best of all it's very easy to add your own.

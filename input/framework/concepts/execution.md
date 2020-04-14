@@ -1,6 +1,7 @@
 Order: 5
-Description: Execution is when pipelines and the modules they contain are run.
 ---
+Execution is when pipelines and the modules they contain are evaluated.
+
 # Engine
 
 When pipelines in Statiq are executed, a special object called the `Engine` is responsible for coordinating activity. The engine contains all the global objects used to perform generation such as the [file system abstraction](/framework/concepts/files). It also creates the [pipeline dependency graph](/framework/concepts/pipelines#concurrency-and-dependencies) and executes the [modules](/framework/concepts/modules) in each pipeline.

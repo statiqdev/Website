@@ -48,10 +48,10 @@ namespace MySite
 
 ## Step 5: Add Some Content
 
-Start adding content by creating Markdown files in your “input” folder.
+Start adding content by creating [Markdown](/web/templates/markdown) files in your “input” folder.
 
-# More Coming Soon
-
-Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.
+<div class="alert alert-info" role="alert">
+  <strong>More coming soon!</strong> Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.
+</div>
 
 <?# ChildPages /?>
