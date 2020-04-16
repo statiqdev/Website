@@ -2,15 +2,17 @@ Statiq has several mechanisms for specifying configuration data.
 
 At [execution time](/framework/concepts/execution) all configuration data is combined into a single set of settings accessible via the [execution context](/framework/concepts/execution#execution-context) which implement `IMetadata` for the purpose of providing configuration and setting data.
 
-# Configuration Files
+# Specifying Configuration
+
+## Configuration Files
 
 As with many other .NET Core applications, Statiq supports the use of an `appsettings.json` file. Any values will be ...
 
-# Environment Variables
+## Environment Variables
 
-# Bootstrapper
+## Bootstrapper
 
-# Cascade To Documents
+## Cascade To Documents
 
 All configuration data "cascades" to documents. That means that any value set in the configuration file, environment variables, etc. is also available as document metadata unless otherwise overwritten. This include settings that would otherwise be set just at a document level. This feature can be very useful for situations when you want all documents to have a particular default value for a setting.
 

@@ -21,14 +21,14 @@
     </None>
   </ItemGroup>
 
+  <!--
   <ItemGroup>
     <PackageReference Include="Statiq.Web" Version="1.0.0-alpha.5" />
   </ItemGroup>
+  -->
   
-  <!--
   <ItemGroup>
     <ProjectReference Include="..\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
   </ItemGroup>
-  -->
 
 </Project>
