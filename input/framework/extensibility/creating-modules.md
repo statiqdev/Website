@@ -29,7 +29,7 @@ Here are some other guidelines and tips to follow when writing a module:
 
 - Consider using the built-in `ExecuteConfig` module instead of writing your own.
   - You may not even need a new module. The `ExecuteConfig` module lets you specify a delegate that can return documents, content, and other types of data which will be converted to output documents as appropriate.
-- Use `Config<T>`.
+- Use `Config<T>` [configuration delegates](/framework/usage/configuration-delegates).
   - If your module needs to accept user-configurable values, use `Config<T>`.
   - Consider using one of the base module classes that deals with `Config<T>` like `ConfigModule` or `MultiConfigModule`.
 - Avoid document-to-document references (especially to/from children):

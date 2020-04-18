@@ -26,7 +26,7 @@ dotnet add package Statiq.Web
 
 ## Step 4: Create a Bootstrapper
 
-Creating a [Bootstrapper](/framework/usage/bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](/framework/concepts/pipelines) or custom [modules](/framework/extensibility/modules), you shouldn’t need to for most sites.
+Creating a [Bootstrapper](/framework/usage/bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](/framework/usage/adding-pipelines) or [custom modules](/framework/extensibility/creating-modules), you shouldn’t need to for most sites.
 
 ```csharp
 using System;

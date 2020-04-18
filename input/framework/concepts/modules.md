@@ -4,21 +4,6 @@ A module is a component that performs a specific action, usually by creating, pr
 
 A module is a small single-purpose component that takes [documents](/framework/concepts/documents) as input, does something based on those documents (possibly transforming them), and outputs documents as a result of whatever operation was performed. Modules are typically chained in a sequence called a [pipeline](/framework/concepts/pipelines).
 
-# Configuration
-
-Most modules that require configuration use a special `Config<TValue>` delegate. This type allows you to specify lazy logic that's evaluated at [execution time](/framework/concepts/execution) and optionally uses the document and/or [execution context](/framework/concepts/execution#execution-context), is async or not, or just converts from a simple value. Creating a `Config<TValue>` is often done via factory methods from the `Config` static class. For example, if a module needs a string for a given setting it will accept a `Config<string>` which can be created by passing a `string` directly:
-
-``` csharp
-new SomeModule("my-string")
-```
-
-or by using one of the many factory methods:
-
-``` csharp
-new SomeModule(
-    Config.FromDocument(doc => doc.GetString("key")))
-```
-
 # Module Patterns
 
 Different modules treat inputs and outputs in different ways. Some modules just "pass-through" the documents that are input, some transform them in some way and output the results, and some exhibit more complex behavior. Some modules even exhibit different behavior depending on how the module was configured. The behavior can get especially confusing when considering some modules evaluate child modules which also output documents. In these cases, there are different behaviors for how the input documents and the result documents from the child modules are combined. The way inputs, outputs, and child module results are related can generally be described as a few different patterns and even though these probably don't cover the way *every* module or combination of modules works, they should help you understand the concepts involved.

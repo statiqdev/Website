@@ -8,7 +8,7 @@ When pipelines in Statiq are executed, a special object called the `Engine` is r
 
 # Execution Context
 
-While executing pipelines and modules, the current state and other functionality is passed in an instance of `IExecutionContext`. This object contains lots of information such as the current pipeline, phase, and module, the settings and file system, the input documents to the module, and more. The current execution context is generally accessed through [configuration delegates](/framework/concepts/modules#configuration) or a [module execution method](/framework/extensibility/modules).
+While executing pipelines and modules, the current state and other functionality is passed in an instance of `IExecutionContext`. This object contains lots of information such as the current pipeline, phase, and module, the settings and file system, the input documents to the module, and more. The current execution context is generally accessed through [configuration delegates](/framework/usage/configuration-delegates) or a [module execution method](/framework/extensibility/creating-modules).
 
 ## Interfaces
 
