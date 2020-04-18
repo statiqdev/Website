@@ -18,7 +18,7 @@ The current apple is <?#= Current /?>.
 
 This will result in 4 documents, one for each of the apples. It uses the shorthand [`Meta`](/web/content/shortcodes#meta) shortcode syntax to output the name of the current enumerated value, but could also have used [Razor](/web/templates/razor) syntax or another templating format.
 
-Unfortunately this file will also result in all four documents having the same destination path and being written to the same file on disk, overwriting each other. We need to add a [`DestinationFileName`](/web/configuration#destinationfilename) document configuration value to specify the file name of each apple-specific document. Since the destination path also needs to access the "Current" metadata value that the enumeration produces, we'll have to use [computed values](/framework/concepts/metadata#computed-values):
+Unfortunately this file will also result in all four documents having the same destination path and being written to the same file on disk, overwriting each other. We need to add a [`DestinationFileName`](/web/settings#destinationfilename) document configuration value to specify the file name of each apple-specific document. Since the destination path also needs to access the "Current" metadata value that the enumeration produces, we'll have to use [computed values](/framework/concepts/metadata#computed-values):
 
 ```txt
 Enumerate:

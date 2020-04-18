@@ -62,7 +62,7 @@ The script also a number of predefined global properties available to it (see th
 
 - `Module`: Gets the current executing [module](/framework/concepts/modules).
 
-- `Inputs`: The collection of input [documents](/framework/concepts/documents) to the current [module](/framework/concepts/modules) (probably the most important property of the execution context).
+- `Inputs`: The collection of input [documents](/framework/concepts/documents) to the current [module](/framework/concepts/modules).
 
 In addition, all metadata values of the current document are exposed as properties in the script. For example, if a document has a metadata item with a key of "MyItem", a global property `MyItem` will be available to the script.
 

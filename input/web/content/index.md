@@ -10,6 +10,6 @@ In general, your content should be placed in the “input” folder (or a sub-fo
 
 In all cases, global processing such as [shortcodes](/web/content/shortcodes) is performed and [layouts](/web/templates#layouts) and [themes](/web/templates/themes) are applied.
 
-Many [themes](/web/templates/themes) also support treating content differently depending on what sub-folder the files are in. For example, themes for blogging often infer blog posts should go in a “input/posts” sub-folder. In most cases the specific paths used for different types of content are [configurable](/web/configuration).
+Many [themes](/web/templates/themes) also support treating content differently depending on what sub-folder the files are in. For example, themes for blogging often infer blog posts should go in a “input/posts” sub-folder. In most cases the specific paths used for different types of content are [configurable as settings](/web/settings).
 
 <?# ChildPages /?>
