@@ -18,9 +18,17 @@ namespace Statiqdev
                 .AddSetting(Keys.LinksUseHttps, true)
                 .AddSetting(
                     Keys.DestinationPath,
-                    Config.FromDocument(doc => doc.Source.Parent.Segments.Last().SequenceEqual("posts".AsMemory())
-                        ? new NormalizedPath("blog").Combine(doc.GetDateTime(WebKeys.Published).ToString("yyyy/MM/dd")).Combine(doc.Destination.FileName.ChangeExtension(".html"))
-                        : doc.Destination.ChangeExtension(".html")))
+                    Config.FromDocument((doc, ctx) =>
+                    {
+                        // Only applies to the content pipeline
+                        if (ctx.PipelineName == nameof(Statiq.Web.Pipelines.Content))
+                        {
+                            return doc.Source.Parent.Segments.Last().SequenceEqual("posts".AsMemory())
+                                ? new NormalizedPath("blog").Combine(doc.GetDateTime(WebKeys.Published).ToString("yyyy/MM/dd")).Combine(doc.Destination.FileName.ChangeExtension(".html"))
+                                : doc.Destination.ChangeExtension(".html");
+                        }
+                        return doc.Destination;
+                    }))
                 .AddSetting("EditLink", Config.FromDocument((doc, ctx) => new NormalizedPath("https://github.com/statiqdev/statiq.dev/edit/master/input").Combine(doc.Source.GetRelativeInputPath())))
                 .AddShortcode("ChildPages", Config.FromDocument(doc =>
                 {
@@ -30,11 +38,13 @@ namespace Statiqdev
                     {
                         builder.AppendLine("<div>");
                         builder.AppendLine("<div class=\"p-3 mb-2 bg-light page-box\">");                        
-                        builder.AppendLine($@"<h5><a href=""{child.GetLink()}"">{child.GetTitle()}</a></h5>");
+                        builder.AppendLine($@"<h4><a href=""{child.GetLink()}"">{child.GetTitle()}</a></h4>");
                         string excerpt = child.GetString(Statiq.Html.HtmlKeys.Excerpt);
                         if (!string.IsNullOrEmpty(excerpt))
                         {
+                            builder.AppendLine("<div class=\"font-size-sm\">");
                             builder.AppendLine(excerpt);
+                            builder.AppendLine("</div>");
                         }
                         builder.AppendLine("</div>");
                         builder.AppendLine("</div>");

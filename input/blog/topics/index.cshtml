@@ -6,7 +6,7 @@ ArchivePageSize: 10
 ArchiveOrderKey: Published
 ArchiveOrderDescending: true
 Title: Topics
-ArchiveTitle: => Outputs["Data"][$"blog/topics/{GroupKey}.yml"].GetString("Title")
+ArchiveTitle: => Outputs["Data"][$"blog/topics/{GroupKey}.yml"]["Title"]
 NoSidebar: => !ContainsKey("GroupKey")
 ---
 @if (Document.ContainsKey(Keys.GroupKey))
@@ -17,7 +17,12 @@ NoSidebar: => !ContainsKey("GroupKey")
 else
 {
     @foreach (IDocument topic in Document.GetChildren())
-    {
-        <p>@Html.DocumentLink(topic)</p>
+    {        
+        <div>
+            <div class="p-3 mb-2 bg-light page-box">
+                <h4>@Html.DocumentLink(topic)</h4>
+                <p>@(Outputs[nameof(Data)][$"blog/topics/{topic.GetString(Keys.GroupKey)}.yml"].GetString("Description"))</p>
+            </div>
+        </div>
     }
 }
