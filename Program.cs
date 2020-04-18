@@ -29,7 +29,7 @@ namespace Statiqdev
                         }
                         return doc.Destination;
                     }))
-                .AddSetting("EditLink", Config.FromDocument((doc, ctx) => new NormalizedPath("https://github.com/statiqdev/statiq.dev/edit/master/input").Combine(doc.Source.GetRelativeInputPath())))
+                .AddSetting("EditLink", Config.FromDocument((doc, ctx) => new NormalizedPath("https://github.com/statiqdev/statiqdev.github.io/edit/develop/input").Combine(doc.Source.GetRelativeInputPath())))
                 .AddShortcode("ChildPages", Config.FromDocument(doc =>
                 {
                     StringBuilder builder = new StringBuilder();

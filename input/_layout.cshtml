@@ -18,6 +18,8 @@
         <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
+        
+		@RenderSection(SectionNames.Head, false)
 
         @{
             string title = @Document.ContainsKey(Keys.Title) ? $"Statiq - {Document.GetString(Keys.Title)}" : "Statiq";
@@ -63,6 +65,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="https://github.com/statiqdev"><i class="fab fa-github"></i> GitHub</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" href="/license">License</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -71,10 +76,10 @@
             {
                 @RenderSection(SectionNames.Splash, false)
             }
-            @{ 
+            @{
                 string section = Document.Destination.Segments.Length > 1 ? Document.Destination.Segments[0].ToString() : null;
             }
-            <div class="flex-grow-1 d-flex flex-column @(section != null ? "section-" + section : null)">
+            <div class="flex-grow-1 d-flex flex-column @(section != null ? "section-undefined section-" + section : null)">
                 @if(section != null)
                 {
                     <div id="titlebar" class="py-4">
@@ -136,7 +141,7 @@
                                             IgnoreSection(SectionNames.Sidebar);
                                         }
 
-                                        <div class="col">
+                                        <div class="col p-4 pt-md-0">
                                             @RenderBody()
                                         </div>
                                     }
@@ -173,7 +178,7 @@
                                                 }
                                             }
                                         </div>
-                                        <div class="col-md-9 col-lg-8 pt-4 pt-md-0 pb-4 px-4">
+                                        <div class="col-md-9 col-lg-8 p-4 pt-md-0">
                                             @RenderBody()
                                         </div>
                                     }

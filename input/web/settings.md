@@ -1,4 +1,4 @@
-<?! Include "../framework/usage/configuration.md" /?>
+<?! Include "../framework/usage/settings.md" /?>
 
 # Global Settings
 

@@ -177,6 +177,7 @@ h2, h3 {
 $sections: () !default;
 $sections: map-merge(
     (
+        "undefined": $gray-600,
         "web": $blue,
         "docs": $orange,
         "framework": $purple,
@@ -203,9 +204,18 @@ $sections: map-merge(
         #titlebar {
             background: darken($color, 20%) linear-gradient(180deg, darken($color, 20%), darken($color, 10%)) repeat-x !important;
 
-            .section {
-                color: darken($color, 5%);
-                font-size: $h6-font-size;
+            @if $section == 'undefined' {
+                .section {
+                    display: none;
+                    visibility: hidden;
+                }
+            } @else {
+                .section {
+                    color: darken($color, 5%);
+                    font-size: $h6-font-size;
+                    display: block;
+                    visibility: visible;
+                }
             }
 
             .title {
