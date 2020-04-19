@@ -11,7 +11,7 @@ The cost for a private license is **$50.00 per developer** and covers all releas
     <script src="https://js.stripe.com/v3/" data-no-mirror></script>
     <div class="form-inline">
         <label class="mb-2 mr-2" for="quantityInput" class="mr-2">Number Of Developers:</label>
-        <input id="quantityInput" type="number" min="1" onchange="changeQuantity(this.value)" value="1" inputmode=“numeric” pattern=“\d*” onkeyup=“this.value=this.value.replace(/[^\d]+/,’’)” class="mr-2 mb-2"></input>
+        <input id="quantityInput" type="number" min="1" onchange="changeQuantity(this.value)" value="1" inputmode="numeric" pattern="\d*" onkeyup="this.value=this.value.replace(/[^\d]+/,’’)" class="mr-2 mb-2"></input>
         <button class="btn btn-primary" id="checkout-button-sku_H7XbjLJDzHVInz" role="link">Buy A Commercial-Use License</button>
     </div>
     <div id="error-message"></div>
