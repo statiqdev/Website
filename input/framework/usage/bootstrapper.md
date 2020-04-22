@@ -1,6 +1,6 @@
 The bootstrapper helps configure an engine, add modules and pipelines to it, and process command-line arguments.
 
-The `Bootstrapper` is defined in [Statiq.App](https://www.nuget.org/packages/Statiq.App) and helps create an [engine](/framework/core/concepts/execution#engine) and has fluent methods to configure it, add modules and pipelines, and process command-line arguments.
+The `Bootstrapper` is defined in [Statiq.App](https://www.nuget.org/packages/Statiq.App) and helps create an [engine](xref:execution#engine) and has fluent methods to configure it, add modules and pipelines, and process command-line arguments.
 
 # Creating A Bootstrapper
 

@@ -26,7 +26,7 @@ Practically, the `ParseYaml` module is usually used as the child of the `Extract
 
 ## Lazy Values
 
-In more advanced scenarios you sometimes want to defer figuring out the value of a metadata item until it's accessed. This can help when the data to determine the value isn't available yet, when computing the value would be expensive and you don't know if it'll actually need to be accessed, or you want to compute a fresh value each time it's accessed. This can be accomplished by implementing `IMetadataValue`. If an object that implements that interface is added as a metadata value, it's `object Get(IMetadata metadata)` method will be called when the value is requested (the `metadata` argument is the current metadata object, for example the [document](/framework/concepts/documents)).
+In more advanced scenarios you sometimes want to defer figuring out the value of a metadata item until it's accessed. This can help when the data to determine the value isn't available yet, when computing the value would be expensive and you don't know if it'll actually need to be accessed, or you want to compute a fresh value each time it's accessed. This can be accomplished by implementing `IMetadataValue`. If an object that implements that interface is added as a metadata value, it's `object Get(IMetadata metadata)` method will be called when the value is requested (the `metadata` argument is the current metadata object, for example the [document](xref:documents)).
 
 ## Computed Values
 
@@ -48,35 +48,35 @@ The script also a number of predefined global properties available to it (see th
 
 - `ExecutionState` contains the current `IExecutionState` object.
 
-- `Context` (and the `ctx` shorthand) contain the current [execution context](/framework/concepts/execution#execution-context).
+- `Context` (and the `ctx` shorthand) contain the current [execution context](xref:execution#execution-context).
 
-- `Document` (and the `doc` shorthand) contain the current [document](/framework/concepts/documents).
+- `Document` (and the `doc` shorthand) contain the current [document](xref:documents).
 
 - `PipelineName`: Gets the name of the currently executing pipeline.
 
 - `Pipeline`: Gets the currently executing pipeline.
 
-- `Phase`: Gets the currently executing [phase](/framework/concepts/pipelines#phases) of the current pipeline.
+- `Phase`: Gets the currently executing [phase](xref:pipelines#phases) of the current pipeline.
 
-- `Parent`: Gets the parent execution context if currently in a nested [module](/framework/concepts/modules).
+- `Parent`: Gets the parent execution context if currently in a nested [module](xref:modules).
 
-- `Module`: Gets the current executing [module](/framework/concepts/modules).
+- `Module`: Gets the current executing [module](xref:modules).
 
-- `Inputs`: The collection of input [documents](/framework/concepts/documents) to the current [module](/framework/concepts/modules).
+- `Inputs`: The collection of input [documents](xref:documents) to the current [module](xref:modules).
 
 In addition, all metadata values of the current document are exposed as properties in the script. For example, if a document has a metadata item with a key of "MyItem", a global property `MyItem` will be available to the script.
 
 ## Config Metadata
 
-Adding a Another way of accessing the current [document](/framework/concepts/documents) or [execution context](/framework/concepts/execution#execution-context) while computing a lazy metadata value is 
+Adding a Another way of accessing the current [document](xref:documents) or [execution context](xref:execution#execution-context) while computing a lazy metadata value is 
 
 # Accessing Metadata
 
-Every [document](/framework/concepts/documents) acts like a dictionary and implements `IReadOnlyDictionary<string, object>` for easy access. Metadata key/value pairs can be accessed through this interface.
+Every [document](xref:documents) acts like a dictionary and implements `IReadOnlyDictionary<string, object>` for easy access. Metadata key/value pairs can be accessed through this interface.
 
 ## Type Conversion 
 
-All metadata is represented internally as raw objects. This allows you to store not just strings, but more complex data as well. However, when you access metadata you probably don't want to think about how it's stored or what the original type was. For example, YAML doesn't really distinguish between numbers and strings when it reads data, it's only when getting a value that you care. To make metadata as easy to work with as possible, Statiq Framework includes a very powerful [type conversion capability](/framework/usage/type-conversion) that lets you convert nearly any metadata value to any other compatible type. For example, when you call `IMetadata.Get<TValue>(string key)` it doesn’t matter what the underlying type of the metadata is because the type converter will convert it to the requested `TValue` type if at all possible.
+All metadata is represented internally as raw objects. This allows you to store not just strings, but more complex data as well. However, when you access metadata you probably don't want to think about how it's stored or what the original type was. For example, YAML doesn't really distinguish between numbers and strings when it reads data, it's only when getting a value that you care. To make metadata as easy to work with as possible, Statiq Framework includes a very powerful [type conversion capability](xref:type_conversion) that lets you convert nearly any metadata value to any other compatible type. For example, when you call `IMetadata.Get<TValue>(string key)` it doesn’t matter what the underlying type of the metadata is because the type converter will convert it to the requested `TValue` type if at all possible.
 
 ## Raw Values
 

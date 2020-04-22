@@ -11,7 +11,7 @@ File and directory classes (implementations of `IFile` and `IDirectory`) point d
 
 # Virtual File System
 
-The link between paths, file providers, and files and paths is managed by a virtual file system available through the [execution context](/framework/concepts/execution#execution-context) as the `FileSystem` property. It stores all the root, input, and output paths and provides methods to join them with relative paths to get `IFile` and `IDirectory` instances.
+The link between paths, file providers, and files and paths is managed by a virtual file system available through the [execution context](xref:execution#execution-context) as the `FileSystem` property. It stores all the root, input, and output paths and provides methods to join them with relative paths to get `IFile` and `IDirectory` instances.
 
 ## Root Path
 

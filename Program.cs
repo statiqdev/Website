@@ -29,7 +29,7 @@ namespace Statiqdev
                         }
                         return doc.Destination;
                     }))
-                .AddSetting("EditLink", Config.FromDocument((doc, ctx) => new NormalizedPath("https://github.com/statiqdev/statiqdev.github.io/edit/develop/input").Combine(doc.Source.GetRelativeInputPath())))
+                .AddSetting("EditLink", Config.FromDocument((doc, ctx) => "https://github.com/statiqdev/statiqdev.github.io/edit/develop/input/" + doc.Source.GetRelativeInputPath()))
                 .AddShortcode("ChildPages", Config.FromDocument(doc =>
                 {
                     StringBuilder builder = new StringBuilder();
@@ -49,7 +49,7 @@ namespace Statiqdev
                         builder.AppendLine("</div>");
                         builder.AppendLine("</div>");
                     }
-                    return builder.ToString();
+                    return (ShortcodeResult)builder.ToString();
                 }))
                 .AddPipelines()
                 .RunAsync();

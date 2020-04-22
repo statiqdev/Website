@@ -45,7 +45,7 @@ namespace MyGenerator
 }
 ```
 
-This creates a default `Bootstrapper` and passes it the [command-line arguments](/framework/usage/boostrapper#command-line) so it can process them with the `.CreateDefault(args)` call. Then it executes the specified command (from the command-line) during the final `.RunAsync()` call.
+This creates a default `Bootstrapper` and passes it the [command-line arguments](/framework/usage/bootstrapper#command-line) so it can process them with the `.CreateDefault(args)` call. Then it executes the specified command (from the command-line) during the final `.RunAsync()` call.
 
 This example is all you need for a minimal, functioning Statiq Framework application. The only problem is that it doesn’t actually do anything. Let’s add one more step and process some Markdown files.
 
