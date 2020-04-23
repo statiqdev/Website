@@ -26,7 +26,7 @@ dotnet add package Statiq.Web
 
 ## Step 4: Create a Bootstrapper
 
-Creating a [Bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:adding_pipelines) or [custom modules](xref:creating-modules), you shouldn’t need to for most sites.
+Creating a [Bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:adding_pipelines) or [custom modules](xref:creating_modules), you shouldn’t need to for most sites.
 
 ```csharp
 using System;
