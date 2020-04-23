@@ -4,4 +4,4 @@ The type conversion capability is accessible through the static `TypeHelper` cla
 
 Converting between sequences of different types or from a single item to a sequence is also supported. If you request an `IList<T>`, `IEnumerable<T>`, or array of `T` and the original value is also enumerable, all elements will be converted to the requested type `T` and those that cannot be converted will be omitted from the result. If the original value is not enumerable, it will be returned as a single element of the requested enumerable type.
 
-While type conversion is most often used when dealing with [metadata](/framework/concepts/metadata#type-conversion), it’s also very helpful in situations when you only have string values (such as dealing with data from service endpoints).
+While type conversion is most often used when dealing with [metadata](xref:metadata#type-conversion), it’s also very helpful in situations when you only have string values (such as dealing with data from service endpoints).

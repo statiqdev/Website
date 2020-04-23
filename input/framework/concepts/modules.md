@@ -2,7 +2,7 @@ Order: 3
 ---
 A module is a component that performs a specific action, usually by creating, processing, or manipulating documents.
 
-A module is a small single-purpose component that takes [documents](/framework/concepts/documents) as input, does something based on those documents (possibly transforming them), and outputs documents as a result of whatever operation was performed. Modules are typically chained in a sequence called a [pipeline](/framework/concepts/pipelines).
+A module is a small single-purpose component that takes [documents](xref:documents) as input, does something based on those documents (possibly transforming them), and outputs documents as a result of whatever operation was performed. Modules are typically chained in a sequence called a [pipeline](xref:pipelines).
 
 # Module Patterns
 
