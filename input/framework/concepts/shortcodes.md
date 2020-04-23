@@ -4,7 +4,7 @@ Shortcodes are small but powerful macros that can generate content or add metada
 
 <?! Raw ?><?# Raw ?>
 
-Statiq supports several templating engines like Markdown and Razor, but sometimes you need to generate some content regardless of the templating language you're using. Shortcodes are small text macros that can do big things and work across any templating engine. Statiq Framework and [Statiq Web](xref:web) come with several helpful shortcodes and best of all it's very easy to add your own.
+Statiq supports several templating engines like Markdown and Razor, but sometimes you need to generate some content regardless of the templating language you're using. Shortcodes are small text macros that can do big things and work across any templating engine. Statiq Framework and [Statiq Web](xref:about_statiq_web) come with several helpful shortcodes and best of all it's very easy to add your own.
 
 # Using Shortcodes
 

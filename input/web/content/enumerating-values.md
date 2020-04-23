@@ -1,6 +1,6 @@
 Title: Enumerating Values
 ---
-Statiq Web has a nifty feature where you can declare a sequence of values to be enumerated within the [front matter](xref:front-matter) of a file and it will create additional documents for each of the values.
+Statiq Web has a nifty feature where you can declare a sequence of values to be enumerated within the [front matter](xref:front_matter) of a file and it will create additional documents for each of the values.
 
 To use this feature, define a metadata key `Enumerate` with the values you want to create documents for. Each document will contain the original content and metadata along with an additional `Current` metadata value.
 
