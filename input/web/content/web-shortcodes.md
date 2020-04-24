@@ -1,6 +1,4 @@
-﻿Xref: Web_Shortcodes
----
-Coming Soon
+﻿Coming Soon
 
 # Built-In Shortcodes
 
