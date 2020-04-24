@@ -30,27 +30,7 @@ namespace Statiqdev
                         return doc.Destination;
                     }))
                 .AddSetting("EditLink", Config.FromDocument((doc, ctx) => "https://github.com/statiqdev/statiqdev.github.io/edit/develop/input/" + doc.Source.GetRelativeInputPath()))
-                .AddShortcode("ChildPages", Config.FromDocument(doc =>
-                {
-                    StringBuilder builder = new StringBuilder();
-                    builder.AppendLine(@"<h4 class=""h-section mb-2"">Child Pages</h4>");
-                    foreach (IDocument child in doc.GetChildren())
-                    {
-                        builder.AppendLine("<div>");
-                        builder.AppendLine("<div class=\"p-3 mb-2 bg-light page-box\">");                        
-                        builder.AppendLine($@"<h4><a href=""{child.GetLink()}"">{child.GetTitle()}</a></h4>");
-                        string excerpt = child.GetString(Statiq.Html.HtmlKeys.Excerpt);
-                        if (!string.IsNullOrEmpty(excerpt))
-                        {
-                            builder.AppendLine("<div class=\"font-size-sm\">");
-                            builder.AppendLine(excerpt);
-                            builder.AppendLine("</div>");
-                        }
-                        builder.AppendLine("</div>");
-                        builder.AppendLine("</div>");
-                    }
-                    return (ShortcodeResult)builder.ToString();
-                }))
+                .AddSetting(SiteKeys.NoChildPages, Config.FromDocument(doc => doc.Destination.Segments[0].SequenceEqual("blog".AsMemory())))
                 .AddPipelines()
                 .RunAsync();
     }

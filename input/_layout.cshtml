@@ -180,6 +180,24 @@
                                         </div>
                                         <div class="col-md-9 col-lg-8 p-4 pt-md-0">
                                             @RenderBody()
+
+                                            @if (!Document.GetBool(SiteKeys.NoChildPages) && Document.HasChildren())
+                                            {
+                                                <h4 class="h-section mb-2">Child Pages</h4>
+                                                @foreach(IDocument child in Document.GetChildren())
+                                                {
+                                                    string excerpt = child.GetString(Statiq.Html.HtmlKeys.Excerpt);
+                                                    <div>
+                                                        <div class="p-3 mb-2 bg-light page-box">
+                                                            <h4>@Html.DocumentLink(child)</h4>
+                                                            @if(!string.IsNullOrEmpty(excerpt))
+                                                            {
+                                                                <div class="font-size-sm">@Html.Raw(excerpt)</div>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
                                         </div>
                                     }
                                 }

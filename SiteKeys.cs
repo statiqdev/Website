@@ -9,5 +9,6 @@ namespace Statiqdev
         public const string NoContainer = nameof(NoContainer);
         public const string NoSidebar = nameof(NoSidebar);
         public const string Topic = nameof(Topic);
+        public const string NoChildPages = nameof(NoChildPages);
     }
 }
