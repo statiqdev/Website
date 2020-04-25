@@ -1,0 +1,1 @@
+Execution happens when [pipelines and the modules they contain](xref:pipelines_and_modules) are evaluated.

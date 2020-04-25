@@ -1,0 +1,1 @@
+While Statiq can certainly process plain text files, it also has more powerful ways of working with content including support for a variety of template languages.

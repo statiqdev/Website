@@ -1,16 +1,10 @@
 Order: 5
 ---
-Execution is when pipelines and the modules they contain are evaluated.
+While executing [pipelines and modules](xref:pipelines_and_modules), the current state and other functionality is passed in an object called the execution context.
 
-# Engine
+The execution context contains lots of information such as the current pipeline, phase, and module, the settings and file system, the input documents to the module, and more. The current execution context is generally provided by [configuration delegates](xref:configuration_delegates) or a [module execution method](xref:writing_modules).
 
-When pipelines in Statiq are executed, a special object called the `Engine` is responsible for coordinating activity. The engine contains all the global objects used to perform generation such as the [file system abstraction](xref:files_and_paths). It also creates the [pipeline dependency graph](xref:pipelines#concurrency-and-dependencies) and executes the [modules](xref:modules) in each pipeline.
-
-# Execution Context
-
-While executing pipelines and modules, the current state and other functionality is passed in an instance of `IExecutionContext`. This object contains lots of information such as the current pipeline, phase, and module, the settings and file system, the input documents to the module, and more. The current execution context is generally accessed through [configuration delegates](xref:configuration_delegates) or a [module execution method](xref:writing_modules).
-
-## Interfaces
+# Interfaces
 
 The execution context implements a number of interfaces that provide additional capabilities:
 
@@ -22,7 +16,7 @@ The execution context implements a number of interfaces that provide additional 
 
 - `IServiceProvider`: allows you to use the execution context as a dependency injection service provider.
 
-## Properties
+# Properties
 
 In addition to directly implementing these interfaces, the execution context also contains a number of useful properties:
 
@@ -66,6 +60,6 @@ In addition to directly implementing these interfaces, the execution context als
 
 - `Inputs`: The collection of input [documents](xref:documents) to the current [module](xref:modules) (probably the most important property of the execution context).
 
-## Current Execution Context
+# Current Execution Context
 
 You can get the current execution context at any time by calling `IExecutionContext.Current`. This static default interface property is implemented using an `AsyncLocal<IExecutionContext>` so it always contains the correct execution context even across asynchronous calls.

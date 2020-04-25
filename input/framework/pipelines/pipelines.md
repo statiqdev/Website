@@ -1,3 +1,4 @@
+Title: About Pipelines
 Order: 4
 ---
 A pipeline is a series of modules executed in sequence that results in final output documents.
