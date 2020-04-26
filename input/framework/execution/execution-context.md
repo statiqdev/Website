@@ -1,8 +1,8 @@
 Order: 5
 ---
-While executing [pipelines and modules](xref:pipelines_and_modules), the current state and other functionality is passed in an object called the execution context.
+While executing [pipelines and modules](xref:pipelines-and-modules), the current state and other functionality is passed in an object called the execution context.
 
-The execution context contains lots of information such as the current pipeline, phase, and module, the settings and file system, the input documents to the module, and more. The current execution context is generally provided by [configuration delegates](xref:configuration_delegates) or a [module execution method](xref:writing_modules).
+The execution context contains lots of information such as the current pipeline, phase, and module, the settings and file system, the input documents to the module, and more. The current execution context is generally provided by [configuration delegates](xref:configuration-delegates) or a [module execution method](xref:writing-modules).
 
 # Interfaces
 
@@ -30,7 +30,7 @@ In addition to directly implementing these interfaces, the execution context als
 
 - `Events`: The collection of registered [events](xref:events).
 
-- `FileSystem`: The current [file system](xref:files_and_paths#virtual-file-system) abstraction.
+- `FileSystem`: The current [file system](xref:files-and-paths#virtual-file-system) abstraction.
 
 - `Settings`: The application [settings](xref:settings) as metadata (even though this is also exposed directly by the execution context by implementing `IMetadata`).
 
@@ -40,25 +40,25 @@ In addition to directly implementing these interfaces, the execution context als
 
 - `MemoryStreamFactory`: Provides pooled memory streams (via the `RecyclableMemoryStream` library).
 
-- `Outputs`: Gets the collection of outputs from all previously processed [pipelines](xref:pipelines).
+- `Outputs`: Gets the collection of outputs from all previously processed [pipelines](xref:pipelines-and-modules).
 
 - `Services`: Gets the dependency injection service provider (even though this is also exposed directly by the execution context by implementing `IServiceProvider`).
 
 - `ScriptHelper`: Gets a helper that can compile and evaluate C# scripts.
 
-- `Pipelines`: Gets a read-only collection of all defined [pipelines](xref:pipelines).
+- `Pipelines`: Gets a read-only collection of all defined [pipelines](xref:pipelines-and-modules).
 
 - `PipelineName`: Gets the name of the currently executing pipeline.
 
 - `Pipeline`: Gets the currently executing pipeline.
 
-- `Phase`: Gets the currently executing [phase](xref:pipelines#phases) of the current pipeline.
+- `Phase`: Gets the currently executing [phase](xref:pipelines-and-modules#phases) of the current pipeline.
 
-- `Parent`: Gets the parent execution context if currently in a nested [module](xref:modules).
+- `Parent`: Gets the parent execution context if currently in a nested [module](xref:about-modules).
 
-- `Module`: Gets the current executing [module](xref:modules).
+- `Module`: Gets the current executing [module](xref:about-modules).
 
-- `Inputs`: The collection of input [documents](xref:documents) to the current [module](xref:modules) (probably the most important property of the execution context).
+- `Inputs`: The collection of input [documents](xref:documents-and-metadata) to the current [module](xref:about-modules) (probably the most important property of the execution context).
 
 # Current Execution Context
 

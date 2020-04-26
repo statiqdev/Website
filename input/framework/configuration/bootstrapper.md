@@ -23,7 +23,7 @@ namespace MyGenerator
 }
 ```
 
-When using Statiq Framework you can create the boostrapper with the `.CreateDefault(args)` method on the `Factory`. Other Statiq projects like [Statiq Web](xref:about_statiq_web) often have other factory methods like `.CreateWeb(args)`.
+When using Statiq Framework you can create the boostrapper with the `.CreateDefault(args)` method on the `Factory`. Other Statiq projects like [Statiq Web](xref:about-statiq-web) often have other factory methods like `.CreateWeb(args)`.
 
 # Command Line and Commands
 

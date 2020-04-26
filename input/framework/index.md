@@ -1,6 +1,6 @@
 ﻿Title: About Statiq Framework
 ---
-Statiq Framework is a powerful static generation framework that can be used to create custom static generation applications. While many users will find that [Statiq Web](xref:about_statiq_web) or [Statiq Docs](xref:about_statiq_docs) have enough functionality built-in, crafting a custom static generator with Statiq Framework provides the most flexibility.
+Statiq Framework is a powerful static generation framework that can be used to create custom static generation applications. While many users will find that [Statiq Web](xref:about-statiq-web) or [Statiq Docs](xref:about-statiq-docs) have enough functionality built-in, crafting a custom static generator with Statiq Framework provides the most flexibility.
 
 # Quick Start
 
@@ -51,7 +51,7 @@ This example is all you need for a minimal, functioning Statiq Framework applica
 
 ## Step 5: Add a Pipeline and Modules
 
-Most functionality in Statiq Framework is provided by [pipelines](xref:pipelines) and [modules](xref:modules). The `Bootstrapper` has several mechanisms for [defining pipelines](xref:bootstrapper#defining-pipelines). For this last step lets add a quick pipeline to read Markdown files, render them, and write them back out to disk using some fluent methods to define a pipeline and add modules to it:
+Most functionality in Statiq Framework is provided by [pipelines](xref:pipelines-and-modules) and [modules](xref:about-modules). The `Bootstrapper` has several mechanisms for [defining pipelines](xref:bootstrapper#defining-pipelines). For this last step lets add a quick pipeline to read Markdown files, render them, and write them back out to disk using some fluent methods to define a pipeline and add modules to it:
 
 # How It Works
 
@@ -59,12 +59,12 @@ Statiq is powerful because it combines a few simple building blocks that can be 
 
 - Content and data can come from a variety of sources.
 
-- **[Documents](xref:documents)** are created that each contain **content** and **[metadata](xref:metadata)**.
+- **[Documents](xref:documents-and-metadata)** are created that each contain **[content](documents-and-metadata#about-content)** and **[metadata](xref:documents-and-metadata#about-metadata)**.
 
-- The documents are processed by **[pipelines](xref:pipelines)**.
+- The documents are processed by **[pipelines](xref:pipelines-and-modules)**.
 
-- Each pipeline consists of one or more **[modules](xref:modules)** that manipulate the documents given to it by transforming, aggregating, filtering, or producing entirely new documents.
+- Each pipeline consists of one or more **[modules](xref:about-modules)** that manipulate the documents given to it by transforming, aggregating, filtering, or producing entirely new documents.
 
 - The final output of each pipeline is made available to other pipelines and may be written to output files or deployed to hosting services.
 
-<div><img src=“/assets/flow.png” class=“mw-100”></div>
+<div><img src="/assets/flow.png" class="mw-100"></div>

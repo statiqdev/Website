@@ -243,49 +243,40 @@ $sections: map-merge(
             background-color: darken($color, 10%);
         }
 
+        .sidebar {
+            & > .sidebar-nav-item {
+                margin-bottom: $spacer;
+                font-weight: $font-weight-bold;
+
+                &.has-children {
+                    border-bottom: 1px solid $gray-300;
+                    margin-bottom: 0;
+                }
+            }
+
+            & > .sidebar-nav-children {
+                margin-bottom: $spacer;
+                
+                & > .sidebar-nav-children {
+                    font-size: $font-size-sm;                
+                    padding-left: $spacer * 0.5;
+                }
+            }
+        }
+
         .sidebar-nav-item {
-            padding-top: $spacer * 0.5;
-            padding-bottom: $spacer * 0.5;
-            font-weight: $font-weight-bold;
+            padding-left: $spacer * 0.5;
+            padding-right: $spacer * 0.5;
+            padding-bottom: $spacer * 0.25;
+            padding-top: $spacer * 0.25;
+            margin-bottom: $spacer * 0.25;
 
             &.has-children {
                 margin-bottom: 0;
             }
 
-            &.active a {
-                color: $gray-600;
-
-                @include hover-focus-active() {
-                    color: $gray-600;
-                }
-            }
-        }
-
-        .sidebar-nav-children {
-            border-left: ($border-width * 3) solid $gray-300;
-            padding-left: $spacer;
-            margin-bottom: $spacer;
-            display: none;
-
-            @include media-breakpoint-up(md) {
-                display: block;
-            }
-
             &.active {
-                display: block;
-            }
-        }
-
-        .sidebar-nav-child {
-            padding-top: $spacer * 0.5;
-            padding-bottom: $spacer * 0.5;
-
-            &.active a {
-                color: $gray-600;
-
-                @include hover-focus-active() {
-                    color: $gray-600;
-                }
+                background-color: lighten($color, 30%);
             }
         }
     }

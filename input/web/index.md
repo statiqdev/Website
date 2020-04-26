@@ -26,7 +26,7 @@ dotnet add package Statiq.Web
 
 ## Step 4: Create a Bootstrapper
 
-Creating a [Bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining_pipelines) or [custom modules](xref:writing_modules), you shouldn’t need to for most sites.
+Creating a [Bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites.
 
 ```csharp
 using System;
@@ -48,7 +48,7 @@ namespace MySite
 
 ## Step 5: Add Some Content
 
-Start adding content by creating [Markdown](xref:markdown) files in your “input” folder.
+Start adding content by creating [Markdown](xref:markdown) files in your "input" folder.
 
 <div class="alert alert-info" role="alert">
   <strong>More coming soon!</strong> Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.

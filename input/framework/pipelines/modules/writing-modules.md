@@ -1,4 +1,4 @@
-[Modules](xref:modules) are the basic building blocks of Statiq functionality. If the out-of-the-box modules don’t satisfy your use case, it’s easy to customize generation by creating new modules.
+[Modules](xref:about-modules) are the basic building blocks of Statiq functionality. If the out-of-the-box modules don’t satisfy your use case, it’s easy to customize generation by creating new modules.
 
 Modules implement the `IModule` interface which defines a single `Task<IEnumerable<IDocument>> ExecuteAsync(IExecutionContext context)` method. The [execution context](xref:execution#execution-context) passed to the `ExecuteAsync` method contains the input documents to the module as well as providing access to output documents from other pipelines and various engine and utility functionality.
 
@@ -29,7 +29,7 @@ Here are some other guidelines and tips to follow when writing a module:
 
 - Consider using the built-in `ExecuteConfig` module instead of writing your own.
   - You may not even need a new module. The `ExecuteConfig` module lets you specify a delegate that can return documents, content, and other types of data which will be converted to output documents as appropriate.
-- Use `Config<T>` [configuration delegates](xref:configuration_delegates).
+- Use `Config<T>` [configuration delegates](xref:configuration-delegates).
   - If your module needs to accept user-configurable values, use `Config<T>`.
   - Consider using one of the base module classes that deals with `Config<T>` like `ConfigModule` or `MultiConfigModule`.
 - Avoid document-to-document references (especially to/from children):

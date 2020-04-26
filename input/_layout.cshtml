@@ -166,12 +166,24 @@
 
                                                     @if (document.HasChildren())
                                                     {
-                                                        <div class="sidebar-nav-children @(Document.IdEquals(document) || document.GetChildren().Any(x => Document.IdEquals(x)) ? "active" : null)">
+                                                        <div class="sidebar-nav-children">
                                                             @foreach (IDocument child in document.GetChildren())
-                                                            {
-                                                                <div class="sidebar-nav-child @(Document.IdEquals(child) ? "active" : null)">
+                                                            {                                                                
+                                                                <div class="sidebar-nav-item @(Document.IdEquals(child) ? "active" : null) @(child.HasChildren() ? "has-children" : null)">
                                                                     @Html.DocumentLink(child)
                                                                 </div>
+
+                                                                @if (child.HasChildren())
+                                                                {
+                                                                    <div class="sidebar-nav-children">
+                                                                        @foreach (IDocument child2 in child.GetChildren())
+                                                                        {
+                                                                            <div class="sidebar-nav-item @(Document.IdEquals(child2) ? "active" : null)">
+                                                                                @Html.DocumentLink(child2)
+                                                                            </div>
+                                                                        }
+                                                                    </div>
+                                                                }
                                                             }
                                                         </div>
                                                     }

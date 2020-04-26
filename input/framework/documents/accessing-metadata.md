@@ -1,6 +1,6 @@
 Order: 3
 ---
-Every [document](xref:documents) acts like a dictionary and implements `IReadOnlyDictionary<string, object>` for easy access. Metadata key/value pairs can be accessed through this interface.
+Every [document](xref:documents-and-metadata) acts like a dictionary and implements `IReadOnlyDictionary<string, object>` for easy access. Metadata key/value pairs can be accessed through this interface.
 
 # Type Conversion 
 
@@ -18,4 +18,4 @@ There may be times when you don’t want [lazy values](#lazy-values), [computed 
 
 There are several extensions to make working with documents and metadata easier. One of the more powerful ones lets you generate an `ILookup<T, IDocument>` from a sequence of documents based on a metadata key. The signature of the extension method is `ILookup<T, IDocument> ToLookup<T>(this IEnumerable<IDocument> documents, string key)` where `key` is the metadata key that you want to generate a lookup for.
 
-For example, say you have a sequence of documents, some of which contain metadata for the key “Tags”. Also, assume that some of the documents with “Tags” metadata contain a single value some contain arrays. If you simply call `Documents.ToLookup<string>(“Tags”)` you will get back an `ILookup<T, IDocument>` keyed by each possible tag string with a sequence of the documents that contain that tag as the value.
+For example, say you have a sequence of documents, some of which contain metadata for the key "Tags". Also, assume that some of the documents with "Tags" metadata contain a single value some contain arrays. If you simply call `Documents.ToLookup<string>("Tags")` you will get back an `ILookup<T, IDocument>` keyed by each possible tag string with a sequence of the documents that contain that tag as the value.
