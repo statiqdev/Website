@@ -29,17 +29,17 @@
     <body class="d-flex flex-column">
         <div class="flex-grow-1 d-flex flex-column">
             <div class="bg-red">
-                <div class="container">
+                <div class="container-xl">
                     <div class="text-center text-white p-4">This is an early build of the site and information may not be accurate or complete.</div>
                 </div>
             </div>
-            <nav id="topnav" class="navbar navbar-expand-lg navbar-light">
-                <div class="container py-3">
+            <nav id="topnav" class="navbar navbar-expand-md navbar-light">
+                <div class="container-xl py-3">
                     <a class="navbar-brand" href="/"><img id="logo" src="/assets/statiq.svg" alt="Statiq Framework"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse-target" aria-controls="collapse-target" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
+                    <div class="collapse navbar-collapse collapse-target">
                         <ul class="navbar-nav mr-auto">
                             <li id="nav-web" class="nav-item">
                                 <a class="nav-link text-blue font-weight-light font-size-lg" href="/web">Web</a>
@@ -83,7 +83,7 @@
                 @if(section != null)
                 {
                     <div id="titlebar" class="py-4">
-                        <div class="container">
+                        <div class="container-xl">
                             <div class="row">
                                 @{ 
                                     string titleBarClasses = Document.GetBool(SiteKeys.NoSidebar) ? string.Empty : "offset-md-3 offset-lg-2";
@@ -100,18 +100,18 @@
                         </div>
                     </div>
                     <div id="undertitle">
-                        <div class="container bg-white">                            
+                        <div class="container-xl">                            
                             <div class="row">
                                 @if (Document.GetBool(SiteKeys.NoSidebar))
                                 {
-                                    <div class="col">
+                                    <div class="col bg-white">
                                     </div>
                                 }
                                 else
                                 {
                                     <div class="col-md-3 col-lg-2 bg-section">
                                     </div>
-                                    <div class="col-md-9 col-lg-8">
+                                    <div class="col-md-9 col-lg-8 bg-white">
                                     </div>
                                 }
                                 <div class="col-lg-2 d-none d-lg-block bg-section">
@@ -129,7 +129,7 @@
                     }
                     else
                     {
-                        <div class="container flex-grow-1 d-flex flex-column bg-white">
+                        <div class="container-xl flex-grow-1 d-flex flex-column">
                             <div class="row flex-grow-1 align-items-stretch">
                                 @{ 
                                     IDocument root = Outputs[nameof(Content)].FirstOrDefault(x => x.Destination == section + "/index.html");
@@ -141,56 +141,58 @@
                                             IgnoreSection(SectionNames.Sidebar);
                                         }
 
-                                        <div class="col p-4 pt-md-0">
+                                        <div class="col p-4 pt-md-0 bg-white">
                                             @RenderBody()
                                         </div>
                                     }
                                     else
                                     {
-                                        <div class="sidebar col-md-3 col-lg-2 pt-2 bg-body">
-                                            @if (IsSectionDefined(SectionNames.Sidebar))
-                                            {
-                                                @RenderSection(SectionNames.Sidebar, false)
-                                            }
-                                            else
-                                            {
-                                                <div class="sidebar-nav-item @(Document.IdEquals(root) ? "active" : null)">
-                                                    @Html.DocumentLink(root)
-                                                </div>
-
-                                                @foreach (IDocument document in root.GetChildren())
+                                        <div class="col-md-3 col-lg-2 bg-body p-0">
+                                            <div class="sidebar collapse collapse-target">
+                                                @if (IsSectionDefined(SectionNames.Sidebar))
                                                 {
-                                                    <div class="sidebar-nav-item @(Document.IdEquals(document) ? "active" : null) @(document.HasChildren() ? "has-children" : null)">
-                                                        @Html.DocumentLink(document)
+                                                    @RenderSection(SectionNames.Sidebar, false)
+                                                }
+                                                else
+                                                {
+                                                    <div class="sidebar-nav-item @(Document.IdEquals(root) ? "active" : null)">
+                                                        @Html.DocumentLink(root)
                                                     </div>
 
-                                                    @if (document.HasChildren())
+                                                    @foreach (IDocument document in root.GetChildren())
                                                     {
-                                                        <div class="sidebar-nav-children">
-                                                            @foreach (IDocument child in document.GetChildren())
-                                                            {                                                                
-                                                                <div class="sidebar-nav-item @(Document.IdEquals(child) ? "active" : null) @(child.HasChildren() ? "has-children" : null)">
-                                                                    @Html.DocumentLink(child)
-                                                                </div>
-
-                                                                @if (child.HasChildren())
-                                                                {
-                                                                    <div class="sidebar-nav-children">
-                                                                        @foreach (IDocument child2 in child.GetChildren())
-                                                                        {
-                                                                            <div class="sidebar-nav-item @(Document.IdEquals(child2) ? "active" : null)">
-                                                                                @Html.DocumentLink(child2)
-                                                                            </div>
-                                                                        }
-                                                                    </div>
-                                                                }
-                                                            }
+                                                        <div class="sidebar-nav-item @(Document.IdEquals(document) ? "active" : null) @(document.HasChildren() ? "has-children" : null)">
+                                                            @Html.DocumentLink(document)
                                                         </div>
+
+                                                        @if (document.HasChildren())
+                                                        {
+                                                            <div class="sidebar-nav-children">
+                                                                @foreach (IDocument child in document.GetChildren())
+                                                                {                                                                
+                                                                    <div class="sidebar-nav-item @(Document.IdEquals(child) ? "active" : null) @(child.HasChildren() ? "has-children" : null)">
+                                                                        @Html.DocumentLink(child)
+                                                                    </div>
+
+                                                                    @if (child.HasChildren())
+                                                                    {
+                                                                        <div class="sidebar-nav-children">
+                                                                            @foreach (IDocument child2 in child.GetChildren())
+                                                                            {
+                                                                                <div class="sidebar-nav-item @(Document.IdEquals(child2) ? "active" : null)">
+                                                                                    @Html.DocumentLink(child2)
+                                                                                </div>
+                                                                            }
+                                                                        </div>
+                                                                    }
+                                                                }
+                                                            </div>
+                                                        }
                                                     }
                                                 }
-                                            }
+                                            </div>
                                         </div>
-                                        <div class="col-md-9 col-lg-8 p-4 pt-md-0">
+                                        <div class="col-md-9 col-lg-8 p-4 pt-md-0 bg-white">
                                             @RenderBody()
 
                                             @if (!Document.GetBool(SiteKeys.NoChildPages) && Document.HasChildren())
@@ -239,7 +241,7 @@
             </div>
         </div>
         <div id="footer" class="p-3 text-white font-size-sm">
-            <div class="container">
+            <div class="container-xl">
                 <div>© @DateTime.Today.Year Statiq/Dave Glick</div>
             </div>
         </div>

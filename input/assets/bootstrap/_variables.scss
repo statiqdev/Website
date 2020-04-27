@@ -118,7 +118,7 @@ $enable-rounded:                              true !default;
 $enable-shadows:                              true !default;
 $enable-gradients:                            true !default;
 $enable-transitions:                          true !default;
-$enable-prefers-reduced-motion-media-query:   true !default;
+$enable-prefers-reduced-motion-media-query:   false !default;
 $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
 $enable-grid-classes:                         true !default;
 $enable-pointer-cursor-for-buttons:           true !default;
@@ -169,7 +169,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $gray-100 !default;
-$body-color:                $gray-600 !default;
+$body-color:                $gray-700 !default;
 
 
 // Links
@@ -200,7 +200,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1600px
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -215,7 +215,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 1600px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
