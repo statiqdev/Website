@@ -119,12 +119,12 @@ h2, h3 {
     margin-bottom: $spacer * 1.5;
 }
 
-#topnav {
-    background: $gray-200 linear-gradient(180deg, $white, $gray-200) repeat-x !important;
+.bg-nav {
+    background: $gray-200 linear-gradient(180deg, $gray-200, $white) repeat-x !important;
 }
 
 #logo {
-    height: 3rem;
+    height: 2.5rem;
 }
 
 @mixin nav-project($color) {

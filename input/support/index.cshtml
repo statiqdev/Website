@@ -1,13 +1,44 @@
 NoSidebar: true
 NoChildPages: true
+Title: Support The Project
 ---
 @section Head
 {
     <script src="https://js.stripe.com/v3/" data-no-mirror></script>
 }
 
+<div class="row mb-5">
+    <div class="col-md-6">
+        <h1>Sponsor Development</h1>
+
+        <div class="text-center my-3">
+            <i class="fad fa-heart fa-5x icon-red"></i>
+        </div>
+
 <?# Markdown ?>
-Using the following Statiq projects for commercial purposes requires the purchase of a private license:
+Statiq isn't developed by a big, faceless corporation or backed by mountains of venture captital.
+It's mostly [Dave](https://github.com/daveaglick) and other awesome contributors spending lots of nights and weekends as a labor of love.
+
+Development and support of Statiq (and it's precursor Wyam) has been steady for years and there are no plans to slow down.
+In fact, there are some _big plans_ for Statiq in the future.
+I hope to have a GitHub Sponsor account specifically for the Statiq project soon, but in the meantime if you appreciate this project and would like to show some support,
+please consider [sponsoring Dave on GitHub Sponsors](https://github.com/sponsors/daveaglick).
+<?#/ Markdown ?>
+
+        <div>
+            <a class="btn btn-danger" href="https://github.com/sponsors/daveaglick">Sponsor @@daveaglick on GitHub Sponsors</a>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <h1>Buy A Commercial-Use License</h1>
+
+        <div class="text-center my-3">
+            <i class="fad fa-check fa-5x icon-green"></i>
+        </div>
+
+<?# Markdown ?>
+If you use the following Statiq projects for commercial purposes, a private license is required:
 
 - [Statiq Web](xref:about-statiq-web)
 - [Statiq Docs](xref:about-statiq-docs)
@@ -15,12 +46,14 @@ Using the following Statiq projects for commercial purposes requires the purchas
 The cost for a private license is **$50.00 per developer** and covers all releases of the current major version. See the FAQ below for more details.
 <?#/ Markdown ?>
 
-<div class="form-inline">
-    <label class="mb-2 mr-2" for="quantityInput" class="mr-2">Number Of Developers:</label>
-    <input id="quantityInput" type="number" min="1" onchange="changeQuantity(this.value)" value="1" inputmode="numeric" pattern="\d*" onkeyup="this.value=this.value.replace(/[^\d]+/,'')" class="mr-2 mb-2"></input>
-    <button class="btn btn-primary" id="checkout-button-sku_H7XbjLJDzHVInz" role="link">Buy A Commercial-Use License</button>
+        <div class="form-inline">
+            <label class="mb-2 mr-2" for="quantityInput" class="mr-2">Number Of Developers:</label>
+            <input id="quantityInput" type="number" min="1" onchange="changeQuantity(this.value)" value="1" inputmode="numeric" pattern="\d*" onkeyup="this.value=this.value.replace(/[^\d]+/,'')" class="mr-2 mb-2"></input>
+            <button class="btn btn-primary" id="checkout-button-sku_H7XbjLJDzHVInz" role="link">Buy A Commercial-Use License</button>
+        </div>
+        <div id="error-message"></div>
+    </div>
 </div>
-<div id="error-message"></div>
 
 <?# Markdown ?>
 <?!^ "https://raw.githubusercontent.com/statiqdev/Statiq.Web/master/LICENSE-FAQ.md" /?>
