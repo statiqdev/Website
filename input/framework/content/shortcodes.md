@@ -1,5 +1,3 @@
-Order: 5
----
 Shortcodes are small but powerful macros that can generate content or add metadata to your documents.
 
 <?! Raw ?><?# Raw ?>

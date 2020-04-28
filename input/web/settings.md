@@ -1,3 +1,5 @@
+Xref: web-settings
+---
 <?! Include "../framework/configuration/settings.md" /?>
 
 # Global Settings

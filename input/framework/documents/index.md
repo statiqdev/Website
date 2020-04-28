@@ -1,15 +1,9 @@
 Title: Documents and Metadata
 Order: 2
 ---
-A document is a combination of content and metadata as it makes it’s way through the system. Document content is often read from files, though it can also come from a database, a web service, or any other source. Documents are immutable and must be cloned to change their content and add or change their metadata.
+A document is a combination of content and metadata as it makes it’s way through the system.
 
-# About Metadata
-
-Along with their content, every document also contains metadata. As with documents, metadata is immutable and you must clone a document to add additional metadata. Several [modules](xref:about-modules), such as `SetMetadata`, are designed to allow you to manipulate document metadata as part of your [pipeline](xref:pipelines-and-modules).
-
-# About Content
-
-The content of a document is what most [modules](xref:about-modules) manipulate and is what you'll presumably output to disk at the end of the [pipeline](xref:pipelines-and-modules). Documents are immutable and once a value is added to the metadata by one module, it can never be removed by a subsequent one (though it can be overwritten by a cloned document). Though the documentation often talks about documents being "transformed" or "manipulated" by modules, this isn't strictly accurate. Instead modules return a new cloned copy of the document with different content and/or additional metadata, while maintaining all the metadata the original document had.
+Documents are immutable and once their content is changed or a value is added to their metadata, it can never be removed (though it can be overwritten by a cloned document). Though the documentation often talks about documents being "transformed" or "manipulated" by [modules](xref:pipelines-and-modules), this isn't strictly accurate. Instead modules return a new cloned copy of the document with different content and/or additional metadata, while maintaining all the metadata the original document had.
 
 For example, this visualizes a single document that contains some content as well as two metadata values:
 
@@ -25,6 +19,10 @@ For example, this visualizes a single document that contains some content as wel
 </div>
 
 It's tempting to think of documents as being one-to-one with files in the filesystem, but they're much more than that. While files are often the primary way documents are created, they can come from other sources too. It's better to think of documents and being part of a database. In this mode of thought Statiq is like a document database, with Statiq documents being analogous to the document concept from other document databases.
+
+# About Metadata
+
+Along with their content, every document also contains metadata. As with documents, metadata is immutable and you must clone a document to add additional metadata. Several [modules](xref:about-modules), such as `SetMetadata`, are designed to allow you to manipulate document metadata as part of your [pipeline](xref:pipelines-and-modules).
 
 # Creating and Cloning Documents
 

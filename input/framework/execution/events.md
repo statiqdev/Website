@@ -1,3 +1,5 @@
+Order: 3
+---
 Events let you hook into various stages of the generation process and can be helpful when you need to implement cross-cutting behavior at runtime or when you need to modify the behavior of existing [pipelines](xref:pipelines-and-modules). Statiq has a global event mechanism that makes it easy to subscribe to and handle events.
 
 You can subscribe to an event in an [engine](xref:execution#engine) through the `Events` property:

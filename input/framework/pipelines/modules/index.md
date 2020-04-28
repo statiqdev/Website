@@ -1,5 +1,5 @@
 Title: About Modules
-Order: 3
+Order: 2
 ---
 A module is a component that performs a specific action, usually by creating, processing, or manipulating documents.
 

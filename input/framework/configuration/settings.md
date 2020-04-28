@@ -1,3 +1,5 @@
+Order: 2
+---
 Settings let you define global [metadata](xref:documents-and-metadata#about-metadata) that can be accessed from the [execution context](xref:execution#execution-context) or [documents](xref:documents-and-metadata).
 
 At [execution time](xref:execution) all settings are combined into a single set of metadata accessible via the [execution context](xref:execution#execution-context), which implements `IMetadata` for the purpose of exposing settings values.

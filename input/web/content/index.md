@@ -1,4 +1,5 @@
 ﻿Order: 2
+Xref: web-content
 ---
 Statiq Web has a variety of ways of reading, writing, and working with different kinds of content.
 

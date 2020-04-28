@@ -1,4 +1,4 @@
-Order: 5
+Order: 2
 ---
 While executing [pipelines and modules](xref:pipelines-and-modules), the current state and other functionality is passed in an object called the execution context.
 

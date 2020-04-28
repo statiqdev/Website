@@ -1,4 +1,4 @@
-Order: 6
+Order: 4
 Title: Files and Paths
 ---
 Statiq uses an IO abstraction layer designed to provide flexibility and consistency when dealing with files, directories, and path information.

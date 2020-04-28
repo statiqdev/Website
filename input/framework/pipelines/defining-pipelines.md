@@ -1,3 +1,5 @@
+Order: 1
+---
 # Adding Modules
 
 TODO - discuss how modules are typically added to the pipeline in the constructor

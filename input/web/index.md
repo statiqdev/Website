@@ -4,7 +4,7 @@ Statiq Web is a collection of in-the-box behavior that provides a powerful stati
 
 # Quick Start
 
-The easiest way to get started with Statiq Web is to install the [Statiq.Web](https://www.nuget.org/packages/Statiq.Web) package into a .NET Core console application and use the [bootstrapper](/framework/usage/bootstrapper) to configure everything.
+The easiest way to get started with Statiq Web is to install the [Statiq.Web](https://www.nuget.org/packages/Statiq.Web) package into a .NET Core console application and use the [bootstrapper](xref:bootstrapper) to configure everything.
 
 ## Step 1: Install .NET Core
 

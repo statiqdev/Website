@@ -59,7 +59,7 @@ Statiq is powerful because it combines a few simple building blocks that can be 
 
 - Content and data can come from a variety of sources.
 
-- **[Documents](xref:documents-and-metadata)** are created that each contain **[content](documents-and-metadata#about-content)** and **[metadata](xref:documents-and-metadata#about-metadata)**.
+- **[Documents](xref:documents-and-metadata)** are created that each contain **[content](xref:content)** and **[metadata](xref:documents-and-metadata#about-metadata)**.
 
 - The documents are processed by **[pipelines](xref:pipelines-and-modules)**.
 
