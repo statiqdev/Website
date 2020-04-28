@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Statiq.Web" Version="1.0.0-alpha.8" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-alpha.9" />
   </ItemGroup>
   
   <!--
