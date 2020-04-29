@@ -16,15 +16,15 @@ Two properties can be used to specify dependency data of the pipeline:
 
 In addition to specifying dependencies, other settings can be configured from the pipeline constructor:
 
-- `Isolated` is a `bool` that indicates if the pipeline is an [isolated pipeline](xref:pipelines#isolated). This means that it will be executed independent of any other pipelines.
+- `Isolated` is a `bool` that indicates if the pipeline is an [isolated pipeline](xref:pipelines-and-modules#isolated). This means that it will be executed independent of any other pipelines.
 
-- `Deployment` is a `bool` that indicates if the pipeline is a [deployment pipeline](xref:pipelines#deployment) and should be executed when using the deployment command.
+- `Deployment` is a `bool` that indicates if the pipeline is a [deployment pipeline](xref:pipelines-and-modules#deployment) and should be executed when using the deployment command.
 
-- `ExecutionPolicy` specifies the particular [execution policy](xref:pipelines#execution-policy) the pipeline should use.
+- `ExecutionPolicy` specifies the particular [execution policy](xref:pipelines-and-modules#execution-policy) the pipeline should use.
 
 # Adding Modules
 
-Modules can be added to the pipeline through four `ModuleList` properties (which are essentially `IList<IModule>`) corresponding to the different [pipeline phases](xref:pipelines#phases):
+Modules can be added to the pipeline through four `ModuleList` properties (which are essentially `IList<IModule>`) corresponding to the different [pipeline phases](xref:pipelines-and-modules#phases):
 
 - `InputModules`
 
@@ -53,26 +53,8 @@ public class Content : Pipeline
 
 # Service Injection
 
-If the pipeline is added by type (see [Using The Bootstrapper](#using-the-bootstrapper) below), any services that were [registered with the dependency injection container](xref:bootstrapper#registering-services) will be available to the constructor and you can inject them.
+If the pipeline is [added by type](xref:adding-pipelines), any services that were [registered with the dependency injection container](xref:registering-services) will be available to the constructor and you can inject them.
 
-# Using The Bootstrapper
+# Adding Pipelines
 
-The easiest way to add pipelines to your application is through [the bootstrapper](xref:bootstrapper). By default it will automatically add all pipelines by type in the entry assembly via reflection.
-
-It contains several methods to add additional pipelines by either type or as an instance:
-
-- `AddPipeline<TPipeline>()` will add a pipeline by type (and enable [service injection](#service-injection)).
-
-- `AddPipeline(IPipeline)` and various overloads will add a pipeline instance.
-
-## Finding Pipelines By Reflection
-
-TODO
-
-## Defining Directly
-
-TODO
-
-## Pipeline Builder
-
-TODO - using the pipeline builder to create pipelines
+You can add pipelines to an `[Engine](xref:engine)` directly using it's `Pipelines` property, but the easiest way to add and manipulate pipelines is [through the `Bootstrapper`](xref:adding-pipelines).

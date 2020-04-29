@@ -30,6 +30,12 @@ html, body {
             height: 100%;
         }
     }
+
+    @include media-breakpoint-up(xl) {
+        .h-xl-100 {
+            height: 100%;
+        }
+    }
 }
 
 @each $size, $length in $sizes {

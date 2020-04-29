@@ -27,8 +27,6 @@ namespace MyGenerator
 
 When using Statiq Framework you can create the boostrapper with the `.CreateDefault(args)` method on the `Factory`. Other Statiq projects like [Statiq Web](xref:about-statiq-web) often have other factory methods like `.CreateWeb(args)`.
 
-# Registering Services
-
 # Command Line and Commands
 
 One of the more important responsibilities of the `Bootstrapper` is to manage the command-line interface by processing arguments and executing commands.
