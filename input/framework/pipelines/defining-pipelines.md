@@ -57,4 +57,4 @@ If the pipeline is [added by type](xref:adding-pipelines), any services that wer
 
 # Adding Pipelines
 
-You can add pipelines to an `[Engine](xref:engine)` directly using it's `Pipelines` property, but the easiest way to add and manipulate pipelines is [through the `Bootstrapper`](xref:adding-pipelines).
+You can add pipelines to an [`Engine`](xref:engine) directly using it's `Pipelines` property, but the easiest way to add and manipulate pipelines is [through the `Bootstrapper`](xref:adding-pipelines).
