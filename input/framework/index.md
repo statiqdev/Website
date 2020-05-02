@@ -1,4 +1,5 @@
 ﻿Title: About Statiq Framework
+BreadcrumbTitle: Framework
 ---
 Statiq Framework is a powerful static generation framework that can be used to create custom static generation applications. While many users will find that [Statiq Web](xref:about-statiq-web) or [Statiq Docs](xref:about-statiq-docs) have enough functionality built-in, crafting a custom static generator with Statiq Framework provides the most flexibility.
 
@@ -26,7 +27,7 @@ dotnet add package Statiq.App
 
 ## Step 4: Create a Bootstrapper
 
-There are several ways to create and configure an [engine](xref:execution#engine), but by far the easiest is to use the [Bootstrapper](xref:bootstrapper):
+There are several ways to create and configure an [engine](xref:execution#engine), but by far the easiest is to use the [bootstrapper](xref:bootstrapper):
 
 ```csharp
 using System;
@@ -45,13 +46,13 @@ namespace MyGenerator
 }
 ```
 
-This creates a default `Bootstrapper` and passes it the [command-line arguments](xref:bootstrapper#command-line) so it can process them with the `.CreateDefault(args)` call. Then it executes the specified command (from the command-line) during the final `.RunAsync()` call.
+This creates a default `Bootstrapper` instance and passes it the [command-line arguments](xref:command-line-interface) so it can process them with the `.CreateDefault(args)` call. Then it executes the specified command (from the command-line) during the final `.RunAsync()` call.
 
 This example is all you need for a minimal, functioning Statiq Framework application. The only problem is that it doesn’t actually do anything. Let’s add one more step and process some Markdown files.
 
 ## Step 5: Add a Pipeline and Modules
 
-Most functionality in Statiq Framework is provided by [pipelines](xref:pipelines-and-modules) and [modules](xref:about-modules). The `Bootstrapper` has several mechanisms for [defining pipelines](xref:bootstrapper#defining-pipelines). For this last step lets add a quick pipeline to read Markdown files, render them, and write them back out to disk using some fluent methods to define a pipeline and add modules to it:
+Most functionality in Statiq Framework is provided by [pipelines](xref:pipelines-and-modules) and [modules](xref:about-modules). The [bootstrapper](xref:bootstrapper) has several mechanisms for [adding and defining pipelines](xref:adding-pipelines). For this last step lets add a quick pipeline to read Markdown files, render them, and write them back out to disk using some fluent methods to define a pipeline and add modules to it:
 
 # How It Works
 

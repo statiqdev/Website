@@ -1,6 +1,6 @@
 Order: 1
 ---
-Different modules treat inputs and outputs in different ways.
+Different modules treat inputs and outputs in different ways and this is a non-exhaustive list of some processing patterns that might help you understand the way modules work.
 
 Some modules just "pass-through" the documents that are input, some transform them in some way and output the results, and some exhibit more complex behavior. Some modules even exhibit different behavior depending on how the module was configured. The behavior can get especially confusing when considering some modules evaluate child modules which also output documents. In these cases, there are different behaviors for how the input documents and the result documents from the child modules are combined. The way inputs, outputs, and child module results are related can generally be described as a few different patterns and even though these probably don’t cover the way *every* module or combination of modules works, they should help you understand the concepts involved.
 

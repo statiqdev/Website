@@ -1,4 +1,5 @@
 ﻿Title: About Statiq Web
+BreadcrumbTitle: Web
 ---
 Statiq Web is a collection of in-the-box behavior that provides a powerful static site generation capability suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
 
@@ -26,7 +27,7 @@ dotnet add package Statiq.Web
 
 ## Step 4: Create a Bootstrapper
 
-Creating a [Bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites.
+Creating a [bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites.
 
 ```csharp
 using System;

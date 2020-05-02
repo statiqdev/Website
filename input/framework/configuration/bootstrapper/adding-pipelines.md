@@ -1,4 +1,6 @@
-By default the Bootstrapper will automatically add all pipelines by type in the entry assembly via reflection, but you can also use it to add or define new pipelines.
+Order: 4
+---
+By default the [bootstrapper](xref:bootstrapper) will automatically add all pipelines by type in the entry assembly via reflection, but you can also use it to add or define new pipelines.
 
 It contains several methods to add additional pipelines by either type or as an instance:
 

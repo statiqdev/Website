@@ -6,7 +6,7 @@ At [execution time](xref:execution) all settings are combined into a single set 
 
 # Specifying Settings
 
-## Settings Files
+## Configuration Files
 
 As with many other .NET Core applications, Statiq supports the use of an `appsettings.json` file. Any values will be ...
 

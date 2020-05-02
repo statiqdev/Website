@@ -23,21 +23,13 @@ MyNumber: "=> { int x = 1 + 2; int y = x; return y; }"
 The script also a number of predefined global properties available to it (see the `ScriptBase` class in `Statiq.Core` for all script properties):
 
 - `ExecutionState` contains the current `IExecutionState` object.
-
 - `Context` (and the `ctx` shorthand) contain the current [execution context](xref:execution#execution-context).
-
 - `Document` (and the `doc` shorthand) contain the current [document](xref:documents-and-metadata).
-
 - `PipelineName`: Gets the name of the currently executing pipeline.
-
 - `Pipeline`: Gets the currently executing pipeline.
-
 - `Phase`: Gets the currently executing [phase](xref:pipelines-and-modules#phases) of the current pipeline.
-
 - `Parent`: Gets the parent execution context if currently in a nested [module](xref:about-modules).
-
 - `Module`: Gets the current executing [module](xref:about-modules).
-
 - `Inputs`: The collection of input [documents](xref:documents-and-metadata) to the current [module](xref:about-modules).
 
 In addition, all metadata values of the current document are exposed as properties in the script. For example, if a document has a metadata item with a key of "MyItem", a global property `MyItem` will be available to the script.

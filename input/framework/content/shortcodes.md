@@ -116,9 +116,11 @@ Content
 
 # Writing Shortcodes
 
+Shortcodes get passed the current [document](xref:documents-and-metadata), [execution context](xref:execution-context), any [parameters](#parameters), and any [content](#content) and returns a collection of `ShortcodeResult` objects that contains new content to add to the containing document in the place of the shortcode. The `ShortcodeResult` type is implicitly convertible from both a `string` and a `Stream`, so a shortcode implementation can just return whatever content object is appropriate.
+
 ## Bootstrapper
 
-You can define shortcodes through the `Bootstrapper` which contains many `AddShortcode()` overloads for specifying shortcodes by delegates and other means.
+You can define shortcodes through the [bootstrapper](xref:bootstrapper) which contains many `AddShortcode()` overloads for specifying shortcodes by delegates and other means.
 
 For example, if you add the following:
 
@@ -140,10 +142,23 @@ ABC123XYZ
 
 ## As A Class
 
-To write a shortcode as a class, implement `IShortcode`. The shortcode name will generally be the same as the implementing class name.
+To write a shortcode as a class, implement `IShortcode`. The shortcode name will generally be the same as the implementing class name. Alternatively, several shortcode base classes are provided as a convenience:
 
-# Process Shortcodes
+- `Shortcode` is a base class for single-result asynchronous shortcodes.
+- `SyncShortcode` is a base class for single-result synchronous shortcodes.
+- `MultiShortcode` is a base class for multiple-result asynchronous shortcodes.
+- `SyncMultiShortcode` is a base class for multiple-result synchronous shortcodes.
 
-To process shortcodes in your own pipelines, the `ProcessShortcodes` module is used to find shortcodes within a document and render them. It's generally an accepted pattern to use the `ProcessShortcodes` module after all other templates have been evaluated, but you can certainly use it earlier in your pipelines if you want to.
+## Registering Your Shortcodes
+
+Any custom shortcodes will need to be registered with the [engine](xref:engine).
+
+This can be done through the [bootstrapper](xref:bootstrapper) using its `AddShortcode<TShortcode>()` extensions. Note that the bootstrapper automatically registers all shortcode types in all referenced assemblies by default so you'll rarely need to manually register shortcodes when using the bootstrapper.
+
+You can also register shortcodes directly with an engine using its `Shortcodes` property.
+
+# Processing Shortcodes
+
+Use the `ProcessShortcodes` module in your own pipelines to find shortcodes within a document and render them. It's generally an accepted pattern to use the `ProcessShortcodes` module after all other templates have been evaluated, but you can certainly use it earlier in your pipelines if you want to.
 
 <?#/ Raw ?><?!/ Raw ?>

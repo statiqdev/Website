@@ -138,6 +138,10 @@ code {
     margin: 0;
 }
 
+pre code {
+    padding: 0;
+}
+
 code, code[class*="language-"], pre[class*="language-"] {
     background-color: $gray-200;
     text-shadow: none;
@@ -188,6 +192,22 @@ code, code[class*="language-"], pre[class*="language-"] {
     margin-left: -($font-size-base * 0.75);
 }
 
+#content {
+    ul:not([class]), ul[class=""] {
+        li {
+            padding-top: $spacer * .25;
+            padding-bottom: $spacer * .25;
+        }
+    }
+
+    &.p-4 > pre[class*="language-"] {
+        margin-left: -$spacer * 1.5;
+        margin-right: -$spacer * 1.5;
+        padding-left: $spacer * 1.5;
+        padding-right: $spacer * 1.5;
+    }
+}
+
 #footer {
     background-color: $gray-900;
 }
@@ -223,16 +243,33 @@ $sections: map-merge(
             background: darken($color, 20%) linear-gradient(180deg, darken($color, 20%), darken($color, 10%)) repeat-x !important;
 
             @if $section == 'undefined' {
-                .section {
+                .breadcrumbs {
                     display: none;
                     visibility: hidden;
                 }
             } @else {
-                .section {
-                    color: darken($color, 5%);
+                .breadcrumbs {
+                    color: darken($color, 12%);
                     font-size: $h6-font-size;
                     display: block;
                     visibility: visible;
+
+                    span::after {
+                        content: "\25B8";
+                        margin-left: $spacer * 0.5;
+                        margin-right: $spacer * 0.5;
+                        font-size: $font-size-lg;
+                    }
+
+                    & a {
+                        &, &:focus, &:active {
+                            color: darken($color, 5%);
+                        }
+                
+                        &:hover {
+                            color: $color;
+                        }
+                    }
                 }
             }
 

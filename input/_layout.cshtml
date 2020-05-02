@@ -99,7 +99,16 @@
                                 }
                                 <div class="@titleBarClasses offset-lg-2 col-12 col-lg-8 px-3 px-lg-0 w-100 d-flex align-items-end">
                                     <div class="flex-grow-1">
-                                        <div class="section text-uppercase">@(section)</div>
+                                        <div class="breadcrumbs text-uppercase d-flex flex-column-reverse flex-md-row-reverse justify-content-md-end">
+                                            @{
+                                                IDocument parent = Document.GetParent(Inputs) ?? Document;
+                                                while (parent != null)
+                                                {
+                                                    <span>@Html.DocumentLink(parent, parent.GetString(SiteKeys.BreadcrumbTitle, parent.GetTitle()))</span>
+                                                    parent = parent.GetParent(Inputs);
+                                                }
+                                            }
+                                        </div>
                                         <div class="text-white m-0 title">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</div>
                                         @if (IsSectionDefined(SectionNames.Subtitle))
                                         {
@@ -142,7 +151,7 @@
                 <div class="flex-grow-1 d-flex flex-column">
                     @if (Document.GetBool(SiteKeys.NoContainer))
                     {
-                        <div class="bg-white">
+                        <div id="content" class="bg-white">
                             @RenderBody()
                         </div>
                     }
@@ -160,7 +169,7 @@
                                             IgnoreSection(SectionNames.Sidebar);
                                         }
 
-                                        <div class="offset-lg-2 col-12 col-lg-8 p-4 pt-md-0 bg-white">
+                                        <div id="content" class="offset-lg-2 col-12 col-lg-8 p-4 pt-md-0 bg-white">
                                             @RenderBody()
                                         </div>
                                     }
@@ -211,7 +220,7 @@
                                                 }
                                             </div>
                                         </div>
-                                        <div class="col-md-9 col-lg-8 p-4 pt-md-0 bg-white">
+                                        <div id="content" class="col-md-9 col-lg-8 p-4 pt-md-0 bg-white">
                                             @RenderBody()
 
                                             @if (!Document.GetBool(SiteKeys.NoChildPages) && Document.HasChildren())

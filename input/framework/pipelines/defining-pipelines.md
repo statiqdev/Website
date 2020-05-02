@@ -9,7 +9,6 @@ Most pipeline configuration happens in the pipeline’s constructor by editing p
 Two properties can be used to specify dependency data of the pipeline:
 
 - `Dependencies` is a `HashSet<string>` that contains the names of pipelines that the current one depends on. In other words, any pipeline name in the `Dependencies` collection will be executed before the current pipeline is executed. If the current pipeline is specified as the only executing pipeline (for example, on the [command line](xref:command-line-interface)) then it’s dependencies (and their dependencies) will also be executed.
-
 - `DependencyOf` is a `HashSet<string>` that defines pipelines that this pipeline is a dependent of. In other words, it’s the opposite of the `Dependencies` collection and indicates the current pipeline should be executed before those specified in the `DependencyOf` collection. This property is particularly valuable when you’re trying to add behavior before pre-configured pipelines such as in [Statiq Web](/web).
 
 # Other Settings
@@ -17,9 +16,7 @@ Two properties can be used to specify dependency data of the pipeline:
 In addition to specifying dependencies, other settings can be configured from the pipeline constructor:
 
 - `Isolated` is a `bool` that indicates if the pipeline is an [isolated pipeline](xref:pipelines-and-modules#isolated). This means that it will be executed independent of any other pipelines.
-
 - `Deployment` is a `bool` that indicates if the pipeline is a [deployment pipeline](xref:pipelines-and-modules#deployment) and should be executed when using the deployment command.
-
 - `ExecutionPolicy` specifies the particular [execution policy](xref:pipelines-and-modules#execution-policy) the pipeline should use.
 
 # Adding Modules
@@ -27,11 +24,8 @@ In addition to specifying dependencies, other settings can be configured from th
 Modules can be added to the pipeline through four `ModuleList` properties (which are essentially `IList<IModule>`) corresponding to the different [pipeline phases](xref:pipelines-and-modules#phases):
 
 - `InputModules`
-
 - `ProcessModules`
-
 - `PostProcessModules`
-
 - `OutputModules`
 
 You can either add modules individually (the properties are initialized with an empty list) or create a new `ModuleList` and set the property to that. Note that modules are added as instances, so adding a `ReadFiles` module to the input phase of a pipeline might look like:
@@ -57,4 +51,4 @@ If the pipeline is [added by type](xref:adding-pipelines), any services that wer
 
 # Adding Pipelines
 
-You can add pipelines to an [`Engine`](xref:engine) directly using it's `Pipelines` property, but the easiest way to add and manipulate pipelines is [through the `Bootstrapper`](xref:adding-pipelines).
+You can add pipelines to an [engine](xref:engine) directly using it's `Pipelines` property, but the easiest way to add and manipulate pipelines is [through the bootstrapper](xref:adding-pipelines).

@@ -1,7 +1,7 @@
 Title: Documents and Metadata
 Order: 2
 ---
-A document is a combination of content and metadata as it makes it’s way through the system.
+Documents are the primary unit of information in Statiq and are a combination of content and metadata.
 
 Documents are immutable and once their content is changed or a value is added to their metadata, it can never be removed (though it can be overwritten by a cloned document). Though the documentation often talks about documents being "transformed" or "manipulated" by [modules](xref:pipelines-and-modules), this isn't strictly accurate. Instead modules return a new cloned copy of the document with different content and/or additional metadata, while maintaining all the metadata the original document had.
 
