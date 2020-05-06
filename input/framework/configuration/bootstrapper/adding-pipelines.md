@@ -1,4 +1,4 @@
-Order: 4
+Order: 5
 ---
 By default the [bootstrapper](xref:bootstrapper) will automatically add all pipelines by type in the entry assembly via reflection, but you can also use it to add or define new pipelines.
 

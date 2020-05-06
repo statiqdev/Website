@@ -1,4 +1,4 @@
-Order: 3
+Order: 4
 ---
 Statiq uses a dependency injection container to provide certain services and you can register your own services and use them in your [pipelines and modules](xref:pipelines-and-modules).
 

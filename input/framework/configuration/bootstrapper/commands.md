@@ -1,4 +1,4 @@
-Order: 2
+Order: 3
 ---
 The [command-line commands](xref:command-line-interface) are fully configurable which allows you to extend or replace the behavior of your generator with whatever you want.
 
