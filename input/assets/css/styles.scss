@@ -255,10 +255,15 @@ $sections: map-merge(
                     visibility: visible;
 
                     span::after {
-                        content: "\25B8";
+                        content: "/";
+                        font-weight: $font-weight-bold;
                         margin-left: $spacer * 0.5;
                         margin-right: $spacer * 0.5;
                         font-size: $font-size-lg;
+                    }
+
+                    span:first-child:after {
+                        content: '';
                     }
 
                     & a {
