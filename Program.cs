@@ -16,6 +16,7 @@ namespace Statiqdev
                 .CreateWeb(args)
                 .AddSetting(Keys.Host, "statiq.dev")
                 .AddSetting(Keys.LinksUseHttps, true)
+                .AddSetting(WebKeys.MirrorResources, true)
                 .AddSetting(
                     Keys.DestinationPath,
                     Config.FromDocument((doc, ctx) =>
