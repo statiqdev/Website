@@ -1,6 +1,6 @@
 Order: 1
 ---
-Configurators are classes that can manipulate the [engine](xref:engine), [bootstrapper](xref:bootstrapper), and other items at startup.
+Configurators are classes that can manipulate the [engine](xref:execution#engine), [bootstrapper](xref:bootstrapper), and other items at startup.
 
 Configurators are used internally by the [bootstrapper](xref:bootstrapper) and while you generally won't need to use them directly, you can create your own configurators by implementing `IConfigurator<TConfigurable>` where `TConfigurable` is a type that implements `IConfigurable`. The following types currently implement `IConfigurable`:
 

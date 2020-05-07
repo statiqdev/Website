@@ -2,7 +2,7 @@ Shortcodes are small but powerful macros that can generate content or add metada
 
 <?! Raw ?><?# Raw ?>
 
-Statiq supports several templating engines like Markdown and Razor, but sometimes you need to generate some content regardless of the templating language you're using. Shortcodes are small text macros that can do big things and work across any templating engine. Statiq Framework and [Statiq Web](xref:about-statiq-web) come with several helpful shortcodes and best of all it's very easy to add your own.
+Statiq supports several templating engines like Markdown and Razor, but sometimes you need to generate some content regardless of the templating language you're using. Shortcodes are small text macros that can do big things and work across any templating engine. Statiq Framework and [Statiq Web](xref:web) come with several helpful shortcodes and best of all it's very easy to add your own.
 
 # Using Shortcodes
 
@@ -151,7 +151,7 @@ To write a shortcode as a class, implement `IShortcode`. The shortcode name will
 
 ## Registering Your Shortcodes
 
-Any custom shortcodes will need to be registered with the [engine](xref:engine).
+Any custom shortcodes will need to be registered with the [engine](xref:execution#engine).
 
 This can be done through the [bootstrapper](xref:bootstrapper) using its `AddShortcode<TShortcode>()` extensions. Note that the bootstrapper automatically registers all shortcode types in all referenced assemblies by default so you'll rarely need to manually register shortcodes when using the bootstrapper.
 

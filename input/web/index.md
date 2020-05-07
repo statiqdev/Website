@@ -1,7 +1,12 @@
 ﻿Title: About Statiq Web
 BreadcrumbTitle: Web
+Xref: web
 ---
 Statiq Web is a collection of in-the-box behavior that provides a powerful static site generation capability suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
+
+<div class="alert alert-warning" role="alert">
+  The Statiq Web documentation is being written as quickly as possible. You may currently find placeholder pages which will be completed with content soon.
+</div>
 
 # Quick Start
 
@@ -49,8 +54,8 @@ namespace MySite
 
 ## Step 5: Add Some Content
 
-Start adding content by creating [Markdown](xref:markdown) files in your "input" folder.
+Start adding content by creating [Markdown](xref:web-markdown) files in your "input" folder.
 
 <div class="alert alert-info" role="alert">
-  <strong>More coming soon!</strong> Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.
+  <strong>More features coming soon!</strong> Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.
 </div>

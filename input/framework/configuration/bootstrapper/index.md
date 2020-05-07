@@ -1,6 +1,6 @@
 Order: 1
 ---
-The bootstrapper is the easiest way to configure an [engine](xref:engine), add [pipelines and modules](xref:pipelines-and-modules) to it, and process [command-line arguments](xref:command-line-interface).
+The bootstrapper is the easiest way to configure an [engine](xref:execution#engine), add [pipelines and modules](xref:pipelines-and-modules) to it, and process [command-line arguments](xref:command-line-interface).
 
 # Creating A Bootstrapper
 
@@ -23,7 +23,7 @@ namespace MyGenerator
 }
 ```
 
-When using Statiq Framework you can create a bootstrapper with the `.CreateDefault(args)` method on the `Factory`. Other Statiq projects like [Statiq Web](xref:about-statiq-web) often have other factory methods like `.CreateWeb(args)`.
+When using Statiq Framework you can create a bootstrapper with the `.CreateDefault(args)` method on the `Factory`. Other Statiq projects like [Statiq Web](xref:web) often have other factory methods like `.CreateWeb(args)`.
 
 The bootstrapper exposes a fluent API very similar to how ASP.NET Core and other modern .NET projects are provisioned.
 
@@ -46,6 +46,6 @@ The default behavior of the bootstrapper is controlled by `DefaultFeatures` flag
 - `BuildCommands`: Adds the default `pipelines` and `deploy` [commands](xref:commands) as well as all `ICommand` implementations.
 - `CustomCommands`: Adds all `ICommand` implementations without also adding the `pipelines` and `deploy` [commands](xref:commands).
 - `Shortcodes`: Adds all [shortcodes](xref:shortcodes).
-- `Namespaces`: Adds all namespaces from all referenced assemblies to the `Namespaces` collection in the [engine](xref:engine).
+- `Namespaces`: Adds all namespaces from all referenced assemblies to the `Namespaces` collection in the [engine](xref:execution#engine).
 - `Pipelines`: Adds all [pipelines](xref:pipelines-and-modules) in the entry assembly.
 - `All`: Configures all default features.

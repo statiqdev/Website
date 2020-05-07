@@ -1,5 +1,3 @@
-﻿Xref: 
----
-Coming Soon
+﻿Coming Soon
 
-<!-- TODO: Link to the front-matter page in framework -->
+<!-- TODO: Link (or redirect?) to the front-matter page in framework -->

@@ -14,7 +14,7 @@ There are a few different ways you can generate links:
 
 Several [global settings](xref:settings) help control default link generation:
 
-- `Host`: The host to use when generating links.
+- `Host`: The host to use when generating links (for example, "statiq.dev").
 - `LinksUseHttps`: Indicates if generated links should use HTTPS instead of HTTP as the scheme.
 - `LinkRoot`: The default relative root path to use when generating links (for example "/virtual/directory").
 - `LinkHideIndexPages`: Indicates whether to hide index pages by default when generating links.

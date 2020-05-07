@@ -1,5 +1,5 @@
 Title: Documents and Metadata
-Order: 2
+Order: 3
 ---
 Documents are the primary unit of information in Statiq and are a combination of content and metadata.
 
