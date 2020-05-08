@@ -36,6 +36,7 @@ Creating a [bootstrapper](xref:bootstrapper) for Statiq Web initializes everythi
 
 ```csharp
 using System;
+using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Web;
 
