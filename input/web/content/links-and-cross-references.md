@@ -9,13 +9,13 @@ Given a document you can generate a relative link to it using the [`GetLink()` e
 A [Razor](xref:web-razor) [HTML helper](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.htmlhelper) called `DocumentLink()` is also available that will create an entire link element:
 
 ```txt
-@@Html.DocumentLink(document);
+@Html.DocumentLink(document);
 ```
 
 A number of overloads exist to control things like link text:
 
 ```txt
-@@Html.DocumentLink(document, "My Link");
+@Html.DocumentLink(document, "My Link");
 ```
 
 # Cross References
