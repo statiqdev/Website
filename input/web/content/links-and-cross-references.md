@@ -3,7 +3,7 @@ Statiq Web provides a number of ways to link to documents.
 Given a document you can generate a relative link to it using the [`GetLink()` extension methods](xref:linking-to-documents) (for example, in a [Razor](xref:web-razor) template):
 
 ```html
-<a href="@@document.GetLink()">My Link</a>
+<a href="@document.GetLink()">My Link</a>
 ```
 
 A [Razor](xref:web-razor) [HTML helper](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.htmlhelper) called `DocumentLink()` is also available that will create an entire link element:
