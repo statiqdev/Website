@@ -22,7 +22,7 @@ Settings that you can use to control Statiq Framework include:
 
 Settings keys are just strings, but most built-in settings are also defined as string constants in the `Keys` class.
 
-As with any other metadata, setting values can be [computed values](xref:metadata-values#computed-values) or [configuration delegates](xref:configuration-delegate) and their value will be evaluated at run-time.
+As with any other metadata, setting values can be [computed values](xref:metadata-values#computed-values) or [configuration delegates](xref:configuration-delegates) and their value will be evaluated at run-time.
 
 # Cascade To Documents
 

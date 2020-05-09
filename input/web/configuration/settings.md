@@ -39,4 +39,4 @@ namespace MySite
 }
 ```
 
-As with any other metadata, setting values can be [computed values](xref:metadata-values#computed-values) or [configuration delegates](xref:configuration-delegate) and their value will be evaluated at run-time.
+As with any other metadata, setting values can be [computed values](xref:metadata-values#computed-values) or [configuration delegates](xref:configuration-delegates) and their value will be evaluated at run-time.
