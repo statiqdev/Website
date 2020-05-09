@@ -22,6 +22,8 @@ Settings that you can use to control Statiq Framework include:
 
 Settings keys are just strings, but most built-in settings are also defined as string constants in the `Keys` class.
 
+As with any other metadata, setting values can be [computed values](xref:metadata-values#computed-values) or [configuration delegates](xref:configuration-delegate) and their value will be evaluated at run-time.
+
 # Cascade To Documents
 
 All settings "cascade" to [documents](xref:documents-and-metadata). That means that any value defined in [configuration files](#configuration-files), [environment variables](#environment-variables), etc. is also available as document metadata unless otherwise overwritten by the document. This include settings that would conventionally be set just at a document level (for example, a page title). This feature can be very useful for situations when you want all documents to have a particular default value for a setting or when you want to use a common [computed value](xref:metadata-values#computed-values) to define a script to use to calculate a different value for each document.

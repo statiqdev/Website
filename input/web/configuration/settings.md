@@ -14,3 +14,29 @@ The following global settings are available:
 - `ValidateLinksAsError`: Indicates that link validation failures should be treated as errors and fail the build.
 
 Settings keys are just strings, but most built-in settings are also defined as string constants in the `WebKeys` class.
+
+You can change settings using the [bootstrapper](xref:specifying-settings):
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Statiq.App;
+using Statiq.Web;
+
+namespace MySite
+{
+  public class Program
+  {
+    public static async Task<int> Main(string[] args) =>
+      await Bootstrapper
+        .Factory
+        .CreateWeb(args)
+        .AddSetting(
+          WebKeys.ValidateAbsoluteLinks,
+          true)
+        .RunAsync();
+  }
+}
+```
+
+As with any other metadata, setting values can be [computed values](xref:metadata-values#computed-values) or [configuration delegates](xref:configuration-delegate) and their value will be evaluated at run-time.

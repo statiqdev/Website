@@ -34,7 +34,7 @@ The script also a number of predefined global properties available to it (see th
 
 In addition, all metadata values of the current document are exposed as properties in the script. For example, if a document has a metadata item with a key of "MyItem", a global property `MyItem` will be available to the script.
 
-# Config Metadata
+# Configuration Delegates
 
 Another way of accessing the current [document](xref:documents-and-metadata) or [execution context](xref:execution#execution-context) while computing a lazy metadata value is to use a [configuration delegate](xref:configuration-delegates). When an instance of `IConfig` is added as a metadata value, it will be evaluated on every request for that value.
 

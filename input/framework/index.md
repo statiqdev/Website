@@ -1,4 +1,4 @@
-﻿Title: About Statiq Framework
+Title: About Statiq Framework
 BreadcrumbTitle: Framework
 Xref: framework
 ---
@@ -32,6 +32,7 @@ There are several ways to create and configure an [engine](xref:execution#engine
 
 ```csharp
 using System;
+using System.Threading.Tasks;
 using Statiq.App;
 
 namespace MyGenerator

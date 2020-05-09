@@ -2,7 +2,6 @@ Order: 2
 ---
 Statiq Web has a variety of ways of reading, writing, and working with different kinds of content.
 
-
 Content files should be placed in the `input` folder (or a sub-folder) and are processed based on their media type (which is determined by file extension). The following extensions are recognized by default:
 
 - `.html` processes the file as plain HTML.

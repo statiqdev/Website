@@ -10,6 +10,7 @@ For example, this creates a bootstrapper without adding pipelines from the entry
 
 ```csharp
 using System;
+using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Web;
 

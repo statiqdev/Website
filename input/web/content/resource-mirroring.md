@@ -4,6 +4,7 @@ To enable this feature, set the `MirrorResources` setting to `true` (like most [
 
 ```csharp
 using System;
+using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Web;
 
