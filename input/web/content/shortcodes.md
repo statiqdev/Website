@@ -8,7 +8,7 @@ Statiq supports several templating engines like Markdown and Razor, but sometime
 
 Statiq Web comes with several web-specific shortcodes.
 
-## `Embed` And oEmbed Support
+## Embed And oEmbed Support
 
 [oEmbed is a format](https://oembed.com) for fetching the embedded representation of third-party content The `Embed` shortcode provides general-purpose oEmbed support by calling an oEmbed endpoint and rendering the embedded content:
 
@@ -24,7 +24,7 @@ The `Embed` shortcode accepts the following arguments:
 
 [Many sites](https://oembed.com/#section7) have implemented oEmbed support and some site-specific shortcodes for some of them are also available:
 
-### `Giphy`
+### Giphy
 
 Embeds a gif from Giphy:
 
@@ -34,7 +34,7 @@ Embeds a gif from Giphy:
 
 The only argument is the ID of the gif which can be obtained from it's URL: the ID for the URL https://giphy.com/gifs/excited-birthday-yeah-yoJC2GnSClbPOkV0eA is `excited-birthday-yeah-yoJC2GnSClbPOkV0eA`.
 
-### `Gist`
+### Gist
 
 Embeds a gist from GitHub:
 
@@ -48,7 +48,7 @@ This shortcode accepts the following arguments:
 - `Username`: Contains the username the gist belongs to (optional).
 - `File`: Specifies the file within the gist to embed (optional).
 
-### `Twitter`
+### Twitter
 
 Embeds a Tweet from Twitter:
 
@@ -64,7 +64,7 @@ This shortcode accepts the following arguments:
 - `Theme`: Optionally "light" or "dark". When set to "dark", the Tweet is displayed with light text over a dark background.
 - `OmitScript`: When set to `true`, the `<script>` element that contains the Twitter embed JavaScript code will not be rendered (for example, if you're including it at the top of the page).
 
-### `YouTube`
+### YouTube
 
 Embeds a video from YouTube:
 
@@ -76,7 +76,7 @@ The only argument is the ID of the video to embed.
 
 ## Other Shortcodes
 
-### `Link`
+### Link
 
 Renders a link from the given path, using default settings or specifying overrides as appropriate:
 
@@ -96,7 +96,7 @@ This shortcode accepts the following arguments:
 - `HideExtensions`: If set to `true`, extensions will be hidden.
 - `Lowercase`: If set to `true`, links will be rendered in all lowercase.
 
-### `Figure`
+### Figure
 
 Generates HTML5 `<figure>` elements:
 
@@ -126,7 +126,7 @@ This shortcode accepts the following arguments:
 - `Height`: The `height` attribute of the image.
 - `Width`: The `width` attribute of the image.
 
-### `Table`
+### Table
 
 Renders an HTML table. The content of the shortcode contains the table with each row on a new line and each column separated by new lines. Enclose columns in quotes if they contain a space. Note that since the content of a shortcode may get processed by template engines like Markdown and the content of this shortcode should not be, you probably want to wrap the shortcode content in the special XML processing instruction that will get trimmed like `<?* ... ?>` so it "passes through" any template engines (see example below).
 
