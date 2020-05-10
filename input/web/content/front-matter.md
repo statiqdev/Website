@@ -1,3 +1,5 @@
+Title: Front Matter
+---
 Front matter is a common concept in static generators that lets you define metadata for a file in a file header.
 
 A file that contains front matter might look like this:
