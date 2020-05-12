@@ -2,7 +2,7 @@
 BreadcrumbTitle: Web
 Xref: web
 ---
-Statiq Web is a collection of in-the-box behavior that provides a powerful static site generation capability suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
+Statiq Web is a powerful static web site generation toolkit suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
 
 <div class="alert alert-warning" role="alert">
   The Statiq Web documentation is being written as quickly as possible. You may currently find placeholder pages which will be completed with content soon.
