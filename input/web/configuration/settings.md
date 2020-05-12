@@ -21,6 +21,7 @@ You can change settings using the [bootstrapper](xref:specifying-settings):
 using System;
 using System.Threading.Tasks;
 using Statiq.App;
+using Statiq.Common;
 using Statiq.Web;
 
 namespace MySite
