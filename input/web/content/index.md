@@ -5,8 +5,8 @@ Statiq Web has a variety of ways of reading, writing, and working with different
 Content files should be placed in the `input` folder (or a sub-folder) and are processed based on their media type (which is determined by file extension). The following extensions are recognized by default:
 
 - `.html` processes the file as plain HTML.
-- `.md` processes the file as [Markdown](xref:web-markdown).
-- `.cshtml` processes the file as [Razor](xref:web-razor).
+- `.md` processes the file as [Markdown](xref:template-languages#markdown).
+- `.cshtml` processes the file as [Razor](xref:template-languages#razor).
 
 The `ContentFiles` [setting](xref:web-settings) controls how content files are located and is set to `**/{!_,}*.{html,cshtml,md}` by default.
 

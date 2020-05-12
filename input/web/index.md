@@ -55,7 +55,7 @@ namespace MySite
 
 ## Step 5: Add Some Content
 
-Start adding content by creating [Markdown](xref:web-markdown) files in your "input" folder.
+Start adding content by creating [Markdown](xref:template-languages#markdown) files in your "input" folder.
 
 <div class="alert alert-info" role="alert">
   <strong>More features coming soon!</strong> Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.
