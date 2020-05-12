@@ -18,6 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
+        <script src="https://cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
         
 		@RenderSection(SectionNames.Head, false)
 
@@ -287,6 +288,8 @@
         </div>
         <script>
             $(document).ready(function() {
+                quicklink.listen();
+                
                 mermaid.initialize(
                 {
                     flowchart:
