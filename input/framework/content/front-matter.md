@@ -1,3 +1,5 @@
+Title: Front Matter
+---
 Front matter is a common concept in static generators that lets you define metadata for a file in a file header.
 
 Typically, front matter is placed at the top of an input file and uses some sort of format (like YAML or JSON) to define key/value pairs. In Statiq, front matter can be extracted using the `ExtractFrontMatter` module. That module accepts child modules that process whatever content is contained in the front matter block, such as YAML or JSON.
