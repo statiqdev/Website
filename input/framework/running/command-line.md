@@ -1,11 +1,7 @@
 Title: Command-Line Interface
 Order: 1
 ---
-Statiq provides a number of default commands and arguments to execute and control your pipeline execution.
-
-You can run your Statiq application directly using [`dotnet run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run) but you need to [delimit arguments for your Statiq application](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options) with a `--` between the `dotnet run` command and the arguments you want to pass to your Statiq application. Anything after the `--` will be passed to Statiq.
-
-In general, calling `dotnet run` will compile your application, run the default pipelines, and generate output.
+Statiq provides a number of default commands and arguments to control execution.
 
 # Getting Help
 
@@ -15,7 +11,7 @@ You can view help for any command with the `--help` option:
 dotnet run -- --help
 
 USAGE:
-    DotnetFoundationWeb.dll [pipelines] [OPTIONS]
+    MyGenerator.dll [pipelines] [OPTIONS]
 
 ARGUMENTS:
     [pipelines]    The pipeline(s) to execute

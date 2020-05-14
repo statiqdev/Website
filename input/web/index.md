@@ -71,7 +71,7 @@ If you use a different input folder or have added input folders, add those as we
 
 ## Step 5: Create a Bootstrapper
 
-Creating a [bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites.
+Creating a [bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites. Add the following code in your `Program.cs` file:
 
 ```csharp
 using System;

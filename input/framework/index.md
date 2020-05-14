@@ -67,7 +67,7 @@ If you use a different input folder or have added input folders, add those as we
 
 ## Step 5: Create a Bootstrapper
 
-There are several ways to create and configure an [engine](xref:execution#engine), but by far the easiest is to use the [bootstrapper](xref:bootstrapper):
+There are several ways to create and configure an [engine](xref:execution#engine), but by far the easiest is to use the [bootstrapper](xref:bootstrapper). Add the following code in your `Program.cs` file:
 
 ```csharp
 using System;
