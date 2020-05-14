@@ -7,7 +7,7 @@ Once [pipelines and modules](xref:pipelines-and-modules) are defined and you’v
 
 You can run your Statiq application directly using [`dotnet run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run) but you need to [delimit arguments for your Statiq application](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options) with a `--` between the `dotnet run` command and the arguments you want to pass to your Statiq application. Anything after the `--` will be passed to Statiq.
 
-In general, calling `dotnet run` will compile your application, run the default pipelines, and generate output. Statiq Framework includes [a variety of commands and arguments](xref:command-line) you can use to control execution.
+In general, calling `dotnet run` will compile your application, run the default pipelines, and generate output. Statiq Framework includes [a variety of commands and arguments](xref:command-line-interface) you can use to control execution.
 
 # dotnet publish
 
