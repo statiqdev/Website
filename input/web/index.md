@@ -1,4 +1,4 @@
-﻿Title: About Statiq Web
+Title: About Statiq Web
 BreadcrumbTitle: Web
 Xref: web
 ---
@@ -11,6 +11,8 @@ Statiq Web is a powerful static web site generation toolkit suitable for most us
 # Quick Start
 
 The easiest way to get started with Statiq Web is to install the [Statiq.Web](https://www.nuget.org/packages/Statiq.Web) package into a .NET Core console application and use the [bootstrapper](xref:bootstrapper) to configure everything.
+
+There's no `statiq.exe`. Unlike other static generators which ship as a self-contained executable, Statiq is a framework and as such it runs from within your own console application. This provides the greatest flexibility and extensibility and is one of the unique aspects of using Statiq.
 
 ## Step 1: Install .NET Core
 
@@ -30,7 +32,42 @@ dotnet new console -o MySite
 dotnet add package Statiq.Web
 ```
 
-## Step 4: Create a Bootstrapper
+## Step 4: Edit The Project File
+
+This step is optional but is helpful to prevent certain kinds of problems later. Open the project file that was created in the previous step (for example, `MyGenerator.csproj`). Add the following to the `<PropertyGroup>` at the top:
+
+```xml
+<PropertyGroup>
+  <OutputType>Exe</OutputType>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+  <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+  <DefaultItemExcludes>$(DefaultItemExcludes);output\**</DefaultItemExcludes>
+</PropertyGroup>
+```
+
+The `<RunWorkingDirectory>` will ensure the working directory is equivalent to the project directory so if you run your console application from a different location it can still find the correct root and input folders.
+
+The `<DefaultItemExcludes>` will help exclude the files generated in the `output` folder from the application compilation.
+
+Also add the following `<ItemGroup>` elements to the file:
+
+```xml
+<ItemGroup>
+  <Compile Remove="input\**" />
+</ItemGroup>
+
+<ItemGroup>
+  <None Include="input\**">
+    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+```
+
+This will ensure files in the `input` directory don't get compiled or copied to the output folder. The reason we don't add the `input` folder to the `<DefaultItemExcludes>` above is because unlike the `output` folder, we want the `input` folder to show up in the Visual Studio file tree so we can edit input files.
+
+If you use a different input folder or have added input folders, add those as well.
+
+## Step 5: Create a Bootstrapper
 
 Creating a [bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites.
 
@@ -53,7 +90,7 @@ namespace MySite
 }
 ```
 
-## Step 5: Add Some Content
+## Step 6: Add Some Content
 
 Start adding content by creating [Markdown](xref:template-languages#markdown) files in your "input" folder.
 
