@@ -29,8 +29,10 @@ dotnet new console -o MySite
 ## Step 3: Install Statiq.Web
 
 ```csharp
-dotnet add package Statiq.Web
+dotnet add package Statiq.Web --version 1.0.0-alpha.12
 ```
+
+Use whatever is the [most recent version of Statiq.Web](https://www.nuget.org/packages/Statiq.Web). The `--version` flag is needed while the package is pre-release.
 
 ## Step 4: Edit The Project File
 
