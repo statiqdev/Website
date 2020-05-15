@@ -20,10 +20,13 @@ namespace Statiqdev
 
             InputModules = new ModuleList
             {
-                new ReadGitHub(async (ctx, github) =>
-                    (await Projects.ToAsyncEnumerable().SelectManyAwait(x => GetReleaseNotesAsync(github, x)).ToArrayAsync())
-                        .ToDocuments(sourceFunc: x => ctx.FileSystem.RootPath / ctx.FileSystem.InputPaths[0] / $"blog/posts/{x.Project}-{x.Name}.md", null))
-                    .WithCredentials(Config.FromSetting<string>("GITHUB_TOKEN"))
+                new ExecuteIf("GITHUB_TOKEN")
+                {
+                    new ReadGitHub(async (ctx, github) =>
+                        (await Projects.ToAsyncEnumerable().SelectManyAwait(x => GetReleaseNotesAsync(github, x)).ToArrayAsync())
+                            .ToDocuments(sourceFunc: x => ctx.FileSystem.RootPath / ctx.FileSystem.InputPaths[0] / $"blog/posts/{x.Project}-{x.Name}.md", null))
+                        .WithCredentials(Config.FromSetting<string>("GITHUB_TOKEN"))
+                }
             };
 
             ProcessModules = new ModuleList
