@@ -11,6 +11,8 @@ Regardless of format the data files are parsed and the data in them is added as 
 
 The `DataFiles` [setting](xref:web-settings) controls how data files are located and is set to `**/{!_,}*.{json,yaml,yml}` by default.
 
+Like [content files](xref:web-content), data files support [directory metadata](xref:web-directory-metadata) files, [sidecar](xref:web-sidecar-files) files, and [front matter](xref:web-front-matter). 
+
 # Accessing Data Files
 
 Data files are processed by the `Data` pipeline and can be accessed through the `Outputs` property of the [execution context](xref:execution-context) (which is also available directly in some templating languages like [Razor](xref:template-languages#razor).
@@ -25,3 +27,12 @@ IDocument[] fruits = Outputs["Data"]
   .FilterSources("food/fruit/*")
   .ToArray();
 ```
+
+# Outputting Data Files
+
+By default data files are not output. You may want to adjust this behavior for individual data files or entire directories. This behavior can be controlled with the `ShouldOutput` metadata and there are a few ways to set it:
+
+- Set `ShouldOutput` to `true` directly in the data file. This will result in the `ShouldOutput` value being present in the output file, but that's not always a problem.
+- Set `ShouldOutput` to `true` for an individual file, and entire directory, or an entire directory tree in a [directory metadata](xref:web-directory-metadata) file.
+- Set `ShouldOutput` to `true` in a [sidecar](xref:web-sidecar-files) file.
+- Set `ShouldOutput` to `true` in [front matter](xref:web-front-matter).
