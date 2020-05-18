@@ -1,4 +1,4 @@
-Order: 3
+Order: 2
 ---
 In addition to [content](xref:web-content), Statiq Web has rich support for data files.
 
@@ -9,9 +9,7 @@ Data files should be placed in the `input` folder (or a sub-folder) alongside co
 
 Regardless of format the data files are parsed and the data in them is added as [metadata](xref:documents-and-metadata#about-metadata) to the resulting documents.
 
-The `DataFiles` [setting](xref:web-settings) controls how data files are located and is set to `**/{!_,}*.{json,yaml,yml}` by default.
-
-Like [content files](xref:web-content), data files support [directory metadata](xref:web-directory-metadata) files, [sidecar](xref:web-sidecar-files) files, and [front matter](xref:web-front-matter). 
+The `DataFiles` [setting](xref:web-settings) controls how data files are located and is set to `**/{!_,}*.{json,yaml,yml}` by default. This loads all `.json`, `.yaml`, and `.yml` files in any input directory unless it starts with an underscore `_`.
 
 # Accessing Data Files
 

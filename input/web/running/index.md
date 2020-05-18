@@ -1,6 +1,6 @@
 Order: 6
 ---
-Once you've added some [content](xref:web-content) and/or [data](xref:web-data), you can run your generator application.
+Once you've added some [content and/or data](xref:web-content-and-data), you can run your generator application.
 
 # dotnet run
 

@@ -1,4 +1,4 @@
-Title: Enumerating Values
+Order: 6
 ---
 Statiq Web has a nifty feature where you can declare a sequence of values to be enumerated within the [front matter](xref:web-front-matter) of a file and it will create additional documents for each of the values.
 

@@ -1,3 +1,5 @@
+Order: 1
+---
 Directory metadata allows you to specify metadata that applies to all files in a given directory (and optionally all subdirectories).
 
 By default, directory metadata files are named `_directory.*` where the extension is one of the supported data formats like `.json`, `.yaml`, or `.yml`. The file name(s) and applicable paths can be controlled by the `DirectoryMetadataFiles` [setting](xref:web-settings). The default value is `**/_{d,D}irectory.{json,yaml,yml}`.

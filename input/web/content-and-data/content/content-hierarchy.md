@@ -6,7 +6,7 @@ Documents with a name of `index.*` are considered to be the parent of other docu
 
 # Navigating The Tree
 
-A number of `IDocument` extension methods exist to help navigate the document hiearchy:
+A number of `IDocument` extension methods exist to help navigate the document hierarchy:
 
 - `GetParent()`: Gets the parent document of a given document.
 - `HasChildren()`: Returns if the document has any child documents.
@@ -22,4 +22,4 @@ IDocument result = Outputs["Content"]["first/second/third.html"];
 
 # Flattening
 
-There are many times when instead of a hiearchy you'd rather have a flat collection of documents. Calling `Flatten()` on a collection of documents will collapse the entire tree into a flat sequence. Note that each document will still contain it's children, it's just that they'll all be part of the result sequence.
+There are many times when instead of a hierarchy you'd rather have a flat collection of documents. Calling `Flatten()` on a collection of documents will collapse the entire tree into a flat sequence. Note that each document will still contain it's children, it's just that they'll all be part of the result sequence.

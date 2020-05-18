@@ -1,3 +1,5 @@
+Order: 7
+---
 Archives are one of the most powerful features of Statiq Web and allow you to group and page content.
 
 An archive is defined as a normal [template](xref:web-templates) that contains special metadata. When Statiq Web sees the metadata below it will process the file as an archive and produce the archive outputs. Archives are processed in the `Archive` [pipeline](xref:pipelines-and-modules).

@@ -26,7 +26,7 @@ As with any other metadata, setting values can be [computed values](xref:metadat
 
 # Cascade To Documents
 
-All settings "cascade" to [documents](xref:documents-and-metadata). That means that any value defined in [configuration files](#configuration-files), [environment variables](#environment-variables), etc. is also available as document metadata unless otherwise overwritten by the document. This include settings that would conventionally be set just at a document level (for example, a page title). This feature can be very useful for situations when you want all documents to have a particular default value for a setting or when you want to use a common [computed value](xref:metadata-values#computed-values) to define a script to use to calculate a different value for each document.
+All settings _cascade_ to [documents](xref:documents-and-metadata) (credit to [11ty](https://www.11ty.dev/docs/data-cascade/) for the excellent term). That means that any value defined in [configuration files](#configuration-files), [environment variables](#environment-variables), etc. is also available as document metadata unless otherwise overwritten by the document. This include settings that would conventionally be set just at a document level (for example, a page title). This feature can be very useful for situations when you want all documents to have a particular default value for a setting or when you want to use a common [computed value](xref:metadata-values#computed-values) to define a script to use to calculate a different value for each document.
 
 For example, if you want to set the "Published" key of _every_ document to the date the site was built you can add this to your `appsettings.json` file:
 

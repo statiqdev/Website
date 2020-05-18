@@ -1,3 +1,5 @@
+Order: 8
+---
 Feed files let you define RSS, Atom, and/or RDF feeds for any content or data in your site.
 
 Feed files can be named anything you like and should be one of the supported data formats such as `.json`, `.yaml`, or `.yml`. They are identified by having metadata values for `FeedRss`, `FeedAtom`, and/or `FeedRdf`.

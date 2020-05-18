@@ -1,3 +1,5 @@
+Order: 9
+---
 Documents can be easily excluded from generation, either by removing them entirely or by suppressing their output (but still processing them in the appropriate pipeline).
 
 To hide a document entirely, set the `Excluded` metadata value to `true`. By default, any file with a `Published` metadata value greater than the current date will be automatically excluded.

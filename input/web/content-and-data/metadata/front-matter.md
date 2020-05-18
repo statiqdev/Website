@@ -1,4 +1,4 @@
-Title: Front Matter
+Order: 3
 ---
 Front matter is a common concept in static generators that lets you define metadata for a file in a file header.
 

@@ -1,14 +1,14 @@
-Order: 2
+Order: 1
 ---
-Statiq Web has a variety of ways of reading, writing, and working with different kinds of content.
+Content files contain the pages of your site and are processed based on their media type (which is determined by file extension).
 
-Content files should be placed in the `input` folder (or a sub-folder) and are processed based on their media type (which is determined by file extension). The following extensions are recognized by default:
+The following extensions are recognized by default:
 
 - `.html` processes the file as plain HTML.
 - `.md` processes the file as [Markdown](xref:template-languages#markdown).
 - `.cshtml` processes the file as [Razor](xref:template-languages#razor).
 
-The `ContentFiles` [setting](xref:web-settings) controls how content files are located and is set to `**/{!_,}*.{html,cshtml,md}` by default.
+The `ContentFiles` [setting](xref:web-settings) controls how content files are located and is set to `**/{!_,}*.{html,cshtml,md}` by default. This loads all `.html`, `.cshtml`, and `.md` files in any input directory unless it starts with an underscore `_`.
 
 In all cases, global processing (such as processing [front matter](xref:web-front-matter) and applying [shortcodes](xref:web-shortcodes)) is performed and [layouts](xref:web-templates#layouts) and [themes](xref:web-themes) are applied.
 
