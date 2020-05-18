@@ -13,7 +13,7 @@ Here are the default metadata sources from lowest priority to highest. Think of 
 - [Default Statiq Framework settings](xref:settings).
 - [Default Statiq Web settings](xref:web-settings).
 - [Settings you define via the Bootstrapper](xref:specifying-settings).
-- [Directory metadata](xref:web-directory-metadata).
+- [Directory metadata](xref:web-directory-metadata) (closer to the file have higher priority).
 - [Sidecar files](xref:web-sidecar-files).
 - [Front matter](xref:web-front-matter).
 - Parsed data content (if a [data file](xref:web-data)).
