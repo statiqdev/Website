@@ -76,7 +76,7 @@ An isolated pipeline is one that you know don't need access to output documents 
 
 ## Deployment
 
-Deployment pipelines are special in that they don't execute by default. To execute your deployment pipelines you run Statiq with the `deploy` command. Modules in deployment pipelines can also read document outputs from other pipelines inside their output phase (unlike normal pipelines). In general, modules that deploy final output somewhere (like a web host) are added to the output phase of a deployment pipeline.
+Deployment pipelines are special in that they don't execute by default. To execute your deployment pipelines you run Statiq with the `deploy` command. Modules in deployment pipelines can read document outputs from other pipelines inside their output phase (unlike a normal pipeline). Deployment pipelines are also executed last so that the output phase of other non-deployment pipelines has completed. In general, deployment pipelines contain modules that deploy final output somewhere (like a web host) inside their output phase.
 
 ## Execution Policy
 

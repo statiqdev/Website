@@ -14,6 +14,8 @@ The following global settings are available:
 - `ValidateAbsoluteLinks`: Indicates that absolute links should be validated (may add considerable time to your generation process).
 - `ValidateRelativeLinks`: Indicates that relative links should be validated (the default value is `true`).
 - `ValidateLinksAsError`: Indicates that link validation failures should be treated as errors and fail the build.
+- `MetaRefreshRedirects`: Generates META-REFRESH [redirect pages](xref:web-redirects) (the default value is `true`).
+- `NetlifyRedirects`: Generates a Netlify [redirects file](xref:web-redirects).
 
 Settings keys are just strings, but most built-in settings are also defined as string constants in the `WebKeys` class.
 

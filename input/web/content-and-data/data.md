@@ -13,15 +13,14 @@ The `DataFiles` [setting](xref:web-settings) controls how data files are located
 
 # Accessing Data Files
 
-Data files are processed by the `Data` pipeline and can be accessed through the `Outputs` property of the [execution context](xref:execution-context) (which is also available directly in some templating languages like [Razor](xref:template-languages#razor).
+Data files are processed by the `Data` pipeline and can be accessed through the `Outputs` property of the [execution context](xref:execution-context) (which is also available directly in some templating languages like [Razor](xref:template-languages#razor) as an `Outputs` property).
 
-The resulting data documents are output from the pipeline in a hierarchy, so only documents representing top-level folders are returned from the `Outputs` collection. To flatten the documents and filter for a set of ones you want you'll need to call `.Flatten()` first.
+Unlike [content files](xref:web-content), the resulting data documents are not output from the pipeline in a [hierarchy](xref:web-content-hierarchy) and all documents regardless of depth are part of the collection obtained from the `Outputs` without requiring the use of `.Flatten()`. You can also use `.FilterSources()` and `.FilterDestinations()` extension methods to filter the collection of output documents using a [globbing pattern](xref:files-and-paths#globbing).
 
 For example, the following code will find all documents containing data from YAML files that describe different fruits stored in a `food/fruit` folder under the default `input` folder:
 
 ```csharp
 IDocument[] fruits = Outputs["Data"]
-  .Flatten()
   .FilterSources("food/fruit/*")
   .ToArray();
 ```
