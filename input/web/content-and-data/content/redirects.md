@@ -16,4 +16,6 @@ This is my content.
 
 By default a client-side redirect file using a [`META-REFRESH` header](https://en.wikipedia.org/wiki/Meta_refresh) in an HTML file will be output at the old location(s) pointing to the current output location. To disable the generation of client-side redirect files, set the [setting](xref:web-settings) `MetaRefreshRedirects` to `false`.
 
+# Netlify
+
 You can also create a [Netlify redirect file](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) by [setting](xref:web-settings) `NetlifyRedirects` to `true`.
