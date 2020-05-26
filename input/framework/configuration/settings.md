@@ -44,7 +44,12 @@ Settings can be provided directly to the [engine](xref:execution#engine), but th
 
 ## Configuration Files
 
-As with many other .NET Core applications, Statiq supports the use of an `appsettings.json` file. Additionally, a `statiq.json` file can also be used. Support for both is provisioned by the bootstrapper by default.
+As with many other .NET Core applications, Statiq supports the use of configuiration files with one of the following names:
+
+- `appsettings.json`
+- `statiq.json`
+
+Support for both is provisioned by the bootstrapper by default.
 
 ## Environment Variables
 

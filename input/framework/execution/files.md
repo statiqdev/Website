@@ -23,13 +23,13 @@ Statiq uses multiple input paths that together comprise a virtual aggregated set
 
 Input paths are stored in an ordered list. When checking for files, the paths at the end of the list take precedence over those at the start of the list. For example, if path "A" is at index 0, path "B" is at index 1, and they both have a file named "foo.md", the one from path "B" will be used. Further, all paths are aggregated so searching for files or evaluating [globbing](#globbing) expressions will consider all files and directories in all input paths. In the example above, getting all input files will result in a set of files from both path "A" and path "B" (with files of the same name from path "B" replacing those from path "A").
 
-By default a single input path of "input" is set.
+By default a single input path of `input` is set.
 
 ## Output Path
 
 The output path is where Statiq will place output files by default. Note that many modules have the ability to manually specify an output path, so this behavior can be modified on a module by module basis.
 
-By default the output path is set to "output".
+By default the output path is set to `output`.
 
 # Globbing
 
