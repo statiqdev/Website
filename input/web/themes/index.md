@@ -1,3 +1,5 @@
+Order: 4
+---
 Themes allow you to apply general content, data, layouts, and settings to your own site.
 
 In general, themes are placed in a `theme` folder alongside the `input` folder.
