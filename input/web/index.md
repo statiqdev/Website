@@ -4,10 +4,6 @@ Xref: web
 ---
 Statiq Web is a powerful static web site generation toolkit suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
 
-<div class="alert alert-warning" role="alert">
-  The Statiq Web documentation is being written as quickly as possible. You may currently find placeholder pages which will be completed with content soon.
-</div>
-
 # Quick Start
 
 The easiest way to get started with Statiq Web is to install the [Statiq.Web](https://www.nuget.org/packages/Statiq.Web) package into a .NET Core console application and use the [bootstrapper](xref:bootstrapper) to configure everything.
@@ -95,7 +91,3 @@ namespace MySite
 ## Step 6: Add Some Content
 
 Start adding content by creating [Markdown](xref:template-languages#markdown) files in your "input" folder.
-
-<div class="alert alert-info" role="alert">
-  <strong>More features coming soon!</strong> Statiq Web is still under active feature development and a lot more functionality is coming soon including support for themes.
-</div>
