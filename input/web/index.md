@@ -53,6 +53,6 @@ namespace MySite
 }
 ```
 
-## Step 6: Add Some Content
+## Step 5: Add Some Content
 
 Start adding content by creating [Markdown](xref:template-languages#markdown) files in your "input" folder.

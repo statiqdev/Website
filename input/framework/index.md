@@ -56,7 +56,7 @@ This creates a default `Bootstrapper` instance and passes it the [command-line a
 
 This example is all you need for a minimal, functioning Statiq Framework application. The only problem is that it doesn’t actually do anything. Let’s add one more step and process some Markdown files.
 
-## Step 6: Add a Pipeline and Modules
+## Step 5: Add a Pipeline and Modules
 
 Most functionality in Statiq Framework is provided by [pipelines](xref:pipelines-and-modules) and [modules](xref:about-modules). The [bootstrapper](xref:bootstrapper) has several mechanisms for [adding and defining pipelines](xref:adding-pipelines). For this last step lets add a quick pipeline to read Markdown files, render them, and write them back out to disk using some fluent methods to define a pipeline and add modules to it:
 
