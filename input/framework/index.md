@@ -25,7 +25,7 @@ dotnet new console -o MyGenerator
 ## Step 3: Install Statiq.App
 
 ```csharp
-dotnet add package Statiq.App --version 1.0.0-beta.9
+dotnet add package Statiq.App --version x.y.z
 ```
 
 Use whatever is the [most recent version of Statiq.App](https://www.nuget.org/packages/Statiq.App). The `--version` flag is needed while the package is pre-release.
