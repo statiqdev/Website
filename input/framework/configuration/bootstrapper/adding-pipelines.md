@@ -70,6 +70,7 @@ To complete building the pipeline call `Build()`:
 ```csharp
 using System;
 using Statiq.App;
+using Statiq.Markdown;
 
 namespace MyGenerator
 {
