@@ -75,3 +75,10 @@ Statiq is powerful because it combines a few simple building blocks that can be 
 - The final output of each pipeline is made available to other pipelines and may be written to output files or deployed to hosting services.
 
 <div><img src="/assets/flow.png" class="mw-100"></div>
+
+## Step 6: Run it!
+Let see the Statiq magic happen.
+
+```csharp
+dotnet run
+```
