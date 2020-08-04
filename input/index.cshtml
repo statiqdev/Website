@@ -22,7 +22,7 @@ NoContainer: true
                     <div class="col-sm-4">
                         <h3 class="d-inline text-white">Latest Posts</h3>
                     </div>
-                    @foreach (IDocument post in Outputs[nameof(Archives)]["blog/index.html"].GetChildren().Take(2))
+                    @foreach (IDocument post in Outputs["blog/index.html"].First().GetChildren().Take(2))
                     {
                         <div class="col-sm-4">
                             <div class="text-muted"><small>@post.GetDateTime(WebKeys.Published).ToLongDateString()</small></div>

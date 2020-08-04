@@ -166,7 +166,7 @@
                         <div class="container-xl flex-grow-1 d-flex flex-column">
                             <div class="row flex-grow-1 align-items-stretch">
                                 @{ 
-                                    IDocument root = Outputs[nameof(Content)].FirstOrDefault(x => x.Destination == section + "/index.html");
+                                    IDocument root = Outputs[section + "/index.html"].FirstOrDefault();
 
                                     if (root == null || Document.GetBool(SiteKeys.NoSidebar))
                                     {
@@ -313,7 +313,7 @@
 
                 // Remove the max-width setting that Mermaid sets
                 var mermaidSvg = $('.mermaid svg');
-                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.addClass('img-fluid');
                 mermaidSvg.css('max-width', '');
 
                 // Make it scrollable

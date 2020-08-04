@@ -32,7 +32,7 @@ namespace Statiqdev
                     }))
                 .AddSetting("EditLink", Config.FromDocument((doc, ctx) => "https://github.com/statiqdev/statiqdev.github.io/edit/develop/input/" + doc.Source.GetRelativeInputPath()))
                 .AddSetting(SiteKeys.NoChildPages, Config.FromDocument(doc => doc.Destination.Segments[0].SequenceEqual("blog".AsMemory())))
-                .DeployToGitHubPagesBranch("statiqdev", "statiqdev.github.io", Config.FromSetting<string>("GITHUB_TOKEN"), "master")
+                .DeployToGitHubPagesBranch("statiqdev", "statiqdev.github.io", Config.FromSetting<string>("GITHUB_TOKEN"), "main")
                 .AddPipelines()
                 .RunAsync();
     }

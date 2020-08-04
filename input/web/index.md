@@ -56,3 +56,17 @@ namespace MySite
 ## Step 5: Add Some Content
 
 Start adding content by creating [Markdown](xref:template-languages#markdown) files in your "input" folder.
+
+## Step 6: Run it!
+
+Let the magic happen:
+
+```
+dotnet run
+```
+
+Or run it and [preview the generated site](xref:web-preview-server):
+
+```
+dotnet run -- preview
+```

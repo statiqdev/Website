@@ -1,17 +1,17 @@
 ArchiveSources: "blog/posts/*"
 ArchiveKey: Topic
 ArchiveDestination: >
-  => GetInt("Index") <= 1 ? $"blog/topics/{GroupKey}/index.html" : $"blog/topics/{GroupKey}/{GetInt("Index")}.html"
+  => GetInt("Index") <= 1 ? $"blog/topics/{GetString("GroupKey")}/index.html" : $"blog/topics/{GetString("GroupKey")}/{GetInt("Index")}.html"
 ArchivePageSize: 10
 ArchiveOrderKey: Published
 ArchiveOrderDescending: true
 Title: Topics
-ArchiveTitle: => Outputs["Data"][$"blog/topics/{GroupKey}.yml"]["Title"]
+ArchiveTitle: => Outputs[$"blog/topics/{GetString("GroupKey")}.yml"].First().GetString("Title")
 NoSidebar: => !ContainsKey("GroupKey")
 ---
 @if (Document.ContainsKey(Keys.GroupKey))
 {
-    <p>@(Outputs[nameof(Data)][$"blog/topics/{Document.GetString(Keys.GroupKey)}.yml"].GetString("Description"))</p>
+    <p>@(Outputs[$"blog/topics/{Document.GetString(Keys.GroupKey)}.yml"].First().GetString("Description"))</p>
     @Html.Partial("/_posts.cshtml", Document)
 }
 else
@@ -21,7 +21,7 @@ else
         <div>
             <div class="p-3 mb-2 bg-light page-box">
                 <h4>@Html.DocumentLink(topic)</h4>
-                <p>@(Outputs[nameof(Data)][$"blog/topics/{topic.GetString(Keys.GroupKey)}.yml"].GetString("Description"))</p>
+                <p>@(Outputs[$"blog/topics/{topic.GetString(Keys.GroupKey)}.yml"].First().GetString("Description"))</p>
             </div>
         </div>
     }

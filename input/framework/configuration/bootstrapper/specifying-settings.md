@@ -1,8 +1,8 @@
 Order: 2
 ---
-You can use the bootstrapper to specify [settings](xref:settings), either from various sources like configuration file and environment variables, or by using fluent methods.
+You can use the bootstrapper to specify [settings](xref:settings), either from various sources like [configuration files](xref:settings#configuration-files) and environment variables, or by using fluent methods.
 
-By default, the bootstrapper will add settings from `appsettings.json` and `statiq.json` files as well as all environment variables. This behavior can be controlled via the [bootstrapper default behavior](xref:bootstrapper#default-behavior).
+By default, the bootstrapper will add settings from [a variety of configuration files](xref:settings#configuration-files) as well as all environment variables. This behavior can be controlled via the [bootstrapper default behavior](xref:bootstrapper#default-behavior).
 
 In addition, you can specify settings directly using fluent methods:
 

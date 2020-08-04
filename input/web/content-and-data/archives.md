@@ -33,9 +33,9 @@ The following metadata controls the archive and should be placed in the [front m
 - `ArchiveSources`: A globbing pattern to filter documents from the archive pipeline(s) based on source path (or all documents from the pipeline(s) if not defined).
 - `ArchiveFilter`: An additional metadata filter for documents from the archive pipeline(s) that should return a `bool`.
 - `ArchiveKey`: The key to use for generating archive groups. The source documents will be grouped by the key value(s). If this is not defined, only a single archive index with the source documents will be generated.
+- `ArchiveKeyComparer`: Should return a comparer to be used for comparing archive keys. For example, use `ArchiveKeyComparer: => StringComparer.OrdinalIgnoreCase.ToConvertingEqualityComparer()` to convert the value of archive keys to a string and compare them using a case-insensitive ordinal string comparison.
 - `ArchivePageSize`: The number of items on each group page (or all group items if not defined). The current page index is stored in the `Index` metadata value.
 - `ArchiveTitle`: The title of each group output document. This is usually a [computed value](xref:metadata-values#computed-values) that calculates the title based on the group key. If this value is not specified, the default title will be "[Archive Title] - [Group Key] (Page [Index (If Paged)])".
 - `ArchiveDestination`: The destination path of each group output document. This is usually a [computed value](xref:metadata-values#computed-values) that calculates the destination based on the group key. If this value is not specified, the default group destination will be "[Archive File Path]/[Archive File Name]/[Group Key]/[Index (If Paged)].html". The destination path of the archive index follows normal destination calculation and will be placed at the same relative path as the archive file or can be changed with metadata like `DestinationPath`.
 - `ArchiveOrderKey`: The metadata key that sorting should be based on.
 - `ArchiveOrderDescending`: Indicates the archive should be sorted in descending order.
-

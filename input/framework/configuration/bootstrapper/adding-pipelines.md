@@ -69,6 +69,7 @@ To complete building the pipeline call `Build()`:
 
 ```csharp
 using System;
+using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Markdown;
 

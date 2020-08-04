@@ -7,7 +7,7 @@ The following [settings](xref:web-settings) are used to configure deployment to 
 - `GitHubUsername`: The username to use for deployment.
 - `GitHubPassword`: The password to use for deployment.
 - `GitHubToken`: The token to use for deployment (configure either this _or_ username and password).
-- `GitHubBranch`: The branch to deploy to (defaults to `gh-pages` but you should change this to `master` for organization sites).
+- `GitHubBranch`: The branch to deploy to (defaults to `gh-pages` but you should change this to the configured GitHub Pages branch such as `main` or `master` for organization sites).
 
 It's customary to set one or more of these settings as an environment variable in continuous
 integration environments (particularly secrets like the password). In these scenarios you can either
@@ -71,6 +71,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@master
+      with:
+        submodules: recursive
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.100' # SDK Version to use.

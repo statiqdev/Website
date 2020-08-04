@@ -38,18 +38,36 @@ For example, if you want to set the "Published" key of _every_ document to the d
 
 Note that the setting demonstrated above uses a [computed value](xref:metadata-values#computed-values) to calculate the current `DateTime` at runtime.
 
+## Preventing Settings Cascade
+
+There may be times when you want to get the metadata of a document _without_ the settings cascade. This can be accomplished by calling `WithoutSettings()`:
+
+```csharp
+bool documentDefinesFoo = doc.WithoutSettings().ContainsKey("Foo");
+```
+
 # Specifying Settings With The Bootstrapper
 
 Settings can be provided directly to the [engine](xref:execution#engine), but the easiest and most common way to specify settings is to use a [bootstrapper](xref:bootstrapper).
 
 ## Configuration Files
 
-As with many other .NET Core applications, Statiq supports the use of configuiration files with one of the following names:
+As with many other .NET Core applications, Statiq supports the use of configuration files with one of the following names (by default):
 
+- `settings.json`
+- `settings.yml`
+- `settings.yaml`
+- `settings.xml`
 - `appsettings.json`
+- `appsettings.yml`
+- `appsettings.yaml`
+- `appsettings.xml`
 - `statiq.json`
+- `statiq.yml`
+- `statiq.yaml`
+- `statiq.xml`
 
-Support for both is provisioned by the bootstrapper by default.
+Support for the above configuration files is added by the default [bootstrapper](xref:bootstrapper).
 
 ## Environment Variables
 

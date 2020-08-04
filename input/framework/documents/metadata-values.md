@@ -32,7 +32,11 @@ The script also a number of predefined global properties available to it (see th
 - `Module`: Gets the current executing [module](xref:about-modules).
 - `Inputs`: The collection of input [documents](xref:documents-and-metadata) to the current [module](xref:about-modules).
 
-In addition, all metadata values of the current document are exposed as properties in the script. For example, if a document has a metadata item with a key of "MyItem", a global property `MyItem` will be available to the script.
+In addition, all metadata conversion methods are exposed as global methods. For example, if a document has another metadata value called `Foo` and you wanted to get the `int` value of that in another metadata value you could write something like this in your front matter:
+
+```
+Bar: => GetInt("Foo") + 2
+```
 
 # Configuration Delegates
 

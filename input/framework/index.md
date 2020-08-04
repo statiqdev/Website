@@ -60,6 +60,37 @@ This example is all you need for a minimal, functioning Statiq Framework applica
 
 Most functionality in Statiq Framework is provided by [pipelines](xref:pipelines-and-modules) and [modules](xref:about-modules). The [bootstrapper](xref:bootstrapper) has several mechanisms for [adding and defining pipelines](xref:adding-pipelines). For this last step lets add a quick pipeline to read Markdown files, render them, and write them back out to disk using some fluent methods to define a pipeline and add modules to it:
 
+```csharp
+using System;
+using System.Threading.Tasks;
+using Statiq.App;
+using Statiq.Markdown;
+
+namespace MyGenerator
+{
+  public class Program
+  {
+    public static async Task<int> Main(string[] args) =>
+      await Bootstrapper
+        .Factory
+        .CreateDefault(args)
+        .BuildPipeline("Render Markdown", builder => builder
+            .WithInputReadFiles("*.md")
+            .WithProcessModules(new RenderMarkdown())
+            .WithOutputWriteFiles(".html"))
+        .RunAsync();
+  }
+}
+```
+
+## Step 6: Run it!
+
+Let the magic happen:
+
+```
+dotnet run
+```
+
 # How It Works
 
 Statiq is powerful because it combines a few simple building blocks that can be rearranged and used in limitless combinations. Think of it like LEGO® for static generation.
@@ -74,11 +105,4 @@ Statiq is powerful because it combines a few simple building blocks that can be 
 
 - The final output of each pipeline is made available to other pipelines and may be written to output files or deployed to hosting services.
 
-<div><img src="/assets/flow.png" class="mw-100"></div>
-
-## Step 6: Run it!
-Let see the Statiq magic happen.
-
-```csharp
-dotnet run
-```
+<div><img src="/assets/flow.png" class="img-fluid"></div>

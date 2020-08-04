@@ -5,7 +5,7 @@
 @section Subtitle {
     @if (Document.ContainsKey(WebKeys.Published))
     {
-        IDocument topicDocument = Outputs[nameof(Archives)][$"blog/topics/{Document.GetString("topic")}/index.html"];
+        IDocument topicDocument = Outputs[$"blog/topics/{Document.GetString("topic")}/index.html"].First();
         <div class="text-white-50">
             @Document.GetDateTime(WebKeys.Published).ToLongDateString() in
             <a href="@(topicDocument.GetLink())"><span class="badge badge-dark">@topicDocument.GetTitle()</span></a>
@@ -15,7 +15,8 @@
 
 @section Sidebar {
     <h3>Topics</h3>
-    @foreach (IDocument topic in Outputs[nameof(Archives)]["blog/topics/index.html"]
+    @foreach (IDocument topic in Outputs["blog/topics/index.html"]
+        .First()
         .GetChildren()
         .OrderByDescending(x => x.GetString(Keys.GroupKey)))
     {
