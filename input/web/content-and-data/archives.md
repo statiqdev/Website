@@ -4,7 +4,7 @@ Archives are one of the most powerful features of Statiq Web and allow you to gr
 
 An archive is defined as a normal [template](xref:web-templates) that contains special metadata. When Statiq Web sees the metadata below it will process the file as an archive and produce the archive outputs. Archives are processed in the `Archive` [pipeline](xref:pipelines-and-modules).
 
-There are two types of archive pages that the pipeline can produce from a single archive file: _indexes_ and _groups_. To illustrate the difference, consider a blog where each post contains one or more tags. You probabably want a single _index_ page that lists all the available tags. You probably also want individual _group_ pages for each tag that lists the blog posts containing that tag, and you may want those lists of posts to be paginated and ordered.
+There are two types of archive pages that the pipeline can produce from a single archive file: _indexes_ and _groups_. To illustrate the difference, consider a blog where each post contains one or more tags. You probably want a single _index_ page that lists all the available tags. You probably also want individual _group_ pages for each tag that lists the blog posts containing that tag, and you may want those lists of posts to be paginated and ordered.
 
 A single archive file can produce both types of output documents. The template in the file is used for both, and you can tell whether an index or a group is being rendered by whether or not the document contains the `GroupKey` metadata key which contains the group value. For example, in a Razor archive template you might have the following:
 
@@ -23,7 +23,7 @@ else
 }
 ```
 
-In a group page the value of `GroupKey` contains the group value (for example, the tag) and the child documents (accessable with `Document.GetChildren()`) contains each item (for example, each blog post for the tag).
+In a group page the value of `GroupKey` contains the group value (for example, the tag) and the child documents (accessible with `Document.GetChildren()`) contains each item (for example, each blog post for the tag).
 
 In an index page the child documents contains each of groups (for example, each tag).
 
