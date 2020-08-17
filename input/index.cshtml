@@ -18,13 +18,38 @@ NoContainer: true
     <div class="container-xl py-4">
         <div class="row">
             <div class="offset-lg-2 col-12 col-lg-8">
-                <div class="row d-flex align-items-end">
-                    <div class="col-sm-4">
-                        <h3 class="d-inline text-white">Latest Posts</h3>
+                <div class="row d-flex align-items-end border-bottom border-muted pb-2 mb-2">
+                    <div class="col-sm-3">
+                        <h3 class="d-inline text-white">Latest Releases</h3>
                     </div>
-                    @foreach (IDocument post in Outputs["blog/index.html"].First().GetChildren().Take(2))
+                    @{
+                        IDocument webRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Web").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).First();
+                        IDocument frameworkRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Framework").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).First();
+                    }
+                    <div class="col-sm-3">
+                        <div class="text-muted"><small>Web</small></div>
+                        <div>@Html.DocumentLink(webRelease, webRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="text-muted"><small>Docs</small></div>
+                        <div class="text-muted">Coming Soon</div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="text-muted"><small>Framework</small></div>
+                        <div>@Html.DocumentLink(frameworkRelease, frameworkRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-2 col-12 col-lg-8">
+                <div class="row d-flex align-items-end">
+                    <div class="col-sm-3">
+                        <h3 class="d-inline text-white">Latest News</h3>
+                    </div>
+                    @foreach (IDocument post in Outputs.Get("news/index.html").GetChildren().Take(3))
                     {
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="text-muted"><small>@post.GetDateTime(WebKeys.Published).ToLongDateString()</small></div>
                             <div><a href="@post.GetLink()" class="text-white">@post.GetTitle()</a></div>
                         </div>

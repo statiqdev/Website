@@ -1,0 +1,8 @@
+Host: statiq.dev
+LinksUseHttps: true
+MirrorResources: true
+EditLink: => "https://github.com/statiqdev/statiqdev.github.io/edit/develop/input/" + doc.Source.GetRelativeInputPath()
+GitHubOwner: statiqdev
+GitHubName: statiqdev.github.io
+GitHubToken: => Config.FromSetting<string>("GITHUB_TOKEN")
+GitHubBranch: main

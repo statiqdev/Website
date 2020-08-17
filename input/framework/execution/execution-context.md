@@ -27,7 +27,8 @@ In addition to directly implementing these interfaces, the execution context als
 - `Shortcodes`: A read-only collection of all available [shortcodes](xref:shortcodes).
 - `Namespaces`: Gets a set of namespaces that should be brought into scope for modules that perform dynamic compilation.
 - `MemoryStreamFactory`: Provides pooled memory streams (via the `RecyclableMemoryStream` library).
-- `Outputs`: Gets the collection of outputs from all previously processed [pipelines](xref:pipelines-and-modules).
+- `Outputs`: Gets a collection of outputs from all previously processed [pipelines](xref:pipelines-and-modules).
+- `OutputPages`: Gets a collection of outputs from all previously processed [pipelines](xref:pipelines-and-modules), filtered to just those documents with a destination path ending in one of the configured page extensions (such as ".html" or ".htm").
 - `Services`: Gets the dependency injection service provider (even though this is also exposed directly by the execution context by implementing `IServiceProvider`).
 - `ScriptHelper`: Gets a helper that can compile and evaluate C# scripts.
 - `Pipelines`: Gets a read-only collection of all defined [pipelines](xref:pipelines-and-modules).

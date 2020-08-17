@@ -1,7 +1,7 @@
 ﻿<div>
     @foreach (IDocument post in Document.GetChildren())
     {
-        IDocument topicDocument = Outputs[$"blog/topics/{post.GetString("topic")}/index.html"].First();
+        IDocument topicDocument = OutputPages[$"news/topics/{post.GetString("topic")}/index.html"].First();
         string excerpt = post.GetString(Statiq.Html.HtmlKeys.Excerpt);
         <div>
             <div class="p-3 mb-2 bg-light page-box">
@@ -24,17 +24,17 @@
     }
     @if (older != null || newer != null)
     {
-        <div class="d-flex flex-row justify-content-between">
-            <div>
-                @if (older != null)
-                {
-                    <a class="btn btn-primary" href="@Context.GetLink(older)" role="button">Older</a>
-                }
-            </div>
-            <div>
+        <div>
+            <div class="float-sm-left">
                 @if (newer != null)
                 {
-                    <a class="btn btn-primary" href="@Context.GetLink(newer)" role="button">Newer</a>
+                    <a class="btn btn-primary" href="@Context.GetLink(newer)" role="button"><i class="fas fa-angle-double-left"></i> Newer</a>
+                }
+            </div>
+            <div class="float-sm-right">
+                @if (older != null)
+                {
+                    <a class="btn btn-primary" href="@Context.GetLink(older)" role="button">Older <i class="fas fa-angle-double-right"></i></a>
                 }
             </div>
         </div>

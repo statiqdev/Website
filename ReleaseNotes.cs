@@ -20,11 +20,11 @@ namespace Statiqdev
 
             InputModules = new ModuleList
             {
-                new ExecuteIf("GITHUB_TOKEN")
+                new ExecuteIf(Config.ContainsSettings("GITHUB_TOKEN"))
                 {
                     new ReadGitHub(async (ctx, github) =>
                         (await Projects.ToAsyncEnumerable().SelectManyAwait(x => GetReleaseNotesAsync(github, x)).ToArrayAsync())
-                            .ToDocuments(sourceFunc: x => ctx.FileSystem.RootPath / ctx.FileSystem.InputPaths[0] / $"blog/posts/{x.Project}-{x.Name}.md", null))
+                            .ToDocuments(sourceFunc: x => ctx.FileSystem.RootPath / ctx.FileSystem.InputPaths[0] / $"news/posts/{x.Project}-{x.Name}.md", null))
                         .WithCredentials(Config.FromSetting<string>("GITHUB_TOKEN"))
                 }
             };
@@ -36,7 +36,7 @@ namespace Statiqdev
                 new SetMetadata(SiteKeys.Topic, Config.FromDocument(doc => "release")),
                 new SetMetadata(Keys.Title, Config.FromDocument(doc => $"{doc[nameof(ReleaseNote.Project)]} Release {doc[nameof(ReleaseNote.Name)]}")),
                 new SetDestination(Config.FromDocument(doc =>
-                    new NormalizedPath($"blog/{doc.GetDateTimeOffset(nameof(ReleaseNote.Published)):yyyy/MM/dd}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")
+                    new NormalizedPath($"news/{doc.GetDateTimeOffset(nameof(ReleaseNote.Published)):yyyy/MM/dd}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")
                         .OptimizeFileName()))
             };
         }
@@ -60,7 +60,7 @@ namespace Statiqdev
 
             public string Body => _release.Body;
 
-            public DateTime Published => _release.PublishedAt.Value.DateTime;
+            public DateTime Published => _release.PublishedAt.Value.DateTime.ToLocalTime();
         }
     }
 }

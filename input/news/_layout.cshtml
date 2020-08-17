@@ -1,0 +1,35 @@
+@{
+    Layout = @"/_layout.cshtml";
+}
+
+@section Subtitle {
+    @if (Document.ContainsKey("Topic"))
+    {
+        IDocument topicDocument = OutputPages[$"news/topics/{Document.GetString("Topic")}/index.html"].First();
+        <div class="text-white-50">
+            @Document.GetDateTime(WebKeys.Published).ToLongDateString() in
+            <a href="@(topicDocument.GetLink())"><span class="badge badge-dark">@topicDocument.GetTitle()</span></a>
+        </div>
+    }
+}
+
+@section Sidebar {
+    @{
+        IDocument topics = Outputs.Get("news/topics/index.html");
+    }
+    <div class="sidebar-nav-item has-children @(Document.IdEquals(topics) ? "active" : null)">
+        @Html.DocumentLink(topics)
+    </div>
+    <div class="sidebar-nav-children">
+        @foreach (IDocument topic in topics
+            .GetChildren()
+            .OrderByDescending(x => x.GetString(Keys.GroupKey)))
+        {
+            <div class="sidebar-nav-item @(Document.Destination.FullPath.StartsWith(topic.Destination.Parent.FullPath) ? "active" : null)">
+                @Html.DocumentLink(topic)
+            </div>
+        }
+    </div>
+}
+
+@RenderBody()

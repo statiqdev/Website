@@ -118,6 +118,10 @@ h2, h3 {
     color: lighten($primary, 20%);
 }
 
+.border-muted {
+    border-color: $text-muted !important;
+}
+
 .h-section {
     background-color: $gray-700;
     color: $white;
@@ -219,7 +223,7 @@ $sections: map-merge(
         "web": $blue,
         "docs": $orange,
         "framework": $purple,
-        "blog": $gray-600
+        "news": $gray-600
     ),
     $sections
 );
@@ -262,7 +266,7 @@ $sections: map-merge(
                         font-size: $font-size-lg;
                     }
 
-                    span:first-child:after {
+                    span:last-child:after {
                         content: '';
                     }
 

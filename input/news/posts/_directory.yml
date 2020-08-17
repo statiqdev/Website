@@ -1,0 +1,1 @@
+DestinationPath: => new NormalizedPath("news").Combine(doc.GetDateTime(WebKeys.Published).ToString("yyyy/MM/dd")).Combine(doc.Source.FileName.ChangeExtension(".html"))

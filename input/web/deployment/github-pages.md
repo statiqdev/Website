@@ -6,7 +6,7 @@ The following [settings](xref:web-settings) are used to configure deployment to 
 - `GitHubName`: The name of the repository.
 - `GitHubUsername`: The username to use for deployment.
 - `GitHubPassword`: The password to use for deployment.
-- `GitHubToken`: The token to use for deployment (configure either this _or_ username and password).
+- `GitHubToken`: The token to use for deployment (configure either this _or_ username and password). If deploying from a GitHub Action (see below), you should use a [computed value](xref:metadata-values#computed-values) to get the value of "GITHUB_TOKEN" for this value: `=> Config.FromSetting<string>("GITHUB_TOKEN")`.
 - `GitHubBranch`: The branch to deploy to (defaults to `gh-pages` but you should change this to the configured GitHub Pages branch such as `main` or `master` for organization sites).
 
 It's customary to set one or more of these settings as an environment variable in continuous
@@ -22,7 +22,7 @@ Using a computed value in `appsettings.json`:
 {
     "GitHubOwner": "statiqdev",
     "GitHubName": "statiqdev.github.io",
-    "GitHubToken": "=> GITHUB_TOKEN"
+    "GitHubToken": "=> Config.FromSetting<string>(\"GITHUB_TOKEN\")"
 }
 ```
 
