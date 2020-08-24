@@ -19,10 +19,12 @@ Statiq Web consists of .NET Core libraries and [installing the .NET Core SDK](ht
 Create a new console application using the `dotnet` command-line interface:
 
 ```csharp
-dotnet new console -o MySite
+dotnet new console --name MySite
 ```
 
 ## Step 3: Install Statiq.Web
+
+In same folder as your newly created project (*i.e. `MySite`*).
 
 ```csharp
 dotnet add package Statiq.Web --version x.y.z
@@ -35,7 +37,6 @@ Use whatever is the [most recent version of Statiq.Web](https://www.nuget.org/pa
 Creating a [bootstrapper](xref:bootstrapper) for Statiq Web initializes everything you’ll need to generate your web site. While you can certainly extend Statiq Web with new [pipelines](xref:defining-pipelines) or [custom modules](xref:writing-modules), you shouldn’t need to for most sites. Add the following code in your `Program.cs` file:
 
 ```csharp
-using System;
 using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Web;
@@ -55,7 +56,16 @@ namespace MySite
 
 ## Step 5: Add Some Content
 
-Start adding content by creating [Markdown](xref:template-languages#markdown) files in your "input" folder.
+Start adding content by creating [Markdown](xref:template-languages#markdown) files in your `input` folder, by default input folder is located in your project root.
+
+To get something served you can add the following code as `index.md` file in your `input` folder.
+```md
+Title: My First Statiq page
+---
+# Hello World!
+
+Hello from my first Statiq page.
+```
 
 ## Step 6: Run it!
 
@@ -64,9 +74,13 @@ Let the magic happen:
 ```
 dotnet run
 ```
+This will by default create an `output` folder in your project folder if it doesn't exists and generate static web site content based on what's in your `input` folder.
 
 Or run it and [preview the generated site](xref:web-preview-server):
 
 ```
 dotnet run -- preview
 ```
+
+This will generate content and serve your output folder over HTTP (i.e. `http://localhost:5080`).
+![statiq preview](https://user-images.githubusercontent.com/1647294/89655186-0198b580-d8ca-11ea-9db5-bef9a9592161.png)
