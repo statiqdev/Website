@@ -8,4 +8,4 @@ Any metadata defined in a directory metadata file will be applied to all files i
 
 Local metadata in the front matter of a file overrides any defined directory metadata.
 
-Directory metadata support can be globally turned off by [setting](xref:web-settings) `ApplyDirectoryMetadata` to `false`.
+Directory metadata support can be globally turned off by [setting](xref:web-settings) `ApplyDirectoryMetadata` to `false`.ß

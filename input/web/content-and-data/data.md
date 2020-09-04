@@ -9,8 +9,6 @@ Data files should be placed in the `input` folder (or a sub-folder) alongside co
 
 Regardless of format the data files are parsed and the data in them is added as [metadata](xref:documents-and-metadata#about-metadata) to the resulting documents.
 
-The `DataFiles` [setting](xref:web-settings) controls how data files are located and is set to `**/{!_,}*.{json,yaml,yml}` by default. This loads all `.json`, `.yaml`, and `.yml` files in any input directory unless it starts with an underscore `_`.
-
 # Accessing Data Files
 
 Data files are processed by the `Data` pipeline and can be accessed through the `Outputs` property of the [execution context](xref:execution-context) (which is also available directly in some templating languages like [Razor](xref:template-languages#razor) as an `Outputs` property).

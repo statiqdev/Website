@@ -2,9 +2,7 @@ In addition to the [settings available from Statiq Framework](xref:settings), St
 
 The following global settings are available:
 
-- `ContentFiles`: The globbing pattern(s) that are be used to read [content files](xref:web-content).
-- `DataFiles`: The globbing pattern(s) that are be used to read [data files](xref:web-data).
-- `AssetFiles`: The globbing pattern(s) that are be used to find and copy asset files to the output folder.
+- `InputFiles`: The globbing pattern(s) that are be used to read files from the input folder.
 - `DirectoryMetadataFiles`: The globbing pattern(s) that will be used to read [directory metadata files](xref:web-directory-metadata).
 - `OptimizeContentFileNames`: Indicates that content output file names should be optimized to remove spaces, etc.
 - `OptimizeDataFileNames`: Indicates that data output file names should be optimized to remove spaces, etc.
