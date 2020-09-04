@@ -20,7 +20,7 @@ The actual value should be a string (the YAML syntax above assumes a string valu
 MyNumber: "=> { int x = 1 + 2; int y = x; return y; }"
 ```
 
-The script also a number of predefined global properties available to it (see the `ScriptBase` class in `Statiq.Core` for all script properties):
+The script also has access to a number of predefined global properties available to it (see the `ScriptBase` class in `Statiq.Core` for all script properties):
 
 - `ExecutionState` contains the current `IExecutionState` object.
 - `Context` (and the `ctx` shorthand) contain the current [execution context](xref:execution#execution-context).
