@@ -77,7 +77,23 @@ The globbing engine supports the following syntax:
   This represents exclusion and is useful in combination with multiple expansions. For example, `/**/{*,!x}.txt` will find:
   - /c/z.txt
 
-Note that relative globbing patterns are often evaluated from the perspective of your `input` folder and not necessarily from where your config file resides, especially if the pattern is telling Statiq where to find certain files for processing. If you're having problems and a globbing pattern isn't returning the files you think it should, try adjusting it to start from the `input` folder.
+Note that relative globbing patterns are often evaluated from the perspective of your `input` folder.
+
+## Troubleshooting Globbing Patterns
+
+Statiq provides the `glob` command to help troubleshoot globbing patterns, which has two subcommands: `glob eval` and `blog test`.
+
+The `glob eval` command evaluates a globbing pattern against actual files on disk and returns all the files that match:
+
+```
+dotnet run -- glob eval <pattern> <path>
+```
+
+The `glob test` command tests a globbing pattern against a provided path and returns whether the pattern would match the path. The path does not have to be a real file or folder:
+
+```
+dotnet run -- glob test <pattern> <path>
+```
 
 # Testing
 

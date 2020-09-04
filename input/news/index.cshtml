@@ -11,8 +11,8 @@ ArchiveTitle: => GetString("Title")
 NoChildPages: true
 ---
 @{
-  IDocument webRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Web").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).First();
-  IDocument frameworkRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Framework").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).First();
+  IDocument webRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Web").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
+  IDocument frameworkRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Framework").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
 }  
 <div class="card text-white bg-dark mb-3">
   <div class="card-header">
@@ -22,7 +22,12 @@ NoChildPages: true
     <div class="row">
       <div class="col-md">
         <div class="card-title mb-0  text-muted small">Web</div>
-        <p class="card-text">@Html.DocumentLink(webRelease, webRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</p>
+        <p class="card-text">
+          @if(webRelease is object)
+          {
+            <text>@Html.DocumentLink(webRelease, webRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</text>
+          }
+        </p>
       </div>
       <div class="col-md">
         <div class="card-title mb-0 text-muted small">Docs</div>
@@ -30,12 +35,23 @@ NoChildPages: true
       </div>
       <div class="col-md mt-3 mt-md-0">
         <div class="card-title mb-0 text-muted small">Framework</div>
-        <p class="card-text">@Html.DocumentLink(frameworkRelease, frameworkRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</p>
+        <p class="card-text">
+          @if(frameworkRelease is object)
+          {
+            <text>@Html.DocumentLink(frameworkRelease, frameworkRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</text>
+          }
+        </p>
       </div>
     </div>
   </div>
   <div class="card-footer small">
-    @Html.DocumentLink(OutputPages["news/topics/release/index.html"].First(), "View All Release Notes", new Dictionary<object, object> { { "class", "text-white" }})
+    @{
+      IDocument releaseIndex = OutputPages["news/topics/release/index.html"].FirstOrDefault();
+      if (releaseIndex is object)
+      {
+        <text>@Html.DocumentLink(releaseIndex, "View All Release Notes", new Dictionary<object, object> { { "class", "text-white" }})</text>
+      }
+    }
   </div>
 </div>
 
