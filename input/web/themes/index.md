@@ -28,3 +28,21 @@ A folder structure with a theme and both application and theme configuration fil
 
 Themes can be copied into the `theme` folder from anywhere. In the future, Statiq will support built-in commands for
 obtaining and working with themes.
+
+# Installation
+
+Statiq themes go in a `theme` folder alongside your `input` folder. If your site is inside a git repository, you can add the theme as a git submodule.
+
+For example, to add the [CleanBlog](https://github.com/statiqdev/CleanBlog) theme as a submodule:
+
+```
+git submodule add https://github.com/statiqdev/CleanBlog.git theme
+```
+
+Alternatively you can clone the theme directly:
+
+```
+git clone https://github.com/statiqdev/CleanBlog.git theme
+```
+
+Once inside the `theme` folder, Statiq will automatically recognize the theme. If you want to tweak the theme you can edit files directly in the `theme` folder or copy them to your `input` folder and edit them there.
