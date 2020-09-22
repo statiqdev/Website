@@ -1,4 +1,4 @@
-Order: 2
+Order: 3
 ---
 In addition to [content](xref:web-content), Statiq Web has rich support for data files.
 

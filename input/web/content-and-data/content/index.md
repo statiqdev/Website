@@ -1,4 +1,4 @@
-Order: 1
+Order: 2
 ---
 Content files contain the pages of your site and are processed based on their media type (which is determined by file extension).
 

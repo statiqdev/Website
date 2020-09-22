@@ -1,4 +1,4 @@
-Order: 11
+Order: 12
 ---
 Statiq Web supports multiple template languages (_templates_) and you can specify which ones should be applied for your site.
 

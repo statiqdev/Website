@@ -1,4 +1,4 @@
-Order: 7
+Order: 8
 ---
 The structuring of documents in a hierarchy is an important concept to understand since it helps navigate documents to create components like breadcrumbs or navigation bars.
 

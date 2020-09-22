@@ -1,4 +1,4 @@
-Order: 9
+Order: 10
 ---
 Feed files let you define RSS, Atom, and/or RDF feeds for any content or data in your site.
 

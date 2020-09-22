@@ -1,4 +1,4 @@
-Order: 4
+Order: 5
 ---
 Files with a `.csx` or `.cs` extension are processed as a script. Similar to [computed values](xref:metadata-values#computed-values), full scripts also provide access to a number of predefined global properties (see the `ScriptBase` class in `Statiq.Core` for all script properties):
 

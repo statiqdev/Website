@@ -1,14 +1,16 @@
 Title: Porting From Wyam
 Order: 7
 ---
-Statiq Web is roughly compatible with the Wyam blog recipe. Here are some notes if you're porting from Wyam to Statiq Web:
+Statiq Web is roughly compatible with the Wyam blog recipe, but Statiq and Wyam are two different projects and not everything has a direct equivalent, especially if you customized your Wyam site. That said, whatever you could do in Wyam you can almost certainly do in Statiq, even if it's a little different. If you're having trouble figuring out how to port a particular feature, please [head over to the discussions](https://github.com/statiqdev/Discussions/discussions) and let us know so we can help out.
+
+Here are some notes if you're porting from Wyam to Statiq Web:
 
 - You will need to [create a Statiq Web app](/web) at the root of your site (you can keep the `input` directory).
   - Run `dotnet new console` at the root of your site.
   - Run `dotnet add package Statiq.Web --version x.y.z` (using the [latest Statiq Web version](https://www.nuget.org/packages/Statiq.Web)).
   - Change the generated `Program` class in `Program.cs` to:
 
-```
+```csharp
 using System;
 using System.Threading.Tasks;
 using Statiq.App;
@@ -44,3 +46,19 @@ namespace ...
 
 - You can likely remove any build scripting and bootstrapping code since you can now run `dotnet run -- preview` to preview the site.
   - You can also now setup [built-in deployment](xref:web-deployment).
+
+- If you have Disqus code for comments on your blog that looks like something like this:
+
+```javascript
+var disqus_identifier = '@Model.FilePath(Keys.RelativeFilePath).FileNameWithoutExtension.FullPath';
+var disqus_title = '@Model.String(Wyam.Blog.BlogKeys.Title)';
+var disqus_url = '@Context.GetLink(Model)';
+```
+
+You can change it to this:
+
+```javascript
+var disqus_identifier = '@Document.Destination.FileNameWithoutExtension.FullPath';
+var disqus_title = '@Document.GetString("Title")';
+var disqus_url = '@Document.GetLink(true)';
+```

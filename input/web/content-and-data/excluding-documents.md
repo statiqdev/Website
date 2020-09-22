@@ -1,4 +1,4 @@
-Order: 10
+Order: 11
 ---
 Documents can be easily excluded from generation, either by removing them entirely or by suppressing their output (but still processing them in the appropriate pipeline).
 

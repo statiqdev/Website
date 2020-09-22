@@ -1,4 +1,4 @@
-Order: 3
+Order: 4
 ---
 [Metadata](xref:documents-and-metadata#about-metadata) lets you add bits of information to [documents](xref:documents-and-metadata) and control their behavior.
 
