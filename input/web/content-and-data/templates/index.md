@@ -11,7 +11,7 @@ indicates the [processing phase](xref:pipelines-and-modules#phases) in which the
 By default the following templates are defined:
 
 - Markdown (in the [process phase](xref:pipelines-and-modules#process-phase))
-- Razor
+- [Razor](xref:web-razor)
 - Handlebars
 
 A default template is also specified which will be executed last regardless of media type. This allows a particular template
