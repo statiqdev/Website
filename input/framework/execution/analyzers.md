@@ -2,7 +2,7 @@ Order: 4
 ---
 Analyzers provide a mechansim to run validation checks, inspect documents, and otherwise report on the status of your content and data.
 
-An analyzer implements `IAnalyzer` and is run on the output documents from one (or more) pipeline(s) and one (or more) phase(s). Analyzers are run after each phase so exceptions propogate immediatly, but analyzer results are reported at the end of execution. An analyzer receives the document(s) to be analyzed along with a `IAnalyzerContext` that includes an `Add(...)` method used to add analyzer messages.
+An analyzer implements `IAnalyzer` and is run on the output documents from one (or more) pipeline(s) and phase(s). Analyzers are run after each phase so exceptions propogate immediatly, but analyzer results are reported at the end of execution. An analyzer receives an `IAnalyzerContext` that includes the documents to be analyzed as `IAnalyzerContext.Inputs` an `AddAnalyzerResult(...)` method used to add analyzer messages.
 
 # Writing Analyzers
 
@@ -11,7 +11,7 @@ Some base classes are provided that make writing analyzers easier:
 - `Analyzer` is a basic analyzer that analyzes documents from one (or more) pipeline(s) and phase(s).
 - `SyncAnalyzer` can be used when the analyze method should be synchronous (I.e. not `async`).
 
-An analyzer defines which pipeline(s) and phase(s) it should be run after using the `Pipelines` and `Phases` properties. Analyzers also define a default logging level their result messages should be logged as using the `LogLevel` property (which can be overriden, see below).
+An analyzer defines which pipeline(s) and phase(s) it should be run after using the `PipelinePhases` property. Analyzers also define a default logging level their result messages should be logged as using the `LogLevel` property (which can be overriden, see below).
 
 ## Using The Bootstrapper
 
@@ -52,7 +52,7 @@ Analyzers:
 
 ## Registering On The Command Line
 
-Analyzers can be registered and log levels set using the [command line](xref:command-line) as well using either `-a` or `--analyzer` and the same `name=log-level` syntax. For example:
+Analyzers can be registered and log levels set using the [command line](xref:command-line-interface) as well using either `-a` or `--analyzer` and the same `name=log-level` syntax. For example:
 
 ```
 dotnet run -- -a ValidateSomeMetadata=Warning
