@@ -16,6 +16,8 @@ The bootstrapper also includes the ability to use reflection to find and add pip
 - `AddPipelines(Type)` will add all pipelines defined as nested classes in the specified parent type.
 - `AddPipelines<TParent>()` will add all pipelines defined as nested classes in the specified parent type.
 
+Typically, the name of the added pipeline is inferred from the class name though its also possible to [specify an alternate name](xref:defining-pipelines#naming-pipelines).
+
 ## Adding Directly
 
 You can add pipelines to the `IPipelineCollection` directly using the following extensions:

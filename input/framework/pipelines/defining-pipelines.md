@@ -52,3 +52,7 @@ If the pipeline is [added by type](xref:adding-pipelines), any services that wer
 # Adding Pipelines
 
 You can add pipelines to an [engine](xref:execution#engine) directly using it's `Pipelines` property, but the easiest way to add and manipulate pipelines is [through the bootstrapper](xref:adding-pipelines).
+
+# Naming Pipelines
+
+Several mechanisms for adding pipelines infer the pipeline name from the class name if you don't provide an explicit name. If you want to define a different name for a pipeline, you can implement the `INamedPipeline` interface which contains a `PipelineName` property.
