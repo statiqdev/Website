@@ -39,3 +39,19 @@ This is a <a href="xref:blog-posts">cross reference</a> to a document.
 ```
 
 Cross referencing is especially useful when refactoring content because existing links will continue to point to a document's new location even if it moves around.
+
+## Changing The Default Cross Reference Name
+
+The default `xref` value is computed by a [global setting](xref:web-settings) that gets inherited by every document. You can change how all or some documents compute their `xref` values by changing this setting.
+
+For example, to use only the file name instead of the title when computing an `xref` you can add this to the [bootstrapper](xref:bootstrapper):
+
+```csharp
+.AddSetting(WebKeys.Xref, Config.FromDocument(doc => doc.Destination.FileNameWithoutExtension.Replace(' ', '-')))
+```
+
+Alternatively, if you just want to change it for a subset of files, you can use something like inherited [directory metadata](xref:web-directory-metadata) (in `_directory.yaml`):
+
+```txt
+Xref: => Config.FromDocument(doc => doc.Destination.FileNameWithoutExtension.Replace(' ', '-'))
+```
