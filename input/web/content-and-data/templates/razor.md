@@ -9,7 +9,6 @@ Because Statiq uses a custom Razor base page, the Razor Intellisense engine does
 @using Statiq.Razor
 @using Statiq.Web
 @using Statiq.Web.Pipelines
-@using Statiqdev
 @using Microsoft.Extensions.Logging
 
 @inherits StatiqRazorPage<IDocument>
