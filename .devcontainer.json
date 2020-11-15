@@ -1,4 +1,0 @@
-{
-  "image": "dotnetcore",
-  "forwardedPorts": [ 5080 ]
-}
