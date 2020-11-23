@@ -4,7 +4,7 @@ Statiq Web attempts to extract an excerpt and headings from your content and sto
 
 The excerpt can be used when you want to display a short amount of content for a document without displaying the whole document. It's useful for [archives](xref:web-archives), [feeds](xref:web-feeds), or any other time you want to show several documents in one view.
 
-By default the excerpt is taken from the first `<p>` element it finds. Alternativly, you can control where the excerpt ends by inserting an excerpt separator contained in your HTML (either `excerpt` or `more`). All `<p>` content up to the separator will be used.
+By default the excerpt is taken from the first `<p>` element it finds. Alternatively, you can control where the excerpt ends by inserting an excerpt separator contained in your HTML (either `excerpt` or `more`). All `<p>` content up to the separator will be used.
 
 For example:
 
