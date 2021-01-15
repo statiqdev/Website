@@ -72,7 +72,7 @@ In addition to the phases above, there are several special types of pipelines yo
 
 ## Isolated
 
-An isolated pipeline is one that you know don't need access to output documents from any other pipelines. You can declare a pipeline to be isolated by setting the `Isolated` flag to `true`. As isolated pipeline will execute all for phases as quickly as possible in parallel with other pipelines. This kind of pipeline is useful for things like processing Less or Sass files that don't rely on coordination with other pipelines.
+An isolated pipeline is one that you know don't need access to output documents from any other pipelines. You can declare a pipeline to be isolated by setting the `Isolated` flag to `true`. As isolated pipeline will execute all four phases as quickly as possible in parallel with other pipelines. This kind of pipeline is useful for things like processing Less or Sass files that don't rely on coordination with other pipelines.
 
 ## Deployment
 
