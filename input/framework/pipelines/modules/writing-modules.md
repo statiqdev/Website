@@ -25,7 +25,7 @@ While you can implement `IModule` easily enough yourself, in practice most modul
 When using the base module classes you should never call `IModule.ExecuteAsync(...)` directly. Instead, most of the module base classes above have both an `ExecuteContext` virtual method and/or an `ExecuteInput` virtual method.
 
 - Overload the `ExecuteContext` method to have your code called once for all the input documents (available via `IExecutionContext.Inputs`). This is useful for modules that need to create new documents from scratch or that need to aggregate or operate on the input documents as a set.
-- Overload the `ExecuteInput` method to have you code called once per document. This is useful when the module transforms or manipulates documents that are unrelated to each other.
+- Overload the `ExecuteInput` method to have your code called once per document. This is useful when the module transforms or manipulates documents that are unrelated to each other.
 
 Here are some other guidelines and tips to follow when writing a module:
 
