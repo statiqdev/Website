@@ -1,3 +1,6 @@
 [submodule "src/Statiq.Web"]
 	path = src/Statiq.Web
 	url = https://github.com/statiqdev/Statiq.Web.git
+[submodule "external/Statiq.Web"]
+	path = external/Statiq.Web
+	url = https://github.com/statiqdev/Statiq.Web.git
