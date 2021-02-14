@@ -81,7 +81,7 @@ Note that relative globbing patterns are often evaluated from the perspective of
 
 ## Troubleshooting Globbing Patterns
 
-Statiq provides the `glob` command to help troubleshoot globbing patterns, which has two subcommands: `glob eval` and `blog test`.
+Statiq provides the `glob` command to help troubleshoot globbing patterns, which has two subcommands: `glob eval` and `glob test`.
 
 The `glob eval` command evaluates a globbing pattern against actual files on disk and returns all the files that match:
 
