@@ -20,6 +20,8 @@ ContentType: Asset
 MediaType: text/plain
 ```
 
+Note that to avoid reading every single file and parsing them for front matter, only existing content file types can use front matter to initially change their `ContentType` or `MediaType` values. Other file types need to use [directory metadata](xref:web-directory-metadata) or [sidecar](xref:web-sidecar-files) files to set their media type to something other than their extension.
+
 Both [content files](xref:web-content) and [data files](xref:web-data) support functionality like [directory metadata](xref:web-directory-metadata) files, [sidecar](xref:web-sidecar-files) files, and [front matter](xref:web-front-matter). The main difference is that [templates](xref:web-templates) like [Markdown](xref:template-languages#markdown) and [Razor](xref:template-languages#razor) are processed for content files whereas data files are parsed as data formats like JSON and YAML and add to the [metadata of a document](xref:documents-and-metadata).
 
 Features like [archives](xref:web-archives) and [feeds](xref:web-feeds) also let you work with content and data and produce different kinds of outputs from them.

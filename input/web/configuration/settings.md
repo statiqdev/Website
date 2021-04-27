@@ -1,3 +1,5 @@
+Order: 2
+---
 In addition to the [settings available from Statiq Framework](xref:settings), Statiq Web also has a number of settings that can be used to control behavior. Global settings that apply to the generation process and all documents are generally defined [in a configuration file](xref:settings#configuration-files). Most settings are also appropriate to define [at the directory level](xref:web-directory-metadata) or [per-document](xref:web-front-matter) if you only want them to apply to specific files.
 
 The following global settings are available:
