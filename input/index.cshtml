@@ -24,6 +24,7 @@ NoContainer: true
                     </div>
                     @{
                         IDocument webRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Web").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
+                        IDocument docsRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Docs").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
                         IDocument frameworkRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Framework").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
                     }
                     <div class="col-sm-3">
@@ -37,7 +38,12 @@ NoContainer: true
                     </div>
                     <div class="col-sm-3">
                         <div class="text-muted"><small>Docs</small></div>
-                        <div class="text-muted">Coming Soon</div>
+                        <div>
+                            @if (docsRelease is object)
+                            {
+                                <text>@Html.DocumentLink(docsRelease, docsRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</text>
+                            }
+                        </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="text-muted"><small>Framework</small></div>
