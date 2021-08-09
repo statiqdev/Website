@@ -1,5 +1,9 @@
 name: Deploy Site
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
 
 jobs:
   build:
@@ -14,3 +18,4 @@ jobs:
     - run: dotnet run -- deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}

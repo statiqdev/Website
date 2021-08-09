@@ -2,7 +2,5 @@ Host: statiq.dev
 LinksUseHttps: true
 MirrorResources: true
 EditLink: => "https://github.com/statiqdev/statiqdev.github.io/edit/develop/input/" + doc.Source.GetRelativeInputPath()
-GitHubOwner: statiqdev
-GitHubName: statiqdev.github.io
-GitHubToken: => Config.FromSetting<string>("GITHUB_TOKEN")
-GitHubBranch: main
+NetlifySiteId: b84df763-be90-43e0-88b7-f0bfcdc0deed
+NetlifyAccessToken: => Config.FromSetting<string>("NETLIFY_TOKEN")
