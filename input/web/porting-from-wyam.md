@@ -38,13 +38,13 @@ namespace ...
 
 - If you created an `input/assets/css/override.css` file, move it to `input/scss/_overrides.scss` (and you can now use Sass inside the CSS overrides file).
 
-- Replace any uses of `img-response` CSS class with `img-fluid` since this theme uses a newer version of Bootstrap and that CSS class changed.
+- Replace any uses of `img-responsive` CSS class with `img-fluid` since this theme uses a newer version of Bootstrap and that CSS class changed.
 
 - Rename and fix up any override theme files or partials according to the supported ones documented in the new theme.
   - For example, the old Wyam CleanBlog supported a `_PostFooter.cshtml` which should be renamed to `_post-footer.cshtml` in the new Statiq [CleanBlog](https://github.com/statiqdev/CleanBlog) theme.
   - The CSS may not match exactly, especially if you're changing themes, so you may need to take a look at the default partial implementations in the new theme and adjust your override files accordingly.
 
-- You can likely remove any build scripting and bootstrapping code since you can now run `dotnet run -- preview` to preview the site.
+- You can likely remove any build scripting and bootstrapping code since you can now run `dotnet run preview` to preview the site.
   - You can also now setup [built-in deployment](xref:web-deployment).
 
 - If you have Disqus code for comments on your blog that looks like something like this:
