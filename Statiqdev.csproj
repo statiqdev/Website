@@ -11,17 +11,20 @@
     <None Remove="external\**" />
   </ItemGroup>
 
-  <!--
-  <ItemGroup>
-    <PackageReference Include="Statiq.Docs" Version="1.0.0-alpha.7" />
-  </ItemGroup>
-  -->
-
-  <ItemGroup>
-    <ProjectReference Include="..\Statiq\Statiq.Docs\src\Statiq.Docs\Statiq.Docs.csproj" />
-    <ProjectReference Include="..\Statiq\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
-    <ProjectReference Include="..\Statiq\Statiq.Framework\src\core\Statiq.Core\Statiq.Core.csproj" />
-    <ProjectReference Include="..\Statiq\Statiq.Framework\src\core\Statiq.Common\Statiq.Common.csproj" />
-  </ItemGroup>
+  <Choose>
+    <When Condition=" '$(StatiqDocsVersion)' == ''">
+      <ItemGroup>
+        <ProjectReference Include="..\Statiq.Docs\src\Statiq.Docs\Statiq.Docs.csproj" />
+        <ProjectReference Include="..\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
+        <ProjectReference Include="..\Statiq.Framework\src\core\Statiq.Core\Statiq.Core.csproj" />
+        <ProjectReference Include="..\Statiq.Framework\src\core\Statiq.Common\Statiq.Common.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Statiq.Docs" Version="$(StatiqDocsVersion)" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
 
 </Project>
