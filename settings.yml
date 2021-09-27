@@ -4,3 +4,4 @@ MirrorResources: true
 EditLink: => "https://github.com/statiqdev/statiqdev.github.io/edit/develop/input/" + doc.Source.GetRelativeInputPath()
 NetlifySiteId: b84df763-be90-43e0-88b7-f0bfcdc0deed
 NetlifyAccessToken: => Config.FromSetting<string>("NETLIFY_TOKEN")
+SourceFiles: C:\Code\statiqdev\Statiq.Framework\src\core\Statiq.Common\**\*
