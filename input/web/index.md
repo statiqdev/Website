@@ -14,6 +14,22 @@ There's no `statiq.exe`. Unlike other static generators which ship as a self-con
 
 Statiq Web consists of .NET Core libraries and [installing the .NET Core SDK](https://dot.net) is the only prerequisite.
 
+## Step 2: Get it up and running using a quick template
+Clone quick template,
+
+    git clone --recurse-submodules https://github.com/atiq-cs/statiq-init.git MySite
+
+Edit using Visual Studio Code IDE,
+
+    Push-Location MySite/
+    Start-Process Code .
+
+To try a local run/preview, please run,
+
+    dotnet run -- preview
+
+For previous detailed instruction follow these,
+
 ## Step 2: Create a .NET Core Console Application
 
 Create a new console application using the `dotnet` command-line interface:
@@ -83,6 +99,7 @@ dotnet run -- preview
 ```
 
 This will generate content and serve your output folder over HTTP (i.e. `http://localhost:5080`).
+
 ![statiq preview](https://user-images.githubusercontent.com/1647294/89655186-0198b580-d8ca-11ea-9db5-bef9a9592161.png)
 
 ## Step 7: (Optional) Check out a Blog theme to see Statiq.Web in practice
