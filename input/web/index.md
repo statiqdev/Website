@@ -17,7 +17,7 @@ Statiq Web consists of .NET Core libraries and [installing the .NET Core SDK](ht
 ## Step 2: Get it up and running using a quick template
 Clone quick template,
 
-    git clone --recurse-submodules https://github.com/atiq-cs/statiq-init.git MySite
+    git clone --recurse-submodules https://github.com/atiq-cs/statiq-template.git MySite
 
 Edit using Visual Studio Code IDE,
 
