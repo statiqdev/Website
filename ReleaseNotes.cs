@@ -6,7 +6,6 @@ using Octokit;
 using Statiq.Common;
 using Statiq.Core;
 using Statiq.Web.GitHub;
-using Statiq.Web.Modules;
 
 namespace Statiqdev
 {
@@ -33,7 +32,7 @@ namespace Statiqdev
             {
                 // Need to replace "@" for Razor and "<?" because some of the release notes reference shortcode syntax
                 new SetContent(Config.FromDocument(doc => doc.GetString(nameof(ReleaseNote.Body)).Replace("@", "@@").Replace("<?", "&lt;?")), MediaTypes.Markdown),
-                new SetMetadata(SiteKeys.Topic, Config.FromDocument(doc => "release")),
+                new SetMetadata("Topic", Config.FromDocument(doc => "release")),
                 new SetMetadata(Keys.Title, Config.FromDocument(doc => $"{doc[nameof(ReleaseNote.Project)]} Release {doc[nameof(ReleaseNote.Name)]}")),
                 new SetDestination(Config.FromDocument(doc =>
                     new NormalizedPath($"news/{doc.GetDateTimeOffset(nameof(ReleaseNote.Published)):yyyy/MM/dd}/{doc[nameof(ReleaseNote.Project)]}-{doc[nameof(ReleaseNote.Name)]}.html")

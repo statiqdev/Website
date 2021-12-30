@@ -12,7 +12,7 @@ NoChildPages: true
 @if (Document.ContainsKey(Keys.GroupKey))
 {
     <p>@(Outputs[$"news/topics/{Document.GetString(Keys.GroupKey)}.yml"].First().GetString("Description"))</p>
-    @Html.Partial("/_Posts.cshtml", Document)
+    @Html.Partial("_Posts", Document)
 }
 else
 {
