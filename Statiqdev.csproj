@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\Statiq.Web\src\Statiq.Web\Statiq.Web.props" Condition="'$(StatiqDocsVersion)' == 'local'" />
+  <!-- We need to do this manually since Statiq.Web is being brought in by a ProjectReference so the Statiq.Web.props won't apply -->
+  <Import Project="..\Statiq.Web\src\Statiq.Web\Statiq.Web.props" Condition="'$(StatiqDocsVersion)' == ''" />
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -17,10 +18,8 @@
     <ProjectReference Include="theme\Docable.csproj" />
   </ItemGroup>
 
-  <!-- We need to do this manually since Statiq.Web is being brought in by a ProjectReference so the Statiq.Web.props won't apply -->
-
   <Choose>
-    <When Condition="'$(StatiqDocsVersion)' == 'local'">
+    <When Condition="'$(StatiqDocsVersion)' == ''">
       <ItemGroup>
         <ProjectReference Include="..\Statiq.Docs\src\Statiq.Docs\Statiq.Docs.csproj" />
         <ProjectReference Include="..\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
