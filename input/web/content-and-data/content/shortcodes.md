@@ -128,7 +128,7 @@ This shortcode accepts the following arguments:
 
 ### Table
 
-Renders an HTML table. The content of the shortcode contains the table with each row on a new line and each column separated by new lines. Enclose columns in quotes if they contain a space. Note that since the content of a shortcode may get processed by template engines like Markdown and the content of this shortcode should not be, you probably want to wrap the shortcode content in the special XML processing instruction that will get trimmed like `<?* ... ?>` so it "passes through" any template engines (see example below).
+Renders an HTML table. The content of the shortcode contains the table with each row on a new line and each column separated by space. Enclose columns in quotes if they contain a space. Note that since the content of a shortcode may get processed by template engines like Markdown and the content of this shortcode should not be, you probably want to wrap the shortcode content in the special XML processing instruction that will get trimmed like `<?* ... ?>` so it "passes through" any template engines (see example below).
 
 ```html
 <?# Table Class=table HeaderRows=1 ?>
