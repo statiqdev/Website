@@ -1,5 +1,7 @@
 ﻿Title: About Statiq Docs
 BreadcrumbTitle: Docs
+NavigationTitle: Docs
+Order: 1
 Xref: docs
 ---
 Statiq Docs builds on [Statiq Web](/web) by adding support for .NET API documentation and other functionality that's important for documentation web sites.

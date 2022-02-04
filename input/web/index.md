@@ -1,5 +1,6 @@
 Title: About Statiq Web
 BreadcrumbTitle: Web
+ShowInNavigation: false
 Xref: web
 ---
 Statiq Web is a powerful static web site generation toolkit suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
@@ -27,10 +28,10 @@ dotnet new console --name MySite
 In same folder as your newly created project (*i.e. `MySite`*).
 
 ```csharp
-dotnet add package Statiq.Web --prelease
+dotnet add package Statiq.Web --version x.y.z
 ```
 
-The `--prerelease` flag is needed while the package is pre-release.
+Use whatever is the [most recent version of Statiq.Web](https://www.nuget.org/packages/Statiq.Web). The `--version` flag is needed while the package is pre-release.
 
 ## Step 4: Create a Bootstrapper
 
@@ -84,7 +85,3 @@ dotnet run -- preview
 
 This will generate content and serve your output folder over HTTP (i.e. `http://localhost:5080`).
 ![statiq preview](https://user-images.githubusercontent.com/1647294/89655186-0198b580-d8ca-11ea-9db5-bef9a9592161.png)
-
-## Step 7: (Optional) Check out a Blog theme to see Statiq.Web in practice
-
-Go to the [CleanBlog](https://github.com/statiqdev/CleanBlog) repo and import the theme into your project to start exploring a more functional example.

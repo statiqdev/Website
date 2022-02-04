@@ -1,5 +1,6 @@
 NoSidebar: true
 NoChildPages: true
+ShowInNavigation: false
 Title: Support The Project
 ---
 @section Head
@@ -70,7 +71,7 @@ The cost for a private license is **$50.00 per developer** and covers all releas
 
         (function() {
             var stripe = Stripe('pk_live_4tiVivY5ixgmXsAuM5khf36i');
-            
+
             var checkoutButton = document.getElementById('checkout-button-sku_H7XbjLJDzHVInz');
 
             checkoutButton.addEventListener('click', function () {

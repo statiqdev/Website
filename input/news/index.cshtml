@@ -7,8 +7,10 @@ ArchiveOrderDescending: true
 ArchiveFilter: => GetString("Topic") != "release"
 Title: Statiq News
 BreadcrumbTitle: News
+NavigationTitle: News
 ArchiveTitle: => GetString("Title")
 NoChildPages: true
+Order: 2
 ---
 @{
   IDocument webRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Web").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();

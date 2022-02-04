@@ -31,7 +31,7 @@ namespace Statiqdev
             ProcessModules = new ModuleList
             {
                 // Need to replace "@" for Razor and "<?" because some of the release notes reference shortcode syntax
-                new SetContent(Config.FromDocument(doc => doc.GetString(nameof(ReleaseNote.Body)).Replace("@", "@@").Replace("<?", "&lt;?")), MediaTypes.Markdown),
+                new SetContent(Config.FromDocument(doc => doc.GetString(nameof(ReleaseNote.Body)).Replace("<?", "&lt;?").Replace("@", "\\ @")), MediaTypes.Markdown),
                 new SetMetadata("Topic", Config.FromDocument(doc => "release")),
                 new SetMetadata(Keys.Title, Config.FromDocument(doc => $"{doc[nameof(ReleaseNote.Project)]} Release {doc[nameof(ReleaseNote.Name)]}")),
                 new SetDestination(Config.FromDocument(doc =>

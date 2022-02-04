@@ -1,5 +1,6 @@
 Title: About Statiq Framework
 BreadcrumbTitle: Framework
+ShowInNavigation: false
 Xref: framework
 ---
 Statiq Framework is a powerful static generation framework that can be used to create custom static generation applications. While many users will find that [Statiq Web](xref:web) or [Statiq Docs](xref:docs) have enough functionality built-in, crafting a custom static generator with Statiq Framework provides the most flexibility.
