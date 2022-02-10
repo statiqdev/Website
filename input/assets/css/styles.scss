@@ -1,0 +1,12 @@
+﻿@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+.product-wordmark {
+  width: 3em;
+}
+
+.product-icon {
+  font-size: $font-size-base * 1.5;
+  margin-left: -($font-size-base * 0.75);
+}

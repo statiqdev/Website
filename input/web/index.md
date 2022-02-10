@@ -1,8 +1,17 @@
 Title: About Statiq Web
-BreadcrumbTitle: Web
 ShowInNavigation: false
+ShowInSidebar: false
+NoSidebar: true
 Xref: web
 ---
+```raw
+@section Title { }
+
+<div class="text-center mb-4">
+    <img src="/assets/statiq-web.svg" alt="Statiq Web" class="w-50"></img>
+</div>
+```
+
 Statiq Web is a powerful static web site generation toolkit suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
 
 # Quick Start

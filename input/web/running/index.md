@@ -1,8 +1,6 @@
 Title: Running Your Application
 Order: 6
 ---
-Once you've added some [content and/or data](xref:web-content-and-data), you can run your generator application.
-
 # dotnet run
 
 You can run your Statiq application directly using [`dotnet run`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run) but you need to [delimit arguments for your Statiq application](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options) with a `--` between the `dotnet run` command and the arguments you want to pass to your Statiq application. Anything after the `--` will be passed to Statiq.

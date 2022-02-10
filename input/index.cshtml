@@ -1,12 +1,13 @@
 ﻿Title: Your Imagination, Your Generator
 NoContainer: true
+NoTitle: true
 ---
 @section Splash {
     <div id="hero" class="jumbotron jumbotron-fluid mb-0">
         <div class="container-xl">
             <div class="row">
                 <div class=" offset-lg-2 col-12 col-lg-8">
-                    <div class="display-4 text-white">Your imagination, your generator.</div> 
+                    <div class="display-4 text-white">Your imagination, your generator.</div>
                     <p class="lead text-white">Statiq is the world's most powerful static generation platform, allowing you to use or create a static generator that's exactly what <em>you</em> need.</p>
                 </div>
             </div>
@@ -14,84 +15,22 @@ NoContainer: true
     </div>
 }
 
-<div class="bg-dark">
-    <div class="container-xl py-4">
-        <div class="row">
-            <div class="offset-lg-2 col-12 col-lg-8">
-                <div class="row d-flex align-items-end border-bottom border-muted pb-2 mb-2">
-                    <div class="col-sm-3">
-                        <h3 class="d-inline text-white">Latest Releases</h3>
-                    </div>
-                    @{
-                        IDocument webRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Web").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
-                        IDocument docsRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Docs").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
-                        IDocument frameworkRelease = Outputs.FromPipeline(nameof(ReleaseNotes)).Where(x => x.GetString("Project") == "Statiq.Framework").OrderByDescending(x => x.GetDateTime(WebKeys.Published)).FirstOrDefault();
-                    }
-                    <div class="col-sm-3">
-                        <div class="text-muted"><small>Web</small></div>
-                        <div>
-                            @if (webRelease is object)
-                            {
-                                <text>@Html.DocumentLink(webRelease, webRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</text>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="text-muted"><small>Docs</small></div>
-                        <div>
-                            @if (docsRelease is object)
-                            {
-                                <text>@Html.DocumentLink(docsRelease, docsRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</text>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="text-muted"><small>Framework</small></div>
-                        <div>
-                            @if (frameworkRelease is object)
-                            {
-                                <text>@Html.DocumentLink(frameworkRelease, frameworkRelease.GetString("Name"), new Dictionary<object, object> { { "class", "text-white" }})</text>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="offset-lg-2 col-12 col-lg-8">
-                <div class="row d-flex align-items-end">
-                    <div class="col-sm-3">
-                        <h3 class="d-inline text-white">Latest News</h3>
-                    </div>
-                    @foreach (IDocument post in Outputs.Get("news/index.html").GetChildren().Take(3))
-                    {
-                        <div class="col-sm-3">
-                            <div class="text-muted"><small>@post.GetDateTime(WebKeys.Published).ToLongDateString()</small></div>
-                            <div><a href="@post.GetLink()" class="text-white">@post.GetTitle()</a></div>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="bg-light">
     <div class="container-xl">
         <div class="row">
-            <div class="offset-lg-2 col-12 col-lg-8">        
+            <div class="offset-lg-2 col-12 col-lg-8">
                 <div class="row py-4">
                     <div class="col-xl-4">
                         <a href="/web" class="text-decoration-none">
                             <div><img src="/assets/wordmark.svg" class="product-wordmark" alt="Statiq"></div>
-                            <div class="display-4 font-weight-light text-web mt-n2">Web</div>
+                            <div class="display-4 font-sans-serif font-weight-light text-blue mt-n2">Web</div>
                         </a>
                     </div>
                     <div class="col-xl-8">
                         <div class="row h-xl-100 d-flex align-items-center">
                             <div class="col-xl-2 h-100 d-flex flex-column">
                                 <div class="border-left flex-grow-1 d-none d-xl-block"></div>
-                                <div class="product-icon d-none d-xl-block"><i class="fad fa-globe-africa icon-web"></i></div>
+                                <div class="product-icon d-none d-xl-block"><i class="fad fa-globe-africa icon-blue"></i></div>
                                 <div class="border-left flex-grow-1 d-none d-xl-block"></div>
                             </div>
                             <div class="col-12 col-xl-10">
@@ -109,14 +48,14 @@ NoContainer: true
                     <div class="col-xl-4">
                         <a href="/docs" class="text-decoration-none">
                             <div><img src="/assets/wordmark.svg" class="product-wordmark" alt="Statiq"></div>
-                            <div class="display-4 font-weight-light text-docs mt-n2">Docs</div>
+                            <div class="display-4 font-sans-serif font-weight-light text-orange mt-n2">Docs</div>
                         </a>
                     </div>
                     <div class="col-xl-8">
                         <div class="row h-xl-100 d-flex align-items-center">
                             <div class="col-xl-2 h-100 d-flex flex-column">
                                 <div class="border-left flex-grow-1 d-none d-xl-block"></div>
-                                <div class="product-icon d-none d-xl-block"><i class="fad fa-book icon-docs"></i></div>
+                                <div class="product-icon d-none d-xl-block"><i class="fad fa-book icon-orange"></i></div>
                                 <div class="border-left flex-grow-1 d-none d-xl-block"></div>
                             </div>
                             <div class="col-12 col-xl-10">
@@ -134,14 +73,14 @@ NoContainer: true
                     <div class="col-xl-4">
                         <a href="/framework" class="text-decoration-none">
                             <div><img src="/assets/wordmark.svg" class="product-wordmark" alt="Statiq"></div>
-                            <div class="display-4 font-weight-light text-framework mt-n2">Framework</div>
+                            <div class="display-4 font-sans-serif font-weight-light text-purple mt-n2">Framework</div>
                         </a>
                     </div>
                     <div class="col-xl-8">
                         <div class="row h-xl-100 d-flex align-items-center">
                             <div class="col-xl-2 h-100 d-flex flex-column">
                                 <div class="border-left flex-grow-1 d-none d-xl-block"></div>
-                                <div class="product-icon d-none d-xl-block"><i class="fad fa-rocket-launch icon-framework"></i></div>
+                                <div class="product-icon d-none d-xl-block"><i class="fad fa-rocket-launch icon-purple"></i></div>
                                 <div class="border-left flex-grow-1 d-none d-xl-block"></div>
                             </div>
                             <div class="col-12 col-xl-10">
@@ -224,7 +163,7 @@ NoContainer: true
                                 What good is awesome tooling if figuring out how to deploy your
                                 site is a pain in the neck? Statiq comes with deployment capabilities
                                 built-in for popular scenarios such as <a href="/web/deployment/netlify">Netlify</a> and
-                                <a href="/web/deployment/azure-app-service">Azure App Service</a> with 
+                                <a href="/web/deployment/azure-app-service">Azure App Service</a> with
                                 <a href="/web/deployment/github-pages">GitHub Pages</a>, AWS, and others coming soon.
                             </p>
                         </div>
@@ -270,45 +209,45 @@ NoContainer: true
                     <thead>
                         <tr>
                             <th scope="col" style="width: 40%"></th>
-                            <th scope="col" class="text-framework" style="width: 20%">Framework</th>
-                            <th scope="col" class="text-web" style="width: 20%">Web</th>
-                            <th scope="col" class="text-docs" style="width: 20%">Docs</th>
+                            <th scope="col" class="text-purple" style="width: 20%">Framework</th>
+                            <th scope="col" class="text-blue" style="width: 20%">Web</th>
+                            <th scope="col" class="text-orange" style="width: 20%">Docs</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td scope="row">Preview server with live reload</td>
                             <td></td>
-                            <td><i class="fad fa-check-square icon-web"></i></td>
-                            <td><i class="fad fa-check-square icon-docs"></i></td>
+                            <td><i class="fad fa-check-square icon-blue"></i></td>
+                            <td><i class="fad fa-check-square icon-orange"></i></td>
                         </tr>
                         <tr class="table-dark text-dark">
                             <th scope="row" colspan="4">Deployment</th>
                         </tr>
                         <tr>
                             <td scope="row">General deployment pipelines</td>
-                            <td><i class="fad fa-check-square icon-framework"></i></td>
-                            <td><i class="fad fa-check-square icon-web"></i></td>
-                            <td><i class="fad fa-check-square icon-docs"></i></td>
+                            <td><i class="fad fa-check-square icon-purple"></i></td>
+                            <td><i class="fad fa-check-square icon-blue"></i></td>
+                            <td><i class="fad fa-check-square icon-orange"></i></td>
                         </tr>
                         <tr>
                             <td scope="row">Out-of-the-box Netlify deployments</td>
                             <td></td>
-                            <td><i class="fad fa-check-square icon-web"></i></td>
-                            <td><i class="fad fa-check-square icon-docs"></i></td>
+                            <td><i class="fad fa-check-square icon-blue"></i></td>
+                            <td><i class="fad fa-check-square icon-orange"></i></td>
                         </tr>
                         <tr>
                             <td scope="row">Out-of-the-box Azure App Service deployments</td>
                             <td></td>
-                            <td><i class="fad fa-check-square icon-web"></i></td>
-                            <td><i class="fad fa-check-square icon-docs"></i></td>
+                            <td><i class="fad fa-check-square icon-blue"></i></td>
+                            <td><i class="fad fa-check-square icon-orange"></i></td>
                         </tr>
                         <tr class="table-dark text-dark">
                             <th scope="row" colspan="4">Licensing</th>
                         </tr>
                         <tr>
                             <td scope="row">Open source</td>
-                            <td><i class="fad fa-check-square icon-framework"></i></td>
+                            <td><i class="fad fa-check-square icon-purple"></i></td>
                             <td></td>
                             <td></td>
                         </tr>

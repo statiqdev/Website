@@ -12,6 +12,9 @@
     <Compile Remove="external\**" />
     <EmbeddedResource Remove="external\**" />
     <None Remove="external\**" />
+    <None Update="input\Shared\_Title.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

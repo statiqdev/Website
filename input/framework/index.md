@@ -1,8 +1,16 @@
 Title: About Statiq Framework
-BreadcrumbTitle: Framework
 ShowInNavigation: false
+NoSidebar: true
 Xref: framework
 ---
+```raw
+@section Title { }
+
+<div class="text-center mb-4">
+    <img src="/assets/statiq-framework.svg" alt="Statiq Framework" class="w-50"></img>
+</div>
+```
+
 Statiq Framework is a powerful static generation framework that can be used to create custom static generation applications. While many users will find that [Statiq Web](xref:web) or [Statiq Docs](xref:docs) have enough functionality built-in, crafting a custom static generator with Statiq Framework provides the most flexibility.
 
 # Quick Start
@@ -106,7 +114,7 @@ Statiq is powerful because it combines a few simple building blocks that can be 
 
 - Content and data can come from a variety of sources.
 
-- **[Documents](xref:documents-and-metadata)** are created that each contain **[content](xref:content)** and **[metadata](xref:documents-and-metadata#about-metadata)**.
+- **[Documents](xref:documents-and-metadata)** are created that each contain **[content or data](xref:content-and-data)** and **[metadata](xref:documents-and-metadata#about-metadata)**.
 
 - The documents are processed by **[pipelines](xref:pipelines-and-modules)**.
 

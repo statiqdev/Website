@@ -36,4 +36,4 @@ await Bootstrapper
 ```
 
 If you're deploying to Netlify you can also set `NetlifyRedirects` to `true` to
-create a [Netlify redirects file](xref:web-redirects#netlify).
+create a [Netlify redirects file](xref:redirects#netlify).

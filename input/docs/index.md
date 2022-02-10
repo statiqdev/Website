@@ -1,9 +1,16 @@
 ﻿Title: About Statiq Docs
-BreadcrumbTitle: Docs
-NavigationTitle: Docs
-Order: 1
+ShowInNavigation: false
+NoSidebar: true
 Xref: docs
 ---
+```raw
+@section Title { }
+
+<div class="text-center mb-4">
+    <img src="/assets/statiq-docs.svg" alt="Statiq Docs" class="w-50"></img>
+</div>
+```
+
 Statiq Docs builds on [Statiq Web](/web) by adding support for .NET API documentation and other functionality that's important for documentation web sites.
 
-Statiq Docs is coming soon, so keep an eye on [news](/news) for updates.
+Statiq Docs is coming soon.
