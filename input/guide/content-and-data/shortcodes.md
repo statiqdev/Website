@@ -153,7 +153,7 @@ You can also register shortcodes directly with an engine using its `Shortcodes` 
 
 Use the `ProcessShortcodes` module in your own pipelines to find shortcodes within a document and render them. It's generally an accepted pattern to use the `ProcessShortcodes` module after all other templates have been evaluated, but you can certainly use it earlier in your pipelines if you want to.
 
-# Statiq Web Shortcodes <?# WebBadge /?>
+# Statiq Web Shortcodes <?^ WebBadge /?>
 
 Statiq Web comes with several web-specific shortcodes and support multiple pre-defined processing phases for shortcodes.
 
