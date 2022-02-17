@@ -1,3 +1,5 @@
+Badge: Web
+---
 Statiq can be configured to deploy to [GitHub Pages](https://pages.github.com).
 
 Note that GitHub Pages must be activated for the target repository [according to the instructions](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site) before deploying to it.

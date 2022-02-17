@@ -92,7 +92,7 @@ bootstrapper
 # Layouts
 
 In addition to rendering content in the document, templates are responsible for rendering common layouts. A collection
-of layout files and other common functionality is often called a [theme](xref:web-themes).
+of layout files and other common functionality is often called a [theme](xref:themes).
 
 The HTML template is generally responsible for applying layouts, which is why one is defined. By default, the HTML template
 references the same [Razor](xref:razor) module as the Razor template. That way, any plain HTML files or other non-Razor

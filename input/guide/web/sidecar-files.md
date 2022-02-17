@@ -1,4 +1,4 @@
-Order: 2
+Order: 3
 Badge: Web
 ---
 Sidecar files let you define metadata in a separate file.

@@ -1,4 +1,4 @@
-Order: 4
+Order: 1
 Badge: Web
 ---
 Statiq Web supports running external processes as part of execution. Processes can be defined to run at different stages during execution and can be run one, every time, or stay resident in the background. This provides a high degree of interoperability with other web stacks and existing tooling like the ecosystem of npm-based tools.

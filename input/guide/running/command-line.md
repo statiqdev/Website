@@ -36,6 +36,15 @@ COMMANDS:
     deploy       Executes deployment pipelines
 ```
 
+## Statiq Web Commands <?# WebBadge /?>
+
+In addition to the `pipelines` and `deploy` commands, Statiq Web provides some additional commands related to [locally serving your site](xref:preview-server):
+
+```txt
+    preview      Builds the site and serves it, optionally watching for changes, rebuilding, and triggering client reload by default
+    serve        Serves a folder, optionally watching for changes and triggering client reload by default
+```
+
 # Defining Commands
 
 Additional commands can be [defined using a bootstrapper](xref:commands).

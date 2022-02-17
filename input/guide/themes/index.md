@@ -1,6 +1,7 @@
-Order: 4
+Badge: Web
+Order: 7
 ---
-Themes allow you to apply general content, data, layouts, and settings to your own site.
+Themes are a feature of [Statiq Web](/web) and [Statiq Docs](/docs) that allow you to apply general content, data, layouts, and settings to your own site or to create a packaged set of layouts and assets for others to use.
 
 In general, themes are placed in a `theme` folder alongside the `input` folder.
 Inside the `theme` folder is a theme `input` folder that contains any type of file the normal `input` folder would.

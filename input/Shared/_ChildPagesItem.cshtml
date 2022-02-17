@@ -1,0 +1,23 @@
+@* Override in your own input directory to customize the appearance of items in the child pages list *@
+@* The document for the child page is passed in as the model *@
+
+@{
+    string excerpt = Model.GetString(Keys.Excerpt);
+    <div class="p-3 mb-2 bg-light page-box">
+        <h4>
+            @Html.DocumentLink(Model)
+            @if (Model.GetList<string>("Badge")?.Contains("Web") == true)
+            {
+                <text><?# WebBadge /?></text>
+            }
+            @if (Model.GetList<string>("Badge")?.Contains("Docs") == true)
+            {
+                <text><?# DocsBadge /?></text>
+            }
+        </h4>
+        @if (!string.IsNullOrEmpty(excerpt))
+        {
+            <div class="font-size-sm">@Html.Raw(excerpt)</div>
+        }
+    </div>
+}

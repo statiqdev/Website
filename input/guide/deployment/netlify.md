@@ -1,3 +1,5 @@
+Badge: Web
+---
 Statiq can be configured to deploy to [Netlify](https://www.netlify.com).
 
 The following [settings](xref:web-settings) are used to configure deployment to Netlify:

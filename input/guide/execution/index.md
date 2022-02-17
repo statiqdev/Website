@@ -1,4 +1,4 @@
-Order: 5
+Order: 8
 ---
 Execution happens when [pipelines and the modules they contain](xref:pipelines-and-modules) are evaluated.
 

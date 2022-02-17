@@ -1,3 +1,5 @@
+Badge: Web
+---
 Statiq can be configured to deploy to [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/).
 
 The first step is to set up a new Web App which can be found under App Services in the

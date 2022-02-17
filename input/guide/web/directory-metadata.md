@@ -1,4 +1,4 @@
-Order: 1
+Order: 2
 Badge: Web
 ---
 Directory metadata allows you to specify metadata that applies to all files in a given directory (and optionally all subdirectories).

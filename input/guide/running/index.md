@@ -1,7 +1,7 @@
-Order: 6
+Order: 9
 Title: Running Your Application
 ---
-Once [pipelines and modules](xref:pipelines-and-modules) are defined and you’ve created your content, you can run your generator application.
+Once you’ve created your content, you can run your Statiq application. 
 
 # dotnet run
 
@@ -11,4 +11,4 @@ In general, calling `dotnet run` will compile your application, run the default 
 
 # dotnet publish
 
-Alternativly you can publish your application using [`dotnet publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish). This will create an executable for your generator that you can run without compilation. For more information see [Publish .NET Core apps with the .NET Core CLI](https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli).
+Alternatively you can publish your application using [`dotnet publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish). This will create an executable for your generator that you can run without compilation. For more information see [Publish .NET Core apps with the .NET Core CLI](https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli).

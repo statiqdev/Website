@@ -1,1 +1,0 @@
-Xref: => Config.FromDocument(x => "web-" + x.GetTitle().Replace(' ', '-'))

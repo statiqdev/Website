@@ -86,7 +86,7 @@ dotnet run
 ```
 This will by default create an `output` folder in your project folder if it doesn't exists and generate static web site content based on what's in your `input` folder.
 
-Or run it and [preview the generated site](xref:web-preview-server):
+Or run it and [preview the generated site](xref:preview-server):
 
 ```
 dotnet run -- preview

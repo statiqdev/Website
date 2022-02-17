@@ -1,3 +1,6 @@
+Badge: Web
+Order: 3
+---
 Statiq Web comes with a built-in preview server to help you while developing your layout and content.
 
 You can run the preview server with the `preview` command which will build the site and launch the server:
