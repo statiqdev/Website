@@ -1,7 +1,7 @@
 Order: 10
 Badge: Web
 ---
-[Statiq Web](/web) has built-in support for deployment to a variety of services.
+[Statiq Web](xref:web) has built-in support for deployment to a variety of services.
 
 Statiq Web can deploy to the following services by default:
 - [Azure App Service](xref:azure-app-service)

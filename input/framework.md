@@ -1,5 +1,6 @@
 Title: About Statiq Framework
 ShowInNavigation: false
+ShowInSidebar: false
 NoSidebar: true
 Xref: framework
 ---
@@ -98,7 +99,7 @@ While Markdown support is part of Statiq Framework (and covered by the same MIT 
 dotnet add package Statiq.Markdown --version x.y.z
 ```
 
-That's because Statiq Framework is completely general and doesn't make any assumptions about the kind of generator you're building (unlike [Statiq Web](/web) which is somewhat opinionated and provides support for templates and more out of the box). Many other [Statiq Framework extensions](https://www.nuget.org/packages?q=statiq.) also exist and you should pick and choose which ones you need.
+That's because Statiq Framework is completely general and doesn't make any assumptions about the kind of generator you're building (unlike [Statiq Web](xref:web) which is somewhat opinionated and provides support for templates and more out of the box). Many other [Statiq Framework extensions](https://www.nuget.org/packages?q=statiq.) also exist and you should pick and choose which ones you need.
 
 ## Step 6: Run it!
 

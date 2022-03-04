@@ -12,7 +12,7 @@ Xref: web
 </div>
 ```
 
-Statiq Web is a powerful static web site generation toolkit suitable for most use cases. It's built on top of [Statiq Framework](/framework) so you can always extend or customize it beyond those base capabilities as well.
+Statiq Web is a powerful static web site generation toolkit suitable for most use cases. It's built on top of [Statiq Framework](xref:framework) so you can always extend or customize it beyond those base capabilities as well.
 
 # Quick Start
 
@@ -66,9 +66,9 @@ namespace MySite
 
 ## Step 5: Add Some Content
 
-Start adding content by creating [Markdown](xref:template-languages#markdown) files in your `input` folder, by default input folder is located in your project root.
+Start adding content by creating [Markdown](xref:template-languages#markdown) files in your `input` folder (by default the `input` folder is located in your project root).
 
-To get something served you can add the following code as `index.md` file in your `input` folder.
+To get something started, you can add the following code as `index.md` file in your `input` folder.
 ```md
 Title: My First Statiq page
 ---
@@ -84,13 +84,14 @@ Let the magic happen:
 ```
 dotnet run
 ```
-This will by default create an `output` folder in your project folder if it doesn't exists and generate static web site content based on what's in your `input` folder.
 
-Or run it and [preview the generated site](xref:preview-server):
+This will create an `output` folder in your project folder by default (if it doesn't already exist) and generate static web site content based on what's in your `input` folder.
+
+You can also [preview the generated site](xref:preview-server):
 
 ```
 dotnet run -- preview
 ```
 
-This will generate content and serve your output folder over HTTP (i.e. `http://localhost:5080`).
+This will generate content and serve your `output` folder over HTTP (i.e. `http://localhost:5080`).
 ![statiq preview](https://user-images.githubusercontent.com/1647294/89655186-0198b580-d8ca-11ea-9db5-bef9a9592161.png)

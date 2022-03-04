@@ -9,7 +9,7 @@ Most pipeline configuration happens in the pipeline’s constructor by editing p
 Two properties can be used to specify dependency data of the pipeline:
 
 - `Dependencies` is a `HashSet<string>` that contains the names of pipelines that the current one depends on. In other words, any pipeline name in the `Dependencies` collection will be executed before the current pipeline is executed. If the current pipeline is specified as the only executing pipeline (for example, on the [command line](xref:command-line-interface)) then it’s dependencies (and their dependencies) will also be executed.
-- `DependencyOf` is a `HashSet<string>` that defines pipelines that this pipeline is a dependent of. In other words, it’s the opposite of the `Dependencies` collection and indicates the current pipeline should be executed before those specified in the `DependencyOf` collection. This property is particularly valuable when you’re trying to add behavior before pre-configured pipelines such as in [Statiq Web](/web).
+- `DependencyOf` is a `HashSet<string>` that defines pipelines that this pipeline is a dependent of. In other words, it’s the opposite of the `Dependencies` collection and indicates the current pipeline should be executed before those specified in the `DependencyOf` collection. This property is particularly valuable when you’re trying to add behavior before pre-configured pipelines such as in [Statiq Web](xref:web).
 
 # Other Settings
 
