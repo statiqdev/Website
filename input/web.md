@@ -95,3 +95,19 @@ dotnet run -- preview
 
 This will generate content and serve your `output` folder over HTTP (i.e. `http://localhost:5080`).
 ![statiq preview](https://user-images.githubusercontent.com/1647294/89655186-0198b580-d8ca-11ea-9db5-bef9a9592161.png)
+
+# Next Steps
+
+[🎨 Download a theme](xref:themes) like [CleanBlog](https://github.com/statiqdev/CleanBlog).
+
+[📖 Read the guide](xref:guide) to learn more about all the features of Statiq.
+
+[💬 Use the Discussions repo](https://github.com/statiqdev/Discussions/discussions) for assistance, questions, and general discussion about all Statiq projects.
+
+[🐞 File an issue](https://github.com/statiqdev/Statiq.Web/issues) if you find a bug or have a feature request related to Statiq Web.
+
+# How It Works
+
+<?! ^ _howitworks.md /?>
+
+Statiq Web includes pipelines, modules, and other functionality related to generating web sites out of the box. 

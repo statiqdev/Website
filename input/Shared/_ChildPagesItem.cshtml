@@ -15,9 +15,33 @@
                 <text><?# DocsBadge /?></text>
             }
         </h4>
+
         @if (!string.IsNullOrEmpty(excerpt))
         {
             <div class="font-size-sm">@Html.Raw(excerpt)</div>
+        }
+
+        @{
+            DocumentList<IDocument> children = OutputPages.GetChildrenOf(Model);
+            if (!Model.GetBool(SiteKeys.NoChildPages) && children.Count > 0)
+            {
+                <ul class="list-inline border-top mt-2 pt-2 small">
+                    @foreach (IDocument child in children)
+                    {
+                        <li class="list-inline-item">
+                            @Html.DocumentLink(child)
+                            @if (child.GetList<string>("Badge")?.Contains("Web") == true)
+                            {
+                                <text><?# WebBadge /?></text>
+                            }
+                            @if (child.GetList<string>("Badge")?.Contains("Docs") == true)
+                            {
+                                <text><?# DocsBadge /?></text>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
         }
     </div>
 }

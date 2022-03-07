@@ -50,7 +50,7 @@ The default behavior of the bootstrapper is controlled by `DefaultFeatures` flag
 - `Pipelines`: Adds all [pipelines](xref:pipelines-and-modules) in the entry assembly.
 - `All`: Configures all default features.
 
-## Avoiding Default Behavior in Statiq Web <?# WebBadge /?>
+## <?# WebBadge /?> Avoiding Default Behavior in Statiq Web
 
 When you create a bootstrapper using the `Bootstrapper.Factory.CreateWeb(args)` extension method, it implies that the default bootstrapper behavior should be included and automatically configures all default behavior for Statiq Web. If you'd rather have more control over bootstrapper default behavior, you can use the `AddWeb()` extension method after creating a standard bootstrapper with something like `.CreateDefaultWithout()` instead.
 

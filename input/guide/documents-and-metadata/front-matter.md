@@ -16,11 +16,13 @@ Date: 5/25/2016
 This is the content of the file.
 ```
 
+Note that the first instance of three dashes is typically matched, even if it's further down in the document. That's because the parser has no way of knowing whether the content prior to that is valid front matter or not. If you need to use `---` somewhere else in your content and you're not already using a front matter block, you may need to add a line of three dashes to the top of your content to act as empty front matter so the one further down is ignored.
+
 An example of front matter usage would be using metadata to define tags for your blog posts. You could create a "Tags" metadata field in the front matter of your post file and then read that metadata later to create tag clouds, lists of similar posts, etc.
 
-Practically, the `ParseYaml` module is usually used as the child of the `ExtractFrontMatter` module. However, like most things in Statiq Framework this is designed to be flexible. You could process any type of front matter (JSON, etc.) with this setup by specifying different child modules.
+Generally the `ParseYaml` module is usually used as the child of the `ExtractFrontMatter` module. However, like most things in Statiq Framework this is designed to be flexible. You could process any type of front matter (JSON, etc.) with this setup by specifying different child modules.
 
-# Front Matter Style <?# WebBadge /?>
+# <?# WebBadge /?> Front Matter Style
 
 In Statiq Web you don't need to configure the `ExtractFrontMatter` module and front matter is identified and extracted automatically for all input documents. Statiq Web also supports additional front matter definition syntax in addition to the triple-dash style described above. This allows for the greatest flexibility in how you define front matter.
 

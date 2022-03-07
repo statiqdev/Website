@@ -27,7 +27,7 @@ There are several ways to add metadata to documents and metadata is merged toget
 
 Note that [global settings cascade to documents](xref:settings#cascade-to-documents). This can be helpful because it means you can define metadata that's intended for use by documents as a global setting and it will cascade to every document as a default value.
 
-## Metadata Sources <?# WebBadge /?>
+## <?# WebBadge /?> Metadata Sources
 
 In Statiq Framework, you need to use modules like `ExtractFrontMatter` to add metadata to document, but Statiq Web includes support for many metadata sources out of the box. Here are the default metadata sources in Statiq Web from lowest priority to highest. Think of metadata being applied (or _cascaded_) from the top of this list to the bottom, with duplicate keys overwriting existing values along the way.
 

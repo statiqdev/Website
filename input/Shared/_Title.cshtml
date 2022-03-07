@@ -1,6 +1,5 @@
 @* The root page of this section is passed in as the model *@
 
-@(Document.GetString(Keys.Title) ?? Document.GetTitle())
 @if (Document.GetList<string>("Badge")?.Contains("Web") == true)
 {
     <text><?# WebBadge /?></text>
@@ -9,6 +8,7 @@
 {
     <text><?# DocsBadge /?></text>
 }
+@(Document.GetString(Keys.Title) ?? Document.GetTitle())
 @if (Document.GetInt(Keys.Index) > 1)
 {
     <small>(Page @Document.GetString(Keys.Index))</small>

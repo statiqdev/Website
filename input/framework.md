@@ -1,9 +1,10 @@
+<!---
 Title: About Statiq Framework
 ShowInNavigation: false
 ShowInSidebar: false
 NoSidebar: true
 Xref: framework
----
+--->
 ```raw
 @section Title { }
 
@@ -109,18 +110,14 @@ Let the magic happen:
 dotnet run
 ```
 
+# Next Steps
+
+[📖 Read the guide](xref:guide) to learn more about all the features of Statiq.
+
+[💬 Use the Discussions repo](https://github.com/statiqdev/Discussions/discussions) for assistance, questions, and general discussion about all Statiq projects.
+
+[🐞 File an issue](https://github.com/statiqdev/Statiq.Framework/issues) if you find a bug or have a feature request related to Statiq Framework.
+
 # How It Works
 
-Statiq is powerful because it combines a few simple building blocks that can be rearranged and used in limitless combinations. Think of it like LEGO® for static generation.
-
-- Content and data can come from a variety of sources.
-
-- **[Documents](xref:documents-and-metadata)** are created that each contain **[content or data](xref:content-and-data)** and **[metadata](xref:documents-and-metadata#about-metadata)**.
-
-- The documents are processed by **[pipelines](xref:pipelines-and-modules)**.
-
-- Each pipeline consists of one or more **[modules](xref:about-modules)** that manipulate the documents given to it by transforming, aggregating, filtering, or producing entirely new documents.
-
-- The final output of each pipeline is made available to other pipelines and may be written to output files or deployed to hosting services.
-
-<div><img src="/assets/flow.png" class="img-fluid"></div>
+<?! ^ _howitworks.md /?>

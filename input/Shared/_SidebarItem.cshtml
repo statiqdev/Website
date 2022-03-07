@@ -1,7 +1,6 @@
 @* The document for the sidebar link is passed in as the model *@
 
 <div class="sidebar-nav-item @(Document.IdEquals(Model) ? "active" : null) @(OutputPages.GetChildrenOf(Model).Any() ? "has-children" : null)">
-    @Html.DocumentLink(Model)
     @if (Model.GetList<string>("Badge")?.Contains("Web") == true)
     {
         <text><?# WebBadge /?></text>
@@ -10,4 +9,5 @@
     {
         <text><?# DocsBadge /?></text>
     }
+    @Html.DocumentLink(Model)
 </div>

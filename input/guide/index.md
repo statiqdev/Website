@@ -5,4 +5,4 @@ NavigationTitle: Guide
 ShowInSidebar: false
 Xref: guide
 ---
-This is the guide for Statiq.
+Learn about all the functionality of [Statiq Framework](xref:framework), [Statiq Web](xref:web), and [Statiq Docs](xref:docs).

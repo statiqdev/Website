@@ -36,7 +36,7 @@ COMMANDS:
     deploy       Executes deployment pipelines
 ```
 
-## Statiq Web Commands <?# WebBadge /?>
+## <?# WebBadge /?> Statiq Web Commands 
 
 In addition to the `pipelines` and `deploy` commands, Statiq Web provides some additional commands related to [locally serving your site](xref:preview-server):
 
