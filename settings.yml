@@ -5,7 +5,10 @@ LinksUseHttps: true
 MirrorResources: true
 NetlifySiteId: b84df763-be90-43e0-88b7-f0bfcdc0deed
 NetlifyAccessToken: => Config.FromSetting<string>("NETLIFY_TOKEN")
-SourceFiles: C:\Code\statiqdev\Statiq.Framework\src\core\Statiq.Common\**\*
+SourceFiles:
+- ../../Statiq.Framework/src/**/{!.git,!bin,!obj,!packages,!*.Tests,!*.Templates,}/**/*.cs
+- ../../Statiq.Web/src/**/{!.git,!bin,!obj,!packages,!*.Tests,!*.Templates,}/**/*.cs
+- ../../Statiq.Docs/src/**/{!.git,!bin,!obj,!packages,!*.Tests,!*.Templates,}/**/*.cs
 EditRoot: https://github.com/statiqdev/statiqdev.github.io/edit/develop/input
 FontLink: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Thin:wght@200;700&display=swap"
 sass-blue: "#48bdfe"
