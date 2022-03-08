@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: Website
     steps:
       - name: Get Source
         uses: actions/checkout@v2
