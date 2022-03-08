@@ -13,7 +13,7 @@ jobs:
       - name: Get Source
         uses: actions/checkout@v2
         with:
-          path: statiqdev.github.io
+          path: Website
           submodules: recursive
       - name: Checkout Statiq.Framework
         uses: actions/checkout@v2
