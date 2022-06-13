@@ -107,7 +107,7 @@ This will generate content and serve your `output` folder over HTTP (i.e. `http:
 
 [📖 Read the guide](xref:guide) to learn more about all the features of Statiq.
 
-[💬 Use the Discussions repo](https://github.com/statiqdev/Discussions/discussions) for assistance, questions, and general discussion about all Statiq projects.
+[💬 Use the Discussions](https://github.com/orgs/statiqdev/discussions) for assistance, questions, and general discussion about all Statiq projects.
 
 [🐞 File an issue](https://github.com/statiqdev/Statiq.Docs/issues) if you find a bug or have a feature request related to Statiq Docs.
 
