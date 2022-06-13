@@ -19,3 +19,10 @@ By default a client-side redirect file using a [`META-REFRESH` header](https://e
 # Netlify
 
 You can also create a [Netlify redirect file](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) by [setting](xref:web-settings) `NetlifyRedirects` to `true`.
+
+# Identifying Redirected Documents
+
+For each source of a redirect, Statiq creates a new document with the redirection content.
+These redirect documents might get returned in situations where you don't want them to be.
+You may also need to see the destination of a redirected document in the document metadata.
+When creating redirect documents, Statiq sets the `RedirectTo` [metadata](xref:documents-and-metadata) value to the destination of the redirect.
