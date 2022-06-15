@@ -1,13 +1,14 @@
-@* The document for the sidebar link is passed in as the model *@
+@* The document for the sidebar link and whether it has children is passed in as the model *@
+@inherits StatiqRazorPage<(IDocument, bool)>
 
-<div class="sidebar-nav-item @(Document.IdEquals(Model) ? "active" : null) @(OutputPages.GetChildrenOf(Model).Any() ? "has-children" : null)">
-    @if (Model.GetList<string>("Badge")?.Contains("Web") == true)
+<div class="sidebar-nav-item @(Document.IdEquals(Model.Item1) ? "active" : null) @(Model.Item2 ? "has-children" : null)">
+    @if (Model.Item1.GetList<string>("Badge")?.Contains("Web") == true)
     {
         <text><?# WebBadge /?></text>
     }
-    @if (Model.GetList<string>("Badge")?.Contains("Docs") == true)
+    @if (Model.Item1.GetList<string>("Badge")?.Contains("Docs") == true)
     {
         <text><?# DocsBadge /?></text>
     }
-    @Html.DocumentLink(Model)
+    @Html.DocumentLink(Model.Item1)
 </div>
