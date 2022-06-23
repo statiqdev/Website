@@ -6,7 +6,11 @@ By default, Statiq Docs is configured to look for source files in an `src` folde
 
 # Using Settings
 
-The following [settings](xref:settings) can be used to specify the location of your code. They each accept one or more a [globbing patterns](xref:files-and-paths#globbing) as either a string or collection of strings.
+The following [settings](xref:settings) can be used to specify the location of your code.
+They each accept one or more [globbing patterns](xref:files-and-paths#globbing) as either a string or collection of strings.
+If any of these settings are relative,
+their relative root is the [virtual file system input path(s)](xref:files-and-paths#input-paths)
+which generally includes your `input` folder (as well as any other defined input folders).
 
 - `SourceFiles`: Locates C# source files and compiles them to determine what symbols to document.
   - By default, the patterns `src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs` and `../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs` are used which searches for all `*.cs` files at any depth under a `src` folder but not under `bin`, `obj`, `packages` or `Tests` folders.
