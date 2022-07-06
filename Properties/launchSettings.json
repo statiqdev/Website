@@ -2,7 +2,7 @@
   "profiles": {
     "Statiq.Dev": {
       "commandName": "Project",
-      "commandLineArgs": "preview"
+      "commandLineArgs": "preview -s \"SourceFiles=\" -s IgnoreInvalidXrefs=true"
     }
   }
 }

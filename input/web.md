@@ -62,6 +62,18 @@ namespace MySite
         .RunAsync();
   }
 }
+
+```
+
+Alternatively if you're using .NET 6 and have `<ImplicitUsings>enable</ImplicitUsings>` in your project file,
+you can make use of top-level statements and implicit usings to simplify your `Program.cs` file
+and this is all that's needed:
+
+```csharp
+await Bootstrapper
+  .Factory
+  .CreateWeb(args)
+  .RunAsync();
 ```
 
 ## Step 5: Add Some Content

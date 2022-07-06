@@ -63,6 +63,17 @@ namespace MyGenerator
 }
 ```
 
+Alternatively if you're using .NET 6 and have `<ImplicitUsings>enable</ImplicitUsings>` in your project file,
+you can make use of top-level statements and implicit usings to simplify your `Program.cs` file
+and this is all that's needed:
+
+```csharp
+await Bootstrapper
+  .Factory
+  .CreateDefault(args)
+  .RunAsync();
+```
+
 This creates a default `Bootstrapper` instance and passes it the [command-line arguments](xref:command-line-interface) so it can process them with the `.CreateDefault(args)` call. Then it executes the specified command (from the command-line) during the final `.RunAsync()` call.
 
 This example is all you need for a minimal, functioning Statiq Framework application. The only problem is that it doesn’t actually do anything. Let’s add one more step and process some Markdown files.

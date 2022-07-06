@@ -65,6 +65,17 @@ namespace MySite
 }
 ```
 
+Alternatively if you're using .NET 6 and have `<ImplicitUsings>enable</ImplicitUsings>` in your project file,
+you can make use of top-level statements and implicit usings to simplify your `Program.cs` file
+and this is all that's needed:
+
+```csharp
+await Bootstrapper
+  .Factory
+  .CreateDocs(args)
+  .RunAsync();
+```
+
 ## Step 5: Specify Your Code If Needed
 
 By default, Statiq Docs is configured to look for source files in an `src` folder either one level up from your documentation site (I.e. if you've placed in a `docs` subfolder of your main repository) or directly under your documentation site. You can [define alternate locations](xref:specifying-code) for your code, including directly pointing to assemblies, project files, or solution files.
