@@ -2,7 +2,7 @@ Order: 3
 ---
 The [command-line commands](xref:command-line-interface) are fully configurable which allows you to extend or replace the behavior of your generator with whatever you want.
 
-Statiq uses the excellent [Spectre.Cli](https://github.com/spectresystems/spectre.cli) library to manage command-line parsing. This allows commands to be defined as strongly-typed classes with typed sets of command-line arguments and options. It also automatically generates help text when the user uses the `--help` argument.
+Statiq uses the excellent [Spectre.Console](https://github.com/spectreconsole/spectre.console) library to manage command-line parsing. This allows commands to be defined as strongly-typed classes with typed sets of command-line arguments and options. It also automatically generates help text when the user uses the `--help` argument.
 
 To define a new command, implement the `Spectre.Cli.AsyncCommand<TSettings>` interface (where `TSettings` is the type that contains command-line arguments and options). You can also derive your command class from `BaseCommand<TSettings>` which adds default logging and debugging command-line arguments to your command.
 
