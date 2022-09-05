@@ -3,7 +3,7 @@ Badge: Web
 ---
 Statiq Web supports multiple template languages and you can specify which ones should be applied for your site. The specification of a template language, to what files it should apply, and when it should be executed is generally referred to as a _template_.
 
-A template applies to a documents with a particular media type (generally inferred from the file extension) and the definition
+A template applies to documents with a particular media type (generally inferred from the file extension) and the definition
 indicates the [content type](xref:content-and-media-types) and [processing phase](xref:pipelines-and-modules#phases) in which the template engine should be executed
 (either the [process](xref:pipelines-and-modules#process-phase) or [post-process](xref:pipelines-and-modules#post-process-phase) phase).
 
