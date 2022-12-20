@@ -19,6 +19,7 @@ Settings that you can use to control Statiq Framework include:
 - `CleanOutputPath`: Indicates whether to clean the output path on each execution.
 - `DateTimeInputCulture`: Indicates the culture to use for reading and interpreting dates as input.
 - `DateTimeDisplayCulture`: Indicates the culture to use for displaying dates in output.
+- `CurrentDateTime`: Sets an alternate [current date/time](xref:current-date) for use during generation.
 
 Settings keys are just strings, but most built-in settings are also defined as string constants in the `Keys` class.
 
