@@ -6,6 +6,7 @@ In addition to the [settings available from Statiq Framework](xref:settings), St
 The following global settings are available:
 
 - `InputFiles`: The globbing pattern(s) that are be used to read files from the input folder.
+- `AdditionalInputFiles`: Additional globbing pattern(s) that are be used to read files from the input folder (without having to redefine the default `InputFiles` setting).
 - `DirectoryMetadataFiles`: The globbing pattern(s) that will be used to read [directory metadata files](xref:directory-metadata).
 - `OptimizeContentFileNames`: Indicates that content output file names should be optimized to remove spaces, etc.
 - `OptimizeDataFileNames`: Indicates that data output file names should be optimized to remove spaces, etc.

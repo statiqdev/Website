@@ -7,17 +7,7 @@ There are three broad categories of files in Statiq Web:
 - [Content](xref:content-files) which typically output as HTML files, directly or after one or more [templates](xref:templates) are applied. Examples include Markdown, Razor, and HTML files.
 - [Data](xref:data-files) which may or may not be output and can be used when applying a template to content files. Examples include JSON, YAML, and XML files.
 
-Files should be placed in the `input` folder (or a sub-folder)
-and the `InputFiles` [setting](xref:web-settings) controls what files from the input folder are loaded.
-It's set to `**/{!_,}*` by default which loads all files in any input directory unless it starts with an underscore `_`.
-
-If you do have a file that starts with an underscore and you want to include it,
-the easiest way to do that is to name it without an underscore
-and then create a [sidecar file](xref:sidecar-files) for the file that sets `DestinationFileName`.
-For example, to output the file `_redirects`, you would create a file in your input folder named
-`redirects` (without an underscore) that contains the content
-you want to output and a [sidecar file](xref:sidecar-files) named `_redirects.yml` that contains `DestinationFileName: _redirects`.
-Alternatively, you could redefine the setting `InputFiles` to include either all or specific underscore files (note that including all underscore files might impact other features of Statiq like sidecar file processing because sidecar files would be considered content).
+Files should be placed in the `input` folder (or a sub-folder) and the `InputFiles` [setting](xref:web-settings) controls what files from the input folder are loaded. It's set to `**/{!_,}*` by default which loads all files in any input directory unless it starts with an underscore `_`. You can always redefine the `InputFiles` [setting](xref:web-settings) to whatever [globbing pattern(s)](xref:files-and-paths#globbing) you want, but if you just need to include explicit files that would otherwise be excluded (I.e. ones that start with an underscore), you can use the `AdditionalIntputFiles` [setting](xref:web-settings) to do so.
 
 The category of a file, and thus what operations are performed on it, is determined by its media type (which is inferred from its file extension). Unless the file extension is recognized as a content or data file such as Markdown, Razor, JSON, or YAML, the file is considered an asset file. The category can be changed by setting `ContentType` for the document. For example, you can treat a JSON file which would normally be interpreted as a data file and processed as JSON as an asset file that should be copied to the output folder directly by setting `ContentType` to `Asset` via something like a [sidecar file](xref:sidecar-files).
 
