@@ -18,7 +18,7 @@ By default a client-side redirect file using a [`META-REFRESH` header](https://e
 
 # Netlify
 
-You can also create a [Netlify redirect file](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) by [setting](xref:web-settings) `NetlifyRedirects` to `true`.
+You can also create a [Netlify redirect file](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) by [setting](xref:web-settings) `NetlifyRedirects` to `true`. This setting also ensures an existing `_redirects` file is output even though underscore files [would normally be excluded](xref:content-and-media-types).
 
 # Identifying Redirected Documents
 
