@@ -60,7 +60,7 @@ This is the main phase and it should contain most of the modules for a pipeline.
 
 ## Post-Process Phase
 
-The post-process phase can be used for modules that need access to output documents from the process phase of every pipeline regardless of dependencies (except [isolated pipelines](#isolated)). All post-process phases across all pipelines are executed in parallel, but only after all process phases have completed.
+The post-process phase can be used for modules that need access to output documents from the process phase of every pipeline regardless of dependencies (except [isolated pipelines](#isolated)). Usually all post-process phases across all pipelines are executed in parallel, but only after all process phases have completed (you can change this behavior by indicating the pipeline has [post-process dependencies](post-process-dependencies).
 
 ## Output Phase
 
@@ -77,6 +77,10 @@ An isolated pipeline is one that you know don't need access to output documents 
 ## Deployment
 
 Deployment pipelines are special in that they don't execute by default. To execute your deployment pipelines you run Statiq with the `deploy` command. Modules in deployment pipelines can read document outputs from other pipelines inside their output phase (unlike a normal pipeline). Deployment pipelines are also executed last so that the output phase of other non-deployment pipelines has completed. In general, deployment pipelines contain modules that deploy final output somewhere (like a web host) inside their output phase.
+
+## Post-Process Dependencies
+
+In some situations, you may not want the post-process phase of a pipeline to run concurrent to all other post-process phases, and instead want it to run after the post-process phase(s) of [the pipeline dependencies](#concurrency-and-dependencies). In these cases, you can set `PostProcessHasDependencies` to `true` to indicate that the post-process phase of a pipeline should have dependencies on the other post-process phases of all pipeline dependencies. This is useful if you have a pipeline that needs to run it's post-process phase after all other pipelines have completed post-processing.
 
 ## Execution Policy
 
