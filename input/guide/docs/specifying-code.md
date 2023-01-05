@@ -13,7 +13,7 @@ their relative root is the [virtual file system input path(s)](xref:files-and-pa
 which generally includes your `input` folder (as well as any other defined input folders).
 
 - `SourceFiles`: Locates C# source files and compiles them to determine what symbols to document.
-  - By default, the patterns `src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs` and `../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs` are used which searches for all `*.cs` files at any depth under a `src` folder but not under `bin`, `obj`, `packages` or `Tests` folders.
+  - By default, the patterns `../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs` and `../../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs` are used which searches for all `*.cs` files at any depth under a `src` folder but not under `bin`, `obj`, `packages` or `Tests` folders. The first globbing pattern looks for `src` folders alongside the `input` folder and the second looks for `src` folder up a level alongside the folder of your whole Statiq Docs project (the patterns are initially rooted on the `input` folder).
   - If you want to define other ways of locating code such as project files or assemblies, and don't want source files to be located, set this settings to an empty string.
 - `ProjectFiles`: Locates .NET project files and uses those to determine what symbols to document.
 - `SolutionFiles`: Locates .NET solution files and uses the projects in those to determine what symbols to document.
