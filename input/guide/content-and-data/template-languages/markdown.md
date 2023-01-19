@@ -1,5 +1,9 @@
 ﻿In Statiq Web and Statiq Docs, the Markdown engine is executed automatically for Markdown file types. In Statiq Framework you must use the `RenderMarkdown` module from the `Statiq.Markdown` package in your pipeline to render Markdown content.
 
+The `Statiq.Markdown` package uses [Markdig](https://github.com/xoofx/markdig) to process the Markdown,
+which is a CommonMark compliant Markdown process with additional features like support for
+GitHub Flavored Markdown fenced code blocks.
+
 # Settings
 
 The following settings are available for the `Statiq.Markdown` package:
