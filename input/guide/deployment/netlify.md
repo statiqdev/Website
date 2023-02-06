@@ -26,7 +26,7 @@ Using a computed value in `appsettings.json`:
 The [bootstrapper](xref:bootstrapper) also has an extension method for configuring deployment:
 
 ```csharp
-await Bootstrapper
+return await Bootstrapper
     .Factory
     .CreateWeb(args)
     .DeployToNetlify(

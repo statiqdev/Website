@@ -12,7 +12,7 @@ engine.Events.Subscribe<BeforeModuleExecution>(
 You can also subscribe to an event using the [bootstrapper](xref:bootstrapper):
 
 ```csharp
-await Bootstrapper
+return await Bootstrapper
   .Factory
   .CreateDefault(args)
   .SubscribeEvent<BeforeModuleExecution>(

@@ -10,7 +10,7 @@ To prevent a document from outputting but still include it in pipelines and the 
 You can also exclude entire paths with the global `ExcludedPaths` setting. For example, this will entirely exclude the `exclude_me` folder and no files from that folder will be processed or copied to output:
 
 ```csharp
-await Bootstrapper
+return await Bootstrapper
     .Factory
     .CreateWeb(args)
     .AddSetting(

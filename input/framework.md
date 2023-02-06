@@ -68,7 +68,7 @@ you can make use of top-level statements and implicit usings to simplify your `P
 and this is all that's needed:
 
 ```csharp
-await Bootstrapper
+return await Bootstrapper
   .Factory
   .CreateDefault(args)
   .RunAsync();

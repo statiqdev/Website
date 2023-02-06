@@ -33,7 +33,7 @@ Using a computed value in `appsettings.json`:
 The [bootstrapper](xref:bootstrapper) also has an extension method for configuring deployment:
 
 ```csharp
-await Bootstrapper
+return await Bootstrapper
     .Factory
     .CreateWeb(args)
     .DeployToGitHubPages(
@@ -48,7 +48,7 @@ await Bootstrapper
 There's also an overload to deploy to a specific branch other than `gh-pages`:
 
 ```csharp
-await Bootstrapper
+return await Bootstrapper
     .Factory
     .CreateWeb(args)
     .DeployToGitHubPagesBranch(
