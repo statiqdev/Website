@@ -5,10 +5,32 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: Website
     steps:
       - name: Get Source
         uses: actions/checkout@v2
         with:
+          path: Website
+          submodules: recursive
+      - name: Checkout Statiq.Framework
+        uses: actions/checkout@v2
+        with:
+          repository: statiqdev/Statiq.Framework
+          path: Statiq.Framework
+          submodules: recursive
+      - name: Checkout Statiq.Web
+        uses: actions/checkout@v2
+        with:
+          repository: statiqdev/Statiq.Web
+          path: Statiq.Web
+          submodules: recursive
+      - name: Checkout Statiq.Docs
+        uses: actions/checkout@v2
+        with:
+          repository: statiqdev/Statiq.Docs
+          path: Statiq.Docs
           submodules: recursive
       - name: Install .NET Core SDK
         uses: actions/setup-dotnet@v1
