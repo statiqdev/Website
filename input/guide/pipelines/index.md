@@ -60,7 +60,7 @@ This is the main phase and it should contain most of the modules for a pipeline.
 
 ## Post-Process Phase
 
-The post-process phase can be used for modules that need access to output documents from the process phase of every pipeline regardless of dependencies (except [isolated pipelines](#isolated)). Usually all post-process phases across all pipelines are executed in parallel, but only after all process phases have completed (you can change this behavior by indicating the pipeline has [post-process dependencies](post-process-dependencies).
+The post-process phase can be used for modules that need access to output documents from the process phase of every pipeline regardless of dependencies (except [isolated pipelines](#isolated)). Usually all post-process phases across all pipelines are executed in parallel, but only after all process phases have completed (you can change this behavior by indicating the pipeline has post-process dependencies.
 
 ## Output Phase
 

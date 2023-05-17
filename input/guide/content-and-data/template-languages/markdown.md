@@ -49,6 +49,31 @@ MarkdownExtensions:
 
 This will enable the `Bootstrap` extension.
 
+## Adding extensions by modifying the module or template
+
+The above approaches require that the Markdig extension support a parameterless default constructor and may not work for other extensions. If you see error messages like "Markdown extension XYZ does not have a usable constructor" when trying to configure an extension, you may need to add an instance of that extension directly.
+
+If using the `RenderMarkdown` module directly, you can add an instance of an extension directly using the `.UseExtension()` method:
+
+```csharp
+new RenderMarkdown()
+    .UseExtension(new SmartyPantsExtension(new SmartyPantOptions()))
+```
+
+When using [Statiq Web](xref:web) you will likely want to [modify the Markdown template](xref:templates#modifying-templates) that contains the `RenderMarkdown` module:
+
+```csharp
+await Bootstrapper.Factory
+    .CreateWeb(args)
+    // ...
+    .ModifyTemplate(
+        MediaTypes.Markdown,
+        x => ((RenderMarkdown)x)
+            .UseExtension(new SmartyPantsExtension(new SmartyPantOptions())))
+    // ...
+    .RunAsync();
+```
+
 # Pass Through Content
 
 You can use the special "raw" language to output verbatim content that isn't subject to Markdown processing. This is helpful when you have raw HTML and other content that you want to pass-through the Markdown engine. While using HTML elements in Markdown also accomplishes a single goal, it has some limitations like breaking when new lines are included.
