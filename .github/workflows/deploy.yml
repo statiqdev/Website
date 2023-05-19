@@ -42,7 +42,7 @@ jobs:
           dotnet-version: |
             3.1.x
             6.0.x
-      - run: dotnet run -- deploy -l Debug
+      - run: dotnet run -- deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}

@@ -4,11 +4,24 @@ The `Statiq.Markdown` package uses [Markdig](https://github.com/xoofx/markdig) t
 which is a CommonMark compliant Markdown process with additional features like support for
 GitHub Flavored Markdown fenced code blocks.
 
-# Settings
+# Escaping @ (Or Not)
 
-The following settings are available for the `Statiq.Markdown` package:
+Because of the way Markdown is often passed to [Razor](xref:Razor) for rendering within a layout, and because Razor uses the `@` character to escape HTML content and start Razor instructions, it's often helpful to escape the `@` character in the output from `RenderMarkdown` if it's going to be passed on to the Razor engine.
 
-- `MarkdownExtensions`: List of [Markdig extensions]
+[Statiq Web](xref:web) does this automatically. To escape the `@` character in your own pipelines when using the `RenderMarkdown` module, call the `.EscapeAt()` fluent method on the module.
+
+If you'd like to turn off this behavior in [Statiq Web](xref:web), you can turn it off on a per-file basis by setting the metadata value `EscapeAtInMarkdown` to `false` in something like [front matter](xref:front-matter). You can also turn the `@` escape behavior off globally by [modifying the Markdown template](xref:templates#modifying-templates) that contains the `RenderMarkdown` module:
+
+```csharp
+await Bootstrapper.Factory
+    .CreateWeb(args)
+    // ...
+    .ModifyTemplate(
+        MediaTypes.Markdown,
+        x => ((RenderMarkdown)x).EscapeAt(false))
+    // ...
+    .RunAsync();
+``` 
 
 # Adding extensions
 
