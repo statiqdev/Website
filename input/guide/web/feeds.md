@@ -42,3 +42,8 @@ The following metadata describes items in the feed and should be set in the feed
 - `FeedItemThreadLink`: A link to a comments thread for the feed item.
 - `FeedItemThreadCount`: The number of comments on the feed item.
 - `FeedItemThreadUpdated`: The date the comments thread and count were updated.
+
+Also note that W3C valid feeds require an absolute link to be specified as the location of the feed. To this end, it's highly recommended that the following [global settings](xref:settings) be configured in order to generate a valid feed:
+
+- `Host`
+- `LinksUseHttps`
