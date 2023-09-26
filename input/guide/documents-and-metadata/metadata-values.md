@@ -6,7 +6,7 @@ Generally, metadata can be any instance of any type. Statiq's powerful [type con
 
 # Computed Values
 
-There are _many_ cases where being able to define metadata as a computed value can be valuable. You can define computed metadata with "fat arrow" syntax. For example, placing this in the front matter of a document will result in an `int` of "3" being returned for the "MyNumber" metadata key:
+There are _many_ cases where being able to define metadata as a computed value can be valuable. You can define computed metadata with "arrow" syntax. For example, placing this in the front matter of a document will result in an `int` of "3" being returned for the "MyNumber" metadata key:
 
 ```txt
 MyNumber: => 1 + 2
@@ -37,6 +37,15 @@ In addition, all metadata conversion methods are exposed as global methods. For 
 ```
 Bar: => GetInt("Foo") + 2
 ```
+
+## Cached Vs. Uncached
+
+When using "arrow" syntax to define a computed metadata value, the behavior is different depending on what syntax you use:
+
+- `=>` will cache the result of the script and return the same value every time it's accessed from a given document.
+- `->` will re-evaluate the script every time it's accessed from a given document.
+
+The cached version can often yield _much_ better performance, but the uncached version is provided for situations when the value needs to be re-evaluated every time it's accessed. As an example, consider the use of `DateTime.Now` in the computed metadata value. If the `=>` prefix is used, the value will be cached after the first access, and every time that metadata is requested from that point forward the same `DateTime` will be returned. If the `->` prefix is used, the value will be re-evaluated every time it's accessed and a new, different `DateTime` will be returned. It's recommended that you use the cached `=>` syntax unless you know you really need to re-evaluate the script every time.
 
 # Configuration Delegates
 
