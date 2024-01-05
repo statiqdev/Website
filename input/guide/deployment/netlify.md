@@ -37,5 +37,9 @@ return await Bootstrapper
     .RunAsync();
 ```
 
+Note that you don't need to call `DeployToNetlify` if you're specifying the `NetlifySiteId` and `NetlifyAccessToken`
+settings elsewhere (like an `appsettings.json` file). This method is just a convenience for setting those values. The
+Netliy deployment will automatically take place if those settings are defined, regardless of how or where they were set.
+
 If you're deploying to Netlify you can also set `NetlifyRedirects` to `true` to
 create a [Netlify redirects file](xref:redirects#netlify).

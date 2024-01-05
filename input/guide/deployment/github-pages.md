@@ -85,3 +85,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ```
+
+Note that you don't need to call `DeployToGitHubPages` or `DeployToGitHubPagesBranch` if you're specifying the
+`GitHubOwner`, `GitHubName`, `GitHubToken`, (and optionally `GitHubBranch`)
+settings elsewhere (like an `appsettings.json` file). These methods are just a convenience for setting those values. The
+GitHub deployment will automatically take place if those settings are defined, regardless of how or where they were set.

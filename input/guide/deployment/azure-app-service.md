@@ -44,6 +44,11 @@ return await Bootstrapper
     .RunAsync();
 ```
 
+Note that you don't need to call `DeployToAzureAppService` if you're specifying the
+`AzureAppServiceSiteName`, `AzureAppServiceUsername`, and `AzureAppServicePassword`
+settings elsewhere (like an `appsettings.json` file). This method is just a convenience for setting those values. The
+Azure App Service deployment will automatically take place if those settings are defined, regardless of how or where they were set.
+
 You'll probably want support for extensionless URLs like most other static site hosts.
 Azure App Service and IIS don't support this by default, but you can configure it using
 the following `web.config` file:
